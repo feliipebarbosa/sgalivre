@@ -1,0 +1,105 @@
+Hierarquia de Diretorios
+
+sga3 
+|-- admin                           // Administração do Sistema 
+|-- database                        // Arquivos para Criação do Banco de Dados 
+|-- dialogs		                    // Janelas de diálogo do sistema
+|-- doc			                    // Documentação do Sistema
+|   |-- imgs                        // Imagens utilizadas na documentação
+|-- home                            // Página Inicial 
+|-- images                          // Imagens comum do Sistema (não layout) 
+|   |-- atendimento                 // Imagens utilizadas no módulo Atendimento
+|   |-- calendar                    // Imagens utilizadas nos calendários
+|-- install                         // Diretório de instalação do Sistema
+|   |-- sql                         // Script para criação do banco de dados do Sistema
+|-- lib                             // Biblioteca do Sistema 
+|   |-- js                          // Arquivos de Javascript do Sistema
+|   |   |-- core                    // Necessário para o funcionamento básico 
+|   |   |-- jquery                  // Arquivos da biblioteca jquery
+|   |   |-- themes                  // Arquivos de CSS do Sistema
+|   |   |   |-- images              // Imagens utilizadas no Sistema
+|   |	|-- libjsx                  // Biblioteca de arquivos ajax do Sistema
+|   |   |   |-- ajax                // Arquivos ajax do Sistema
+|   |-- php                         // Arquivos de PHP 
+|   |   |-- core                    // Necessário para o funcionamento básico 
+|   |   |   |-- contrib             // Contribuições de outros autores 
+|   |   |   |-- db                  // Interação com o Banco de Dados 
+|   |   |   |-- relatorios          // Relatórios do Sistema
+|   |   |-- template                // Responsável pelo HTML impresso (padrão)
+|-- login                           // Login Universal do Sistema 
+|-- logout                          // Encerra a sessão do usuário 
+|-- modules                         // Contém os arquivos de execução dos módulos 
+|   |-- sga                         // Diretório do autor 
+|   |   |-- admin                   // Diretório do módulo de configuração de uma unidade
+|   |   |   |-- atendimento         // Arquivos da configuração de atendimento em uma unidade
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- js              // Arquivos de Javascript do módulo
+|   |   |   |   |-- php	            // Arquivos de PHP do módulo
+|   |   |   |-- monitor             // Arquivos de alteração de serviços em uma unidade
+|   |   |   |-- triagem             // Arquivos para impressão
+|   |   |   |-- usuarios	        //	      						
+|   |   |-- atendimento             // Diretório do módulo de Atendimento 
+|   |   |   |-- atender             // Diretório dos arquivos dos tipos de atendimento
+|   |   |   |-- configuracoes       // Configurações do atendente
+|   |   |   |-- estatisticas        // Estatísticas do atendimento
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- css             // CSS do módulo (mais imagens)
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|   |   |   |-- mensagens           // Arquivos relativos as mensagens do monitor 
+|   |   |-- configuracao            // Diretório do modulo de Configuração do Sistema 
+|   |   |   |-- atendimento         // Reinicialização de senhas de atendimento
+|   |   |   |-- cargos              // Gerenciamento dos cargos
+|   |   |   |-- grupos              // Gerenciamento dos grupos
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- css             // CSS do módulo (mais imagens)
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|   |   |   |-- servicos            // Gerenciamento dos serviços
+|   |   |   |-- triagem             // Configurações da triagem
+|   |   |   |-- unidades            // Gerenciamento das unidades
+|   |   |-- home                    //
+|   |   |   |-- lib                 //
+|   |   |   |   |-- php             //
+|   |   |-- inicio                  // Diretório do módulo de Inicio
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|   |   |-- monitor                 // Diretório do módulo de Monitor 
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- css             // CSS do módulo (mais imagens)
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|   |   |-- relatorios              // Diretório do módulo de Relatório 
+|   |   |   |-- estatiscas          // Relatórios estatísticos sobre o sistema
+|   |   |   |-- graficos            // Relatórios gráficos sobre o sistema
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- css             // CSS do módulo (mais imagens)
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|   |   |   |-- relatorio           // Relatórios sobre o sistema
+|   |   |-- triagem                 // Diretório do módulo de Triagem 
+|   |   |   |-- acoes               // Ações relativas as senhas 
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- css             // CSS do modulo (mais imagens)
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|   |   |-- usuarios                // Diretório do módulo de Usuário 
+|   |   |   |-- lib                 // Biblioteca do módulo
+|   |   |   |   |-- js              // Javascript do Módulo
+|   |   |   |   |-- php             // Classes (php) do módulo
+|   |   |   |   |   |-- template    // Classes (php) de template do módulo
+|-- nbproject                       // Propriedades do projeto do Sistema
+|-- painel                          // Arquivos para a Listagem de unidades e serviços
+|-- sounds                          // Sons do sistema
+|-- themes                          // Temas do Sistema 
+|   |-- sga.default                 // Diretório do Autor 
+|   |   |-- css                     // Arquivos CSS 
+|   |   |-- imgs                    // Imagens do layout do Tema
+|-- unidade                         // Arquivos relativos a definição da unidade no módulo Início

@@ -1,0 +1,136 @@
+
+/**
+ * 
+ * Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+ *
+ * Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+ *
+ * O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ * publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+ *
+ * Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ * MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a 
+ * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+ *
+**/
+
+@CHARSET "UTF-8";
+
+/*
+    WINDOW_POPUP
+*/
+
+#install_popup {
+    z-index: +1;
+    text-align: center;
+    margin: 0 auto;
+    width: 750px;
+}
+
+.sga_logo_top{
+	float: left;	
+}
+
+#install_popup_content {
+	background: #EEEEEE;
+    border: 1px solid #000000;
+}
+
+#install_popup_content p {
+	text-align: left;
+}
+
+#install_popup_content h1 {
+    color: black;
+    font: bold 20px Verdana, Arial, Sans-serif;
+    text-transform: uppercase;
+    padding: 15px 0px 15px 0px;
+}
+
+#install_popup_content div {
+    color: black;
+    font: bold 12px Verdana, Arial, Sans-serif;
+    padding: 3px 20px;
+}
+
+#install_popup_content div span {
+    width: 120px;
+    height: 15px;
+    padding: 5px 0px 0px 10px;
+    float: left;
+}
+
+#install_popup_content ul {
+    padding: 20px 0px 15px 20px;
+}
+
+#install_popup_content ul li {
+    padding: 0px 2px;
+    list-style: none;
+    display: inline;
+}
+
+#btn_prev {
+	float: left;
+}
+
+#btn_next {
+	float: right;
+}
+
+#install_popup_progress {
+    padding-top: 5px;
+	background: #EEEEEE;
+    border: 1px solid #000000;
+    height: 30px;
+    
+}
+
+#install_popup_progress span {
+    position: relative;
+    top: 3px;
+	right: 35px;
+	
+}
+
+.etapa-inativa {
+    padding: 5px;
+    background-color: #dedede;
+    border: solid 1px #aaaaaa;
+}
+
+.etapa-ativa {
+    padding: 5px;
+    background-color: #b3c4d0;
+    border: solid 1px #aaaaaa;
+}
+
+#license_textarea {
+    width: 99%;
+    display: block;
+}
+
+#display_install_loading {
+    height: 48px;
+}
+#step_3{
+	width: 450px;
+}
+#step_4{
+	width: 450px;
+}
+#step_3 div, #step_4 div{
+	float: right;
+}
+.cleaner{
+	clear: both;
+	display: block;
+}
+.advertencia {
+	clear: both;
+}
+.img_logo_horizontal{
+	width: 300px;
+}

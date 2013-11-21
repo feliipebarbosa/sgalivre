@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<!--
+--Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+--
+--Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+--
+--O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como --publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+--
+--Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+--MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+--
+--Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+--><title>SGA Livre - Manual de Instalação</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="sgadoc.css" type="text/css"></head><body>
+<div class="document" id="documento">
+<div>
+<center><img style="width: 561px; height: 71px;" alt="" src="imgs/logo_horizontal_simples.jpg"><br>
+</center>
+</div>
+<h1 class="title">Manual de Instalação do SGA Livre</h1>
+<a href="index.html">Retornar à
+Página Inicial</a>
+<ul>
+</ul>
+<div class="section" id="indice">
+<h1 class="tittle">Índice</h1>
+<ul>
+<li><a href="#intro">Introdução</a></li>
+<li><a href="#install">Instalação do Servidor Web
+e Banco de Dados</a></li>
+<li><a href="#controlador">Instalação do
+Controlador de&nbsp;Painéis</a></li>
+<li><a href="#cron">Configuração do Cron</a></li>
+<li><a href="#painelsenhas">Instalação do Painel
+de Senhas</a></li>
+</ul>
+</div>
+<div class="section" id="intro">
+<h1 class="tittle"><a name="intro">Introdução</a></h1>
+A instalação do
+servidor do SGA Livre requer conhecimento técnico em Linux. Então,
+sugerimos que este roteiro seja executado por um usuário familiarizado
+com &nbsp;instalação de pacotes e configuração básica de Apache,
+PHP,
+Postgresql e Java.<br>
+<br>
+Este roteiro está baseado (e Recomendamos) Sistema Operacional
+GNU/Linux Debian 5 - Lenny. <br>
+<br>
+Como
+pode ser visto na seção 'Arquitetura' do manual de introdução, o SGA
+Livre pode ser instalado separando servidor de aplicação web, banco de
+dados e controlador de painéis. Essa decisão deve ser tomada com base
+no volume de acesso e uso do sistema. Porém, para a maioria dos
+usuários, instalar todos esses componentes&nbsp;num único
+servidor&nbsp;será suficiente. Este manual pressupõe que todos os
+componentes&nbsp;estarão instalados na mesma máquina servidora.<br>
+<br>
+<span style="font-weight: bold; text-decoration: underline;">Pré-requisitos
+de hardware:<br>
+</span>A definição de requisitos de hardware deve ser baseada no
+volume de acesso esperado.<br>
+Quanto maior o número de unidades de atendimento, mais adequada deve
+ser a máquina servidora.<br>
+Em
+geral, servidores com dois&nbsp;processadores, 2 GB de memória RAM
+e 50
+GB de espaço em disco devem atender bem para pequenos volumes.<br>
+<p style="text-decoration: underline; font-weight: bold;"></p>
+<p style="text-decoration: underline; font-weight: bold;">Pré-requisitos
+de software:</p>
+<p>Postgresql &nbsp;versão 8.3<br>
+Apache versão 2<br>
+Openjdk-6-jre ou Sun-java6-jre<br>
+PHP versão 5.2.0<br>
+GD versão 2.0<br>
+Multibyte String<br>
+PDO versão 1.0.0<br>
+PDO PgSQL versão 1.0.2<br>
+</p>
+<br>
+<span style="font-weight: bold;">Lista de Pacotes para
+Debian Lenny:</span><br>
+apt-get install postgresql-8.3 postgresql-client-8.3 apache2
+openjdk-6-jre php5
+php5-cli libapache2-mod-php5 php5-gd php5-pgsql
+<p></p>
+<p><small><span style="font-weight: bold; text-decoration: underline;">Dica</span>:
+após instalar os pacotes, e antes de prosseguir com a instalação,
+certifique-se que o usuário padrão&nbsp;de administração do
+Postgresql esteja habilitado.<br>
+Exemplo no Debian para habilitar o usuário padrão postgres:<br>
+<span style="font-style: italic;">$&nbsp;su - postgres</span><br style="font-style: italic;">
+<span style="font-style: italic;">$ psql</span><br style="font-style: italic;">
+<span style="font-style: italic;">$&nbsp;alter user
+postgres with password 'defina_sua_senha';   (com aspas)</span></small></p>
+<p>&nbsp;&nbsp;</p>
+<p></p>
+</div>
+<div class="section" id="install">
+<h1 class="tittle"><a name="tittle">Instalação
+do Servidor Web e Banco de Dados</a></h1>
+<p>Nesta seção será descrita a instalação do Servidor Web e do
+Banco de Dados.</p>
+<p style="font-weight: bold; text-decoration: underline;"><big><big>Pacotes de instalação</big></big></p>O
+pacote completo de instalação do SGA Livre é composto de:<br>
+<ul><li>Para instalação no Servidor</li><ul><ul><li>sgalivre-servidor-web_x.x.x.tgz &nbsp; - Pacote de
+instalação do Servidor Web e Banco de Dados.</li></ul></ul><ul><ul><li>sgalivre-controladorpaineis_x.x.x.tgz - Pacote de
+instalação do Controlador de Painéis.</li></ul></ul></ul>
+<ul><li>Para instalação do Painel de Senhas</li><ul><ul><li>sgalivre-painel_x.x.x.tgz - Pacote de instalação .tgz
+do Painel de Senhas.</li></ul></ul><ul><ul><li>sgalivre-painel_x.x.x.deb - Pacote de instalação .deb
+do Painel de Senhas.</li></ul></ul></ul>
+<br>
+<small style="font-weight: bold;">Onde x.x.x signifca a
+versão. Ex.: 1.0.0</small><br><br><br>
+<br>
+<p class="topic"></p>
+<p class="topic">Primeiro Passo - Início</p>
+<p>Descompactar o sgalivre-servidor-web_x.x.x.tgz na área web do servidor apache2.
+</p><p>Acessar o instalador web, conforme exemplo abaixo:</p>
+<p>Exemplo: http://&lt;ip_do_servidor&gt;/sgalivre</p>
+<p></p>
+<p>Ao acessar o SGA pela primeira vez, a página de instalação
+será exibida. Clicando no botão "Próximo" o usuário será levado a
+página de verificação de requisitos.</p>
+<p></p>
+<center><img src="imgs/install_img00.jpg"></center>
+<br>
+<p class="topic"></p>
+<p class="topic">Segundo Passo - Verificação dos Requisitos</p>
+<p>Esse
+passo da instalação mostra ao usuário os requisitos mínimos do SGA
+Livre e faz a comparação com as versões instaladas no
+servidor.&nbsp; </p>
+<ul>
+</ul>
+<p>Em
+Permissões Requeridas, o SGA Livre aponta a necessidade de permissão de
+escrita no arquivo<span style="font-weight: bold;">
+Config.php</span>. O SGA Livre mostra o caminho através dos
+diretórios para encontrar o arquivo. O usuário deve alterar com chmod,
+adicionando a permissão de escrita. Após disso, basta atualizar a
+página e
+verificar se a alteração foi efetuadas com sucesso.</p>
+<p>Em
+Configurações Requeridas, encontramos o <span style="font-weight: bold;">short_open_tag</span> onde
+o valor
+requerido deve ser "On". Caso o valor seja "OFF" basta alterar o valor
+da chave no arquivo PHP.ini. No Debian, geralmente fica em
+/etc/php5/apache2/php.ini.&nbsp;</p>
+<p>Em Configurações
+Recomendadas, o <span style="font-weight: bold;">magic_quotes_gpc</span>
+deverá ter o valor "OFF", no caso
+contrário basta alterar o valor no arquivo PHP.ini</p>É necessário reiniciar o Apache após alterar o php.ini.
+<p>Os itens que não estão em conformidades com o exigido pelo SGA
+Livre ficam destacados em vermelho.</p>
+<center><img class="max-width" src="imgs/install_img02.jpg"></center>
+<br>
+<br>
+<p class="topic"></p>
+<p class="topic">Terceiro Passo - Licença</p>
+<p>Nesta
+parte da instalação, o usuário é orientado a ler a licença do SGA Livre
+- O SGA é disponibilizado sob a Licença Pública Geral (GPL - versão
+dois, publicada em junho de 1991). Após concordar com os termos da
+Licença,&nbsp;o usuário poderá avançar para o próximo passo.</p>
+<center><img class="max-width" src="imgs/install_img03.jpg"></center>
+<p style="font-weight: normal;" class="topic"><br>
+</p>
+<br>
+<p class="topic"></p>
+<p class="topic">Quarto Passo - Configuração do Banco de
+Dados</p>
+<p>Nesta estapa da instalação, o administrador deverá inserir as
+opções de conexão ao servidor de banco de dados Postgresql, que será
+utilizado pelo SGA Livre.</p>
+<p>Durante
+a configuração do banco o usuário deverá inserir o nome do Host (ou IP)
+onde está o banco; a porta de comunicação do sistema com o banco; o
+nome do usuário administrador do banco; a senha deste usuário e o nome
+do banco a ser criado. Antes de avançar para a próxima etapa, o banco
+deverá ser
+testado.&nbsp;</p>
+<center><img class="max-width" src="imgs/install_img04.png"><br>
+<div style="text-align: left;"><small><span style="font-weight: bold; text-decoration: underline;">Obs.:</span>
+por padrão, o Postgresql permite &nbsp;apenas conexão
+&nbsp;localhost. Para habilitar conexões externas, veja manual do
+Postgresql.</small></div>
+<br>
+</center>
+<div class="attention">
+<p class="admonition-title">Atenção: O banco de dados
+especificado na instalação será criado automaticamente se não existir,
+caso exista será recriado e todos os dados existentes no banco antigo
+serão PERMANENTEMENTE PERDIDOS.</p>
+</div>
+<br>
+<p class="topic"></p>
+<p class="topic">Quinto Passo - Configurações da Conta
+Administrador</p>
+<p>Nesta
+etapa o usuário vai configurar as opções da conta Administrador do SGA
+Livre. Será a conta com a qual o usuário irá acessar
+a primeira vez no sistema para configurá-lo. O administrador terá
+acesso
+total ao sistema. Esta conta poderá ser editada,
+entretanto, nunca poderá ser excluida do sistema.</p>
+<p>As
+informações aplicáveis a conta Administrador durante esta etapa são:
+Usuário - nome usado no acesso ao sistema; Nome - nome do
+administrador; Sobrenome; Senha - senha para acesso ao sistema; e
+Confirmar Senha. Ao preencher todos os campos o usuário poderá avançar
+na instalação</p>
+<center><img class="max-width" src="imgs/install_img05.png"></center>
+<br>
+<p class="topic"></p>
+<p class="topic">Sexto Passo - Aplicar</p>
+<p>Esta
+é a etapa final de instalação. Clicando em instalar, o SGA Livre será
+instalado com as configurações obtidas durante a instalação. Uma
+mensagem indicando o sucesso da operação será exibida e
+posteriormente a página de acesso inicial será exibida.</p>
+<center><img class="max-width" src="imgs/install_img06.jpg"></center>
+<br>
+<br>
+<p>A partir de agora, o usuário poderá logar no sistema com a
+conta
+criada.&nbsp;</p>
+<p>Será necessário&nbsp;configurar o sistema de acordo com
+suas
+necessidades.</p>
+<center><img style="width: 706px; height: 417px;" alt="" class="max-width" src="imgs/install_img09.jpg"></center>
+</div>
+<br>
+<br>
+<br>
+<div class="section" id="painel">
+<h1 class="tittle"><a name="controlador">Instalação
+do Controlador de Painéis</a></h1>
+<p>Esta seção abordará a instalação do Controlador de Painéis do
+SGA Livre.</p>
+<p>O Controlador de Painéis é uma aplicação Java centralizada que
+é
+responsável por enviar as senhas chamadas pelos atendentes para os
+Painéis de Senhas das Unidades de Atendimento, não importando onde elas
+estejam. Basta ter uma conexão de rede disponível.&nbsp; O envio
+das
+senhas é extremanente leve e rápido, pois é constituído de um datagrama
+(pacote) UDP bem curto.</p>
+<div class="note">
+Controlador de Paineis e Paineis de Senhas trabalham com protocolo UDP,
+nas portas 9999 e 8888 respectivamente. Certifique-se de que não haja
+bloqueios em dispositivos de rede como roteadores e firewalls.
+</div>
+<p>Primeiramente, o usuário deverá descompactar o arquivo
+"sgalivre-controladorpaineis_x.x.x.tgz".</p>
+<p>O arquivo <span style="font-weight: bold;">server.conf</span>
+contém
+as informações de configuração do Controlador de Painéis. É muito
+importante que o administrador insira corretamente as informações nesse
+arquivo.&nbsp;</p>
+<br># DATAPREV 2009<br># SGA Livre<br># CONTROLADOR DE PAINEIS 1.0.0<br># ARQUIVO DE CONFIGURAÇÃO DO CONTROLADOR DE PAINEIS<br># server.conf<br>#<br><br><br># Define a classe do Driver SQL a ser usado.<br># O Driver deve ser adequado ao RDMBS em uso.<br># PostgreSQL&nbsp;&nbsp;&nbsp; -&gt; org.postgresql.Driver<br>jdbcDriver = org.postgresql.Driver<br><br># Define a URL JDBC<br># Exemplo: jdbc:&lt;rdbms&gt;://&lt;host&gt;/&lt;database&gt;<br>jdbcUrl = jdbc:postgresql://127.0.0.1/sgalivre<br><br># Define o usuario do SQL<br>jdbcUser = postgres<br><br># Define o password do login SQL<br>jdbcPass = senha<br><br># URL do Servidor Web<br># Define a URL que irá retornar a lista de Unidades<br># Essa URL é enviada para o painel, que a utiliza para obter a lista de unidades<br># Não utilizar endereço de loopback (l27.0.0.1)<br>urlUnidades = http://10.0.0.2/sgalivre/painel/get_unidades.php<br><br># URL do Servidor Web<br># Define a URL que irá retornar a lista de Serviços<br># Essa URL é enviada para o painel, que a utiliza para obter a lista de serviços a partir de uma unidade<br># O token %unidade_id% é substituido no cliente pela unidade selecionada<br># Não utilizar endereço de loopback (l27.0.0.1)<br>urlServicos = http://10.0.0.2/sgalivre/painel/get_servicos.php?id_uni=%id_unidade%<br><br># Intervalo de consulta (em milésimos de segundo)<br># Define o intervalo de consultas SQL em busca de novas senhas<br># Um intervalo muito grande aumenta o tempo de resposta e pode permitir que uma quantidade grande de senhas<br># acumule, causando um pico de processamento.<br># Um intervalo muito pequeno pode causar impacto na performance do banco devido ao excesso de consultas.<br>intervaloConsulta = 100<br><br># Tempo limite (em segundos) que um Painel será considerado como inativo caso nao faça contato.<br># Os painéis enviam sinais de vida baseados nesse intervalo.<br># Um painel continua recebendo mensagens até ser dado como inativo.<br>timeoutPainel = 600<br><br>#
+Tempo limite (em segundos) que um Painel será considerado inexistente,
+e será removido da memória do Controlador e do Banco de Dados.<br>#
+Esta tarefa permite a liberação de recursos da maquina executando o
+controlador de paineis e impede o acumulo de lixo na tabela.<br># Caso o Painel de Senhas na unidade esteja ativo, ou seja, iniciado antes deste tempo limite não será removido.<br># padrão: 345600 segundos (96 horas)<br>removerPaineisIntervalo = 345600<br><br># Horario(HH:MM:SS) no formato 24 horas em que o controlador de paineis irá executar a tarefa de limpeza de paineis inativos<br># Esta tarefa passa por todos paineis e remove aqueles que estao inativos por tempo superior a &lt;removerPaineisIntervalo&gt;<br># É altamente recomendado que esta tarefa execute em um horário de ociosidade do sistema.<br>removerPaineisHora = 23:50:00<br>
+<br style="font-weight: bold;"><span style="font-weight: bold;">
+Realizadas as configurações no arquivo server.conf, o Controlador de
+Painéis pode ser executado, através do script
+controladorpainel.sh.
+</span><p><span style="font-weight: bold;">O Controlador de Painéis deve permanecer em execução todo o
+tempo.</span><br>
+</p>
+<p>&nbsp;&nbsp;</p>
+<h1 class="tittle"><a name="cron">Configuração
+do Cron</a></h1>
+A configuração do Cron é&nbsp;opcional, mas recomendada. A idéia
+básica é agendar uma tarefa no cron para acumular todos os atendimentos
+nas tabelas de histórico do SGA Livre, liberando o sistema para o
+funcionamento no dia seguinte. Ou seja, é a mesma funcionalidade
+existente na opção "Reiniciar Senhas", existente no módulo Config.
+Global. A diferença é apenas a automatização do processo por meio de
+agendamento no servidor.<br>
+<br>
+Para isso, é necessário:<br>
+<br>
+1) Criar&nbsp;<span class="il"></span>um arquivo
+chamado ".pgpass" no diretório do usuário root contendo a senha e com
+permissão 0600.<br>
+<p>Isto é necessário para permitir que o comando execute, sem a solicitação da senha do usuário do PostgreSQL.</p>
+<br>Exemplo de conteúdo do arquivo (formato <tt class="REPLACEABLE"><i>"hostname</i></tt>:<tt class="REPLACEABLE"><i>port</i></tt>:<tt class="REPLACEABLE"><i>database</i></tt>:<tt class="REPLACEABLE"><i>username</i></tt>:<tt class="REPLACEABLE"><i>password")</i></tt>:<br>
+*:*:sgalivre:postgres:senha<br>
+<br>
+<br>2) Criar agendamento no Cron:<br>
+0 23 * * * root psql -d <tt class="REPLACEABLE"><i>database</i></tt> -U <tt class="REPLACEABLE"><i>usuario</i></tt>
+-c "SELECT sp_acumular_atendimentos(now())"<br>
+<br>
+<br>
+<div class="note">
+<p><b>Aviso Importante</b></p>
+<p>Em algumas distribuições(como Debian e Ubuntu) o PostgreSQL pode
+estar configurado de forma mais restritiva, causando uma mensagem
+similar a:</p>
+<pre>PT-BR: psql: FATAL:  autenticação do tipo Ident falhou para usuário "root"<br>EN-US: psql: FATAL: Ident authentication failed for user "root"<br></pre>
+<p>Nessas distribuições o usuário do PostgreSQL deve coincidir com o usuário linux.</p><br>
+<p>Opcionalmente você pode alterar a configuração do PostgreSQL em pg_hba.conf:</p>
+<pre>Restritivo: local   all         all                               ident sameuser<br>Permissivo: local   all         all                               md5<br></pre>
+</div>
+<br>
+<small>Referência: <a href="http://www.postgresql.org/docs/8.3/static/libpq-pgpass.html">http://www.postgresql.org/docs/8.3/static/libpq-pgpass.html</a></small><br>
+<p></p>
+<p></p>
+<p></p>
+<h1 class="tittle"><a name="painelsenhas">Instalação
+do Painel de Senhas</a></h1>
+<div class="note">
+<p><b>Nota importante:</b></p><p><b>Requer&nbsp;Java 6 (JRE) instalado.</b></p>
+<p>A forma recomendada de instalação dos pacotes para o painel é
+via linha de comando: </p>
+<p>Exemplo: sudo dpkg -i&nbsp;sgalivre-painel_x.x.x.deb na distro Ubuntu</p>
+
+<p>--</p><p>É possível a instalação em outros sitemas operacionais
+(inclusive Windows). Entretanto, não será
+fornecido instalador para tal. Nesses casos, basta descompactar o
+arquivo&nbsp;sgalivre-painel_x.x.x.tgz e executar o arquivo
+"painel.jar".</p><p>Exemplo em outras distros Linux: java -jar painel.jar<br>Exemplo em Windows: "duplo clique em painel.jar".</p>
+</div>
+<p>O painel de senhas deverá ser instalado em todas as máquinas
+onde ficarão conectados os monitores que exibirão as senhas chamadas.
+Ao executar pela primeira vez, será
+exibida uma mensagem alertando que as configurações iniciais devem ser
+aplicadas. Como segue na imagem abaixo:</p>
+<div id="img"><img class="border" src="imgs/install_painel01.jpg"></div> &nbsp;<br>&nbsp; <p style="text-align: left;">Obs.:
+Um bug conhecido (tela abaixo) do Java com o Compiz impede que o ícone
+de bandeja&nbsp;funcione corretamente. Nesse caso, basta desativar os
+efeitos visuais do Compiz. No Ubuntu fica no Menu Sistema, Aparência,
+aba Efeitos Visuais. Selecionar Nenhum.</p><p style="text-align: center;"><img style="border: 1px solid ; width: 283px; height: 111px;" alt="" src="imgs/compiz_java.png"></p><p>&nbsp;&nbsp;</p><p></p><p>A janela de configuração apresentada abaixo possui os campos
+"IP do Servidor" - neste campo
+deve ser colocado o IP do servidor onde está instalado o controlador de
+paineis. Após inserir o endereço IP do Controlador de Paineis deve-ser clicar no
+botão "Obter Unidades", para carregar no painel as unidades existentes
+no servidor. Após obter as unidades pode-se selecioná-las no campo
+"Selecione
+Unidade". E após selecionar uma unidade serão exibidos no campo
+"Serviço" os serviços cadastrados na unidade, deve-se então escolher
+quais serviços serão exibidos neste painel.<br>
+</p>
+<p><span style="font-weight: bold;">ATENÇÃO: Essa etapa obter e
+selecionar a unidade somente pode ser efetuada após a realização da
+configuração do sistema, abordado no Manual do Usuário.</span><br>
+</p>
+
+<div id="img"><img class="border" src="imgs/install_painel02.jpg"></div>
+<p>Salvando as opções de configuração o painel será cadastrado no
+servidor de paineis e o mesmo será iniciado.</p>
+<div id="img"><img class="border" src="imgs/install_painel03.jpg"></div>
+<p>O painel de senhas ficará instalado em aplicativos/acessórios.
+Quando executado o painel de senhas exibe um ícone junto ao painel do
+sistema operacioal, próximo a data.</p>
+<div id="img"><img class="border" src="imgs/install_painel05.jpg"></div>
+<p> Selecionando o ícone com o botão direito temos opções de
+configuração do painel, além das opções
+de "Exibir Painel","Sobre" e "Sair". Selecionando a opção "Configurar
+Serviços" a janela de configuração inicial é exibida. No caso da
+"Configuração de Layout" é exibida uma janela como a apresentada abaixo:</p>
+<div id="img"><img class="max-width" src="imgs/install_painel04.jpg"></div>
+<p>Para alterar as cores do painel deve-se clicar na área
+referente no painel exibido no monitor à esquerda e definir a cor
+daquela área. Abaixo temos as opções de monitor primário e secundário
+para o caso da utilização de mais de um monitor no computador em que o
+painel está instalado. Temos também na sequência as opções de sons a
+serem utilizados ao chamar senhas.</p>
+<p>Por padrão o painel de senhas é iniciado automáticamente após
+o sistema operacional ser iniciado. Para ocultar o painel basta
+pressionar o botão esquerdo e direito do mouse. Abaixo temos um exemplo
+do painel.</p>
+<div id="img"><img class="max-width" src="imgs/install_painel06.jpg"></div>
+<h1><small><a class="toc-backref" href="introducao.html#id3"><br>
+</a></small></h1>
+<p>Útima revisão deste documento: 21/10/2009</p>
+<div class="section" id="controle_versao"> <br>
+<a href="index.html">Retornar à página inicial</a> </div>
+<p></p>
+</div>
+</div>
+</body></html>

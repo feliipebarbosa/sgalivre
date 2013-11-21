@@ -1,0 +1,381 @@
+
+/**
+ * 
+ * Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+ *
+ * Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+ *
+ * O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ * publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+ *
+ * Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ * MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a 
+ * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+ *
+**/
+
+/**
+ *
+ *	Configuracao
+ *
+*/
+html, body {
+    overflow: hidden;
+}
+
+h1, h2, h3{
+    font: Verdana, Arial, Sans-serif;
+    padding: 10px 0px;
+}
+h1{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 13px;
+}
+h3{
+    font-size: 20px;
+}
+
+#id_atencao{
+    margin-left: -20px;
+}
+
+/* Altera o tamanho minimo dos select. */
+select#cargos_list, select#groups_list, select#macro_serv_list, select#sub_serv_list {
+    min-width: 170px;
+}
+
+/*
+*
+* === CARGOS === 
+*
+*/
+
+
+/** CARGOS TREEVIEW */
+.arvore_cargos {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.arvore_cargos ul {
+    background-color: white;
+    margin-top: 4px;
+}
+
+.arvore_cargos .hitarea {
+    background: url(../imgs/treeview-default.gif) -64px -25px no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-left: -16px;
+    float: left;
+    cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+    display: inline;
+    float: none;
+}
+
+.arvore_cargos li {
+    margin: 0;
+    padding: 3px 0pt 3px 16px;
+}
+
+.arvore_cargos a.selected {
+    background-color: #eee;
+}
+
+.arvore_cargos .hover { color: red; cursor: pointer; }
+
+.arvore_cargos li { background: url(../imgs/treeview-default-line.gif) 0 0 no-repeat; }
+.arvore_cargos li.collapsable { background-position: 0 -176px; }
+
+.arvore_cargos .expandable-hitarea { background-position: -80px -3px; }
+
+.arvore_cargos li.last { background-position: 0 -1766px }
+.arvore_cargos li.lastCollapsable{ background-image: url(../imgs/treeview-default.gif); }
+.arvore_cargos li.lastCollapsable { background-position: 0 -111px }
+.arvore_cargos li.lastExpandable { background-position: -32px -67px }
+
+.arvore_cargos div.lastCollapsable-hitarea { background-position: 0; }
+
+.arvore_cargos li {
+    padding: 3px 0 2px 16px;
+}
+.arvore_cargos a {
+    text-decoration: none;
+    color: #000000;
+    padding-left: 2px;
+}
+.arvore_cargos span.item_cargo_pai, .arvore_cargos span.item_cargo_filho {
+    padding: 1px 0 1px 16px;
+    display: block;
+}
+
+.arvore_cargos span.item_cargo_pai { background: url(../imgs/cargo_pai.png) 0 0 no-repeat; }
+.arvore_cargos li.expandable span.item_cargo_pai { background: url(../imgs/cargo_pai.png) 0 0 no-repeat; }
+.arvore_cargos span.item_cargo_filho { background: url(../imgs/cargo_filho.png) 0 0 no-repeat; }
+
+/*
+SERVICOS
+*/
+
+#macro_serv {
+    width: auto;
+    height: 100%;
+    float: left;
+}
+
+#sub_serv {
+    width: auto;
+    height: 100%;
+    float: left;
+}
+
+/**
+	Config > Configurar Mensagem
+*/
+#alterar, #id_aplica_todas {
+    font: 12px Verdana, Arial, Sans-serif;
+}
+
+div.lista, div.botoes {
+    float: left;
+    margin-left: 5px;
+}
+
+div.botoes button {
+    width: 105px;
+    clear: left;
+    display: block;
+    margin: 0 0 3px 0;
+}
+
+div.botoes button li {
+    list-style: none;
+}
+
+#nm_serv{
+    width: 268px;
+}
+
+#btn_save, #btn_cancel{
+    width:67px;
+}
+
+div#alterar{
+    margin-top: 10px;
+    background-color: #eee;
+    padding: 5px;
+    display: table;
+}
+
+div#config_user_search {
+    margin-top: 0;
+}
+
+
+/**
+	Config > Unidade
+*/
+div.config_uni_info {
+    width: auto;
+}
+
+
+#config_uni h3 {
+    font: bold 14px Verdana, Arial, Sans-serif;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+#editar_unidade h1{
+    text-align: center;
+}
+#editar_unidade div{
+    display: table-row;
+}
+
+#editar_unidade div span{
+
+    font: 12px Verdana, Arial, Sans-serif;
+    padding: 0px 0px;
+    display: table-cell;
+}
+
+div#criar_unidade {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+
+    border-bottom-width: thin;
+    border-bottom-color: #727272;
+
+    text-align: left;
+}
+
+div#conteudo_resultado_unidade {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+#config_uni .config_user_info #editar_unidade, #editar_unidade{
+    width: 280px;
+    clear: both;
+    position: relative;
+    top: 10px;
+    padding: 0 6px 0 6px;
+    background: #eee;
+}
+
+#config_uni .config_uni_info span, #editar_unidade span{
+    width: 68px;
+    font: 12px Verdana, Arial, Sans-serif;
+    padding: 3px 0px 0px 0px;
+    float: left;
+    display: block;
+}
+
+#config_uni #config_uni_search {
+    float: left;
+}
+
+ul.config_uni_control {
+    padding: 10px 0px;
+    clear: both;
+}
+
+ul.config_uni_control li {
+    padding: 0px 2px;
+    list-style: none;
+    display: inline;
+}
+
+
+/** Popup unidade **/
+#cod_uni_novo{
+    margin-left: 3px;
+}
+
+#nm_uni_novo{
+    margin-left: 10.5px;
+}
+
+#id_grupo_novo{
+    margin-left: 8.3px;
+}
+
+#cod_criar_uni{
+    min-width: 200px;
+}
+
+/**
+	CONFIGURAÇÃO > Remover grupo
+*/
+
+div#remov_grup{
+    overflow: auto;
+    max-height: 300px;
+
+}
+
+div#remov_grup span{
+    width: 40%;
+    float: left;
+    text-transform: capitalize;
+    font: bold 16px ;
+
+}
+
+div#txt_remov_grup{
+    font: 12px Verdana, Arial, Sans-serif;
+    text-align: justify;
+}
+
+.remov_grup {
+    color: red;
+    font: bold 16px Verdana, Arial, Sans-serif ;
+    text-decoration: underline;
+    text-indent: 20px;
+    text-transform: uppercase;
+
+}
+
+div#botoes_remov{
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+button.botao_menu div.btn_txt{
+    max-width:120px;
+}
+/** GRUPOS TREEVIEW */
+.arvore_grupos {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.arvore_grupos ul {
+    background-color: white;
+    margin-top: 4px;
+}
+
+.arvore_grupos .hitarea {
+    background: url(../imgs/treeview-default.gif) -64px -25px no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-left: -16px;
+    float: left;
+    cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+    display: inline;
+    float:none;
+}
+
+.arvore_grupos li {
+    margin: 0;
+    padding: 3px 0pt 3px 16px;
+}
+
+.arvore_grupos a.selected {
+    background-color: #eee;
+}
+
+.arvore_grupos .hover { color: red; cursor: pointer; }
+
+.arvore_grupos li { background: url(../imgs/treeview-default-line.gif) 0 0 no-repeat; }
+.arvore_grupos li.collapsable { background-position: 0 -176px; }
+
+.arvore_grupos .expandable-hitarea { background-position: -80px -3px; }
+
+.arvore_grupos li.last { background-position: 0 -1766px }
+.arvore_grupos li.lastCollapsable { background-image: url(../imgs/treeview-default.gif); }
+.arvore_grupos li.lastCollapsable { background-position: 0 -111px }
+.arvore_grupos li.lastExpandable { background-position: -32px -67px }
+
+.arvore_grupos div.lastCollapsable-hitarea { background-position: 0; }
+
+.arvore_grupos li {
+    padding: 3px 0 2px 16px;
+}
+.arvore_grupos a {
+    text-decoration: none;
+    color: #000000;
+    padding-left: 2px;
+}
+.arvore_grupos span.item_grupo_pai, .arvore_grupos span.item_grupo_filho {
+    padding: 1px 0 1px 16px;
+    display: block;
+}
+
+.arvore_grupos span.item_grupo_pai { background: url(../imgs/grupo_pai.png) 0 0 no-repeat; }
+.arvore_grupos li.expandable span.item_grupo_pai { background: url(../imgs/grupo_pai.png) 0 0 no-repeat; }
+.arvore_grupos span.item_grupo_filho { background: url(../imgs/grupo_filho.png) 0 0 no-repeat; }

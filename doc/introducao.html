@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><!--
+--Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+--
+--Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+--
+--O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como --publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+--
+--Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+--MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+--
+--Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+-->
+
+
+<title>SGA Livre - Introdução</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="sgadoc.css" type="text/css"></head>
+<body>
+<div class="document" id="documento">
+<div align="center"> <br>
+<img style="width: 561px; height: 71px;" alt="SGA" src="imgs/logo_horizontal_simples.jpg"><br>
+</div>
+<br>
+<div class="section" id="indice">
+<h1 class="title"><a name="intro">Introdução</a></h1>
+<a href="index.html">Retornar à Página Inicial</a>
+<ul>
+</ul>
+<br>
+<h1><small>Índice</small></h1>
+<ul class="ul-simples">
+<li><a href="#intro">Sobre o SGA Livre</a></li>
+<li><a href="#modulos">Módulos</a></li>
+<li><a href="#arquitetura">Arquitetura</a></li>
+<li><a href="#tecnologia">Tecnologia</a></li>
+<li><a href="#creditos">Créditos</a></li>
+</ul>
+</div>
+<br>
+<div class="section" id="introducao">
+<h1 class="title"><a name="intro">Sobre
+o SGA Livre</a></h1>
+<div style="text-align: justify;" class="section" id="sobre">
+<h1><small>O que é o SGA Livre?</small></h1>
+<p>SGA&nbsp;significa&nbsp;Sistema de Gerenciamento do
+Atendimento, versão Livre.</p>
+<p>É desenvolvido pela DATAPREV, totalmente baseado em
+tecnologias de software livre e de código aberto.</p>
+<p>Através do SGA&nbsp;é possível gerenciar filas e fluxo de
+atendimento em quaisquer tipos de empresas ou organizações que prestam
+serviço de atendimento presencial à pessoas.</p>
+<p>O SGA oferece&nbsp;o controle de filas de atendimento
+através de emissão de senhas e chamada das mesmas através de painéis.
+As filas de atendimento podem conter um único serviço ou um grupo de
+serviços. Os painéis podem chamar um, vários ou todos os serviços. Uma
+unidade de atendimento pode ter vários painéis.</p>
+<p>O SGA é mais do que um sistema de controle de
+filas.&nbsp;Ao gerenciar o fluxo de atendimento, o
+sistema&nbsp;apresenta uma série de recursos que auxiliam na
+gerência e administração das unidades de atendimento.</p>
+<p>Fornece uma diversidade de informações gerenciais preciosas,
+através de relatórios, estatísticas e gráficos avançados
+sobre&nbsp; atendimentos de uma unidade, de um grupo de unidades ou
+de todas elas. &nbsp;É possível obter estatísticas
+e&nbsp;tempos médios de atendimento por atendente, por período e
+por unidade, entre outras. Pode-se obter dados detalhados ou agregados.</p>
+As informações gerenciais fornecidas pelo SGA possibilitam aos gestores
+planejar, acompanhar, monitorar, otimizar e agilizar o atendimento aos
+clientes. <br>
+<p>O sistema pode ser utilizado tanto de forma centralizada como
+descentralizada. Ou seja, pode-se utilizar servidores hospedados
+centralizadamente ou em cada unidade de atendimento. Porém, o ambiente
+centralizado oferece mais vantagens, pois os dados estarão concentrados
+num mesmo banco de dados, possibilitando emitir relatórios e
+estatísticas completas.</p>
+<p>&nbsp;</p>
+<h1><small><small>Origem do SGA</small></small></h1>
+A Previdência Social, no intuito de conferir excelência ao atendimento
+prestado a seus clientes, realizou diversas ações que resultaram na
+expansão e requalificação da sua rede de atendimento.<br><br>
+Para gerenciar o fluxo de atendimento nas agências, a equipe da
+CGTI do&nbsp;INSS desenvolveu o PHILA.
+Posteriormente, o nome foi modificado para SGA. A partir de 2007, a
+DATAPREV assumiu o desenvolvimento e a evolução do sistema.<br><br>
+Desde o
+início,&nbsp;o sistema utilizava a tecnologia de código aberto, que
+já
+era tendência de
+desenvolvimento de programas computacionais do Governo Federal, em uma
+base operacional baseada em Linux.
+<p> <br>
+</p>
+<h1><small>Licença</small><br>
+</h1>
+<p>Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e
+Informações da Previdência Social - Brasil</p>
+<p>O SGA é um software livre; você pode redistribuí-lo e/ou
+modificá-lo dentro dos termos da Licença Pública Geral GNU como
+publicada pela Fundação do Software Livre (FSF); na versão 2 da
+Licença, ou (na sua opnião) qualquer versão.</p>
+<p>Este programa é distribuído na esperança que possa ser útil,
+mas SEM NENHUMA GARANTIA; sem nenhuma garantia implícita de ADEQUAÇÃO a
+qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública
+Geral GNU para maiores detalhes.</p>
+<p>Você deve ter recebido uma cópia da Licença Pública Geral GNU,
+sob o título&nbsp; "LICENCA.txt", junto com este programa, se não,
+escreva para a Fundação do Software
+Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA&nbsp;
+02110-1301&nbsp; USA.</p>
+<br>
+<div class="section" style="text-align: justify;" id="estrutura_sga">
+<h1 class="title"><a name="modulos">Módulos</a></h1>
+<div class="section" id="modulos">
+<h1><small><a class="toc-backref" href="#id3">Módulos</a></small></h1>
+<p>As funcionalidades do SGA Livre são organizadas e divididas
+em módulos. Cada módulo possui um agrupamento de funções. São dinâmicos
+e estão acessíveis de acordo com o nível de acesso do usuário do
+sistema.</p>
+<p>Nesta seção cada módulo do SGA&nbsp;é descrito
+resumidamente, assim como suas principais funcionalidades e
+conceitos.&nbsp;</p>
+<p>Os módulos do SGA são divididos em dois grupos: Módulos
+Globais e Módulos Locais.</p>
+<ins><b>Módulos Globais</b></ins>
+<p>Módulos Globais são aqueles que afetam todas as unidades, ou
+que por algum motivo não tem relação com nenhuma unidade em particular.
+Estes módulos são:</p>
+<ul class="inside">
+<li><b>Config. Global</b> - Centraliza as
+configurações gerais&nbsp;do sistema. É neste módulo que são
+criados os grupos,&nbsp;cargos,&nbsp; unidades e os serviços.
+Configuração Global é o centro de gerência do SGA, e deve ser utilizado
+com atenção. Geralmente deve estar disponível apenas para um
+administrador.</li>
+<li><b>Usuários</b> - Este módulo apresenta
+configurações específicas para gerência de usuários do SGA. Nele estão
+todas as funcionalidades para a criação de novos usuários, atribuição
+de cargos, alocação em unidades, alteração de senhas e desativação do
+usuário.</li>
+<li><b>Relatórios</b> - Neste módulo, o usuário
+terá acesso a todos os relatórios, gráficos e estatísticas de
+atendimentos registrados no&nbsp;SGA. O SGA&nbsp;permite que
+sejam gerados relatórios, estatísticas e gráficos de uma ou mais
+unidades, de modo a apresentar a informação que a organização necessita
+para otimizar seu atendimento.</li>
+</ul>
+<ins><b>Módulos Locais</b></ins>
+<p>Nos Módulos Locais estão os módulos específicos de cada
+unidade. Estes só estarão visíveis quando o usuário logar em uma
+unidade, e as configurações afetarão apenas esta unidade. Os módulos
+locais são:</p>
+<ul class="inside">
+<li><b>Atendimento</b> - Contém todas as
+funcionalidades para efetuar atendimentos em um guichê. Com menus
+intuitivos e práticos o SGA&nbsp;propicia facilidade e rapidez nos
+atendimentos;</li>
+<li><b>Config. Unidade</b> - Resume toda gerência
+da unidade em um só local. Neste módulo o gestor local poderá gerenciar
+os serviços de sua unidade, ativar impressão de senhas, definir uma
+mensagem de impressão local, dentre outras opções como reiniciar o
+contador de senhas.</li>
+<li><b>Monitor</b> - Este módulo permite o
+acompanhamento em tempo real de toda a unidade de atendimento. É
+possível visualizar todas as filas de atendimento detalhadamente,
+movimentar cliente de uma fila para outra, priorizar, cancelar e
+reativar senhas. Este é um módulo gerencial.</li>
+<li><b>Triagem</b> - É o módulo de pré-atendimento.
+Nele, é possível emitir senhas para os serviços e filas específicas, e
+realizar impressão das mesmas. É possível emitir senhas com prioridade
+e com identificação do cliente. Também é possível cancelar e reativar
+senhas.</li>
+</ul>
+</div>
+<div class="section" id="arquitetura"><br>
+<h1 class="title"><small><a name="arquitetura"></a><big>Arquitetura</big></small></h1>
+<h1 style="text-align: left;"><small>Arquitetura</small></h1>
+<div style="text-align: center;"><img src="imgs/sga-estrutura.png"><br>
+<br>
+<div class="section" id="componentes">
+<div style="text-align: left;"> </div>
+<h1 style="text-align: left;"><small>Componentes</small></h1>
+<p>O SGA&nbsp;é dividido em 4 componentes principais:</p>
+<ul class="simple">
+<li style="text-align: left;"><span style="font-weight: bold;">Banco de
+Dados:</span>&nbsp;Armazena todas as configurações do
+sistema, dados dos usuários, unidades e atendimentos.<span style="font-weight: bold;"></span></li>
+<li style="text-align: left;"><span style="font-weight: bold;">Controlador
+de Painéis:</span> Aplicação centralizada que gerencia e envia as
+senhas chamadas para os&nbsp;painéis.<span style="font-weight: bold;"></span></li>
+<li style="text-align: left;"><span style="font-weight: bold;">Painel de Senhas:</span>
+Aplicativo utilizado nas unidades de atendimento,
+responsável por exibir as senhas a serem atendidas.<span style="font-weight: bold;"></span></li>
+<li style="text-align: left;"><span style="font-weight: bold;">Aplicação
+Web: </span>onde os usuários interagem com o sistema e realizam
+a maior parte de suas tarefas. Esta aplicação reside em um servidor web.<span style="font-weight: bold;"></span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<br>
+<h1 class="title"><small><a name="tecnologia"></a><big>Tecnologia</big></small></h1>
+<h1 style="text-align: left;"><small>Tecnologia</small></h1>
+O SGA Livre foi projetado exclusivamente em tecnologias de software
+livre.<br>
+<br>
+<span style="font-weight: bold;">Características
+principais:</span><br>
+<ul>
+<li>Aplicação web&nbsp;fortemente baseada em PHP 5 e Ajax,
+que fornece interface de resposta rápida e agradável para o usuário.</li>
+<li>Otimizado para navegadores livres, em especial, Firefox 3.</li>
+<li>Projetado para funcionar com Servidor Web Apache2 e SGBD
+PostgreSQL.</li>
+<li>Controlador de Painéis e Painel de Senhas baseados em Java
+6 (OpenJDK ou Sun).</li>
+<li>Sistema operacional recomendado: GNU Linux Debian 5 (Lenny).</li>
+</ul>
+<br>
+<br>
+<br>
+<div class="section" id="credit">
+<h1 style="height: 35px;" class="title"><a name="creditos">Créditos</a></h1>
+<p><b>Segue a lista histórica de colaboradores que atuam ou
+atuaram no desenvolvimento do SGA:</b></p><p><b>Dataprev</b></p>
+<ul class="ul-simples">
+<li>Anderson Roberto Pereira (anderpereira@gmail.com)</li>
+<li>Sylvio Roberto Coutinho da Silva
+(sylvio.roberto@gmail.com)</li>
+<li>Jorge Antônio Macedo de Mello (jorge.mello@globo.com)</li>
+<li>Bruno Wotikoski Lourenço (bwotikoski@gmail.com)</li>
+<li>João Marcos de Rezende (jmrfejao@gmail.com)</li>
+<li>Juliano Frederico de Souza (julianofs@gmail.com)</li>
+<li>Leonardo Popik Bastos (leual27@gmail.com)</li>
+<li>Rafael Tackla de Almeida (rafatackla@gmail.com)</li>
+<li>Robson Filho Colodeti (rcitaliano@gmail.com)</li>
+<li>Rogerio Alencar Lino Filho (rogeriolino@gmail.com)</li>
+<li>Ulysses Rangel Ribeiro (ulyssesrr@gmail.com)</li>
+<li>Vinícius Avelar Moreira (vini0123@gmail.com)</li></ul><span style="font-weight: bold;"><br>INSS</span>
+
+<ul>
+<li>Luiz Antônio de Campos*</li>
+<li>José Márcio de Andrade Ferrari*</li>
+<li>Carlos Alberto Riboldi*</li>
+<li>Sérgio Antônio João*</li>
+<li>Paulo Fernando da Cunha*</li>
+<li>Gerson Borges de Carvalho*</li>
+<li>Herbert Silva*</li>
+<li>Samuel Rocha Marinho*<b></b></li><li>Cleosmilda de Sousa Santos*</li>
+<li>Maria Inês Vitor*</li>
+<li>Manoel Luiz Genol Bara*</li>
+<li>Manoel Lopes Lopes Filho*</li>
+<li>Luiz Carlos da Silva*</li>
+<li>Francisco das Chagas Neto*</li>
+<li>Waldir Assunção Bonfim*</li>
+<li>Antônio Mário Pinto Godoy Coutinho*</li>
+<li>William Veronesi Rocha*</li>
+</ul>
+<p></p>
+<p style="font-weight: bold;">* Contato: <br><span style="font-weight: normal;">
+Diretoria de Atendimento - DIRAT - INSS - DF</span><br style="font-weight: normal;"><span style="font-weight: normal;">
+Email: atendimento.dirat@previdencia.gov.br</span></p>
+<p>&nbsp;</p>
+<p></p>
+<p></p>
+<p></p>
+<p><b>E ainda,&nbsp;o SGA utiliza as seguintes contribuições de
+código aberto:</b></p>
+<ul class="ul-simples">
+<li><em>Graidle</em> por Graidle Sourceforge team.
+Liberado sob licença GPL - <a class="reference external" href="http://graidle.sourceforge.net/">http://graidle.sourceforge.net//</a></li>
+<li><em>Treeview 1.4</em> por Jörn Zaefferer.
+Liberado sob licença GPL e MIT - <a class="reference external" href="http://bassistance.de/jquery-plugins/jquery-plugin-treeview/">http://bassistance.de/jquery-plugins/jquery-plugin-treeview/</a></li>
+<li><em>JQuery</em> por JQuery Team. Liberado sob
+licença GPL e MIT - <a class="reference external" href="http://www.jquery.com/">http://www.jquery.com/</a></li>
+<li><em>JQuery UI</em> por JQuery UI Team. Liberado
+sob licença GPL e MIT - <a class="reference external" href="http://jqueryui.com/">http://jqueryui.com/</a></li>
+<li><em>Crystal Project Icons</em> por Everaldo
+Coelho. Liberado sob licença LGPL - <a class="reference external" href="http://www.everaldo.com/crystal/">http://www.everaldo.com/crystal/</a></li>
+<li><em>Famfamfam Icons</em> por famfamfam.com.
+Liberado sob licença <span class="reference external">Creative
+Commons Attribution 2.5 License</span> - <a class="reference external" href="http://www.famfamfam.com/lab/icons/silk/">http://www.famfamfam.com/lab/icons/silk/</a></li>
+</ul>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;</p>
+<p></p>
+<p style="font-weight: bold;">A equipe&nbsp;do
+SGA&nbsp;agradece às equipes e colaboradores&nbsp;acima por
+suas contribuições!!</p>
+</div>
+<h1><small><a class="toc-backref" href="introducao.html#id3"><br>
+</a></small></h1>
+<p>Útima revisão deste documento: 08/07/2009</p>
+<div class="section" id="controle_versao"> <br>
+<a href="index.html">Retornar à página inicial</a> </div>
+</div>
+</div>
+</div>
+</body></html>

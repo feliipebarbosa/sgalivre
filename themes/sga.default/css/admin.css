@@ -1,0 +1,216 @@
+
+/**
+ * 
+ * Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+ *
+ * Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+ *
+ * O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ * publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+ *
+ * Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ * MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a 
+ * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+ *
+**/
+
+
+html, body{
+    overflow:hidden;
+}
+/*
+	ADMIN
+*/
+#admin {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+h3{
+	font: bold 14px Verdana, Arial, Sans-serif;
+    padding: 10px 0px;
+}
+
+/*
+	ADMIN > TOPO
+*/
+#admin #topo {
+	background: #000000;
+	border-bottom: 2px solid #CCCCCC;
+}
+
+#admin #topo h1 a {
+	width: 150px;
+	font: bold 16px Verdana, Arial, Sans-serif;
+	color: #FFFFFF;
+	padding: 10px 0px 10px 110px;
+	text-decoration: none;
+	background: url(../imgs/sga_horizontal.jpg) no-repeat 0 center;
+	display: block;
+}
+
+/*
+	ADMIN > MENU
+*/
+#admin #topo #menu {
+	width: 100%;
+	background: #F1F1F1;
+	border-bottom: 2px solid #CCCCCC;
+	float: left;
+}
+
+#admin #topo #menu ul {
+	padding: 0px 10px;
+}
+
+#admin #topo #menu ul li {
+	list-style: none;
+}
+
+
+#admin #topo #menu ul li a {
+	font: 12px Verdana, Arial, Sans-serif;
+	color: #000000;
+	padding: 10px 10px;
+	text-decoration: none;
+	float: left;
+}
+
+#admin #topo #menu ul li a:hover {
+	background: #DDDDDD;
+}
+
+/*
+	ADMIN > CONTEUDO
+*/
+
+#admin #conteudo {
+}
+#cod_serv{
+	display:block;
+}
+
+/*
+	ADMIN > RODAPE
+*/
+
+#admin #rodape {
+	padding: 5px 0px 5px 25px;
+	background: #000000;
+	display: block;
+}
+
+#admin #rodape p {
+	font: bold 12px Verdana, Arial, Sans-serif;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+/**
+	ADMIN > GERENCIAR SERVICOS
+*/
+
+#gerenciar_servicos{
+	/*text-align:center;
+	background-color: #6E7B8B;
+	border: 1px solid #000033;*/
+	background-color: #f1f1f1;
+	display: table;
+	padding: 5px;
+}
+#gerenciar_servicos #select{
+	height: 40px;
+	padding-top: 15px;
+	padding-left: 5px;
+}
+#gerenciar_servicos ul li{
+	list-style: none;
+	display: inline;
+}
+#gerenciar_servicos h1{	
+	font: 14px Verdana, Arial, Sans-serif;
+}
+#gerenciar_servicos div{	
+	font: 14px Verdana, Arial, Sans-serif;
+}
+#gerenciar_servicos form div label{
+	font: 12px Verdana, Arial, Sans-serif;
+}
+.sigla{	
+	width: 15px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.nome{
+	width: 225px;	
+}
+#gs {
+	height: 25px;
+	clear: left;
+	display: block;
+	margin-top: 5px;
+}
+#gs_servico {
+	height: 100%;
+	float: left;
+}
+#gs_botoes {
+	height: 100%;
+	margin-left: 10px;
+	float: right;
+}
+#gs_novo_servico {
+	border-top: dotted thin #727272;
+	margin-top: 7px;
+	clear: both;
+}
+
+#id_nome_serv{
+	margin-top: 3px;
+	clear: both;	
+}
+form#id_form_novo_servico{
+	min-width: 450px;
+}
+
+#label_servicos {
+	float: left;
+}
+
+#btn_especializarServ	{
+	display: inline;
+	cursor: pointer;
+	margin-top: -0.7px;	
+	margin-left: 7px;
+}
+
+/**
+	ADMIN > Configurar Mensagem
+*/
+#alterar {
+	font: 14px Verdana, Arial, Sans-serif;
+}
+
+/**
+	Admin > Configurar Mensagem
+*/
+div#alterar_mensagem, div#alterar_ativa_imp {
+	font: 12px Verdana, Arial, Sans-serif;
+	margin-top: 10px;
+	background-color: #eee;
+	padding: 5px;
+	display: table;
+}
+
+div #div_usuario{
+	padding: 0;
+	margin: 0;	
+}
+
+div #bts_group_lista{
+	width: 50px;
+	float: right;	
+}

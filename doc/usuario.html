@@ -1,0 +1,1007 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><!--
+--Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+--
+--Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+--
+--O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como --publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+--
+--Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+--MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+--
+--Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+-->
+
+
+<title>SGA Livre - Manual do Usuário</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="sgadoc.css" type="text/css"></head>
+<body>
+<div class="document" id="documento">
+<div align="center"> <br>
+<img style="width: 522px; height: 76px;" alt="SGA" src="imgs/logo_horizontal_simples.jpg"><br>
+</div>
+<h1 class="title">Manual do Usuário</h1>
+<div class="section" id="indice">
+<br>
+<ul>
+<br>
+</ul>
+<h1 class="tittle">Índice</h1>
+<ul>
+<li><a href="#intro">Introdução</a></li>
+<li><a href="#cfg_global">Módulo Configuração
+Global</a></li>
+<li><a href="#cfg_local">Módulo Configuração da
+Unidade</a></li>
+<li><a href="#usuario">Módulo Usuários</a></li>
+<li><a href="usuario.html#triagem">Módulo Triagem</a></li>
+<li><a href="#atendimento">Módulo Atendimento<br>
+</a></li>
+<li><a href="#monitor">Módulo Monitor</a></li>
+<li><a href="#relatorio">Módulo Relatórios</a></li>
+<br>
+</ul>
+</div>
+<div class="section" id="intro">
+<h1 class="tittle"><a name="intro">Introdução</a></h1>
+<p>O "Manual do Usuário" do SGA Livre tem por objetivo explicar o
+funcionamento dos módulos do sistema, e orientar sobre a correta
+configuração e uso do mesmo.</p>
+<p>O SGA Livre é um sistema muito flexível. Todas as
+configurações principais foram projetadas para que seja possível
+qualquer organização utilizar o sistema para gerenciamento de unidades
+de atendimento. </p>
+<p>Como exemplo podemos citar que qualquer estrutura hierárquica
+de grupos, cargos e usuários podem ser criados.</p>
+<p>Como o sistema é muito flexível (customizável), a configuração
+do mesmo requer planejamento e atenção. Definições incorretas podem
+dificultar o uso do sistema. Permissões concedidas em excesso aos
+usuários finais devem ser evitadas. A definição de grupos e cargos deve
+ser bem pensada e organizada.</p>
+<p>Este documento foi dividido em seções contendo cada módulo
+específico do SGA Livre.</p>
+<div class="note">
+<p style="font-weight: bold;">Uma nota importante sobre a
+configuração inicial do SGA</p>
+<p>Recomenda-se ao administrador atenção especial à
+leitura&nbsp;dos módulos<span style="font-weight: bold;">
+Configuração Global, Config. Unidade e Usuários</span>
+respectivamente. Esses são os principais módulos de configuração e
+administração do sistema.</p>
+</div>
+</div>
+<br>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<div class="section" id="mod_cfgGlobal">
+<h1 class="tittle"><a name="cfg_global">Módulo
+Configuração Global</a></h1>
+<div id="img"><img style="border: 1px solid ; width: 141px; height: 157px;" alt="" src="imgs/usuario_global_img01.jpg"></div>
+<p>O módulo "Configuração Global" é o módulo&nbsp;de
+definição
+e administração geral do sistema. É o módulo mais importante do ponto
+de vista de configuração e definição&nbsp;de funcionamento do
+sistema. Neste módulo, o administrador pode criar/editar/excluir
+grupos, cargos, unidades e serviços globais.&nbsp;</p>
+<div class="attention">
+<p class="admonition-title">Atenção: Independente da
+lotação, qualquer usuário que tenha acesso ao módulo Config. Global
+terá poderes sobre todos os grupos, cargos, unidades e serviços globais
+do sistema. Por este motivo, recomenda-se que o acesso a esse módulo
+seja restrito ao administrador do sistema.</p>
+</div>
+Após entrar no&nbsp;sistema (usuário e senha criados na
+instalação), o primeiro passo&nbsp;é acessar o módulo Config.
+Global.
+Neste módulo os passos
+necessários para a configuração do sistema estão localizados nas opções
+"Grupos", "Unidades", "Cargos" e "Serviços", que se encontram no menu à
+esquerda da página.<br>
+<br>
+<br>
+<div id="img"><img class="border" style="width: 603px; height: 391px;" alt="" src="imgs/config_img01.jpg"></div>
+<p></p>
+<p>Descrição sumária dos ítens do Módulo Config.
+Global:</p>
+<ul>
+<li><span style="font-weight: bold;">Grupos:</span>
+Configuração fundamental do sistema. Em grupos, deve-se criar a
+estrutura hierárquica das unidades de atendimento. Os grupos podem
+refletir a distribuição&nbsp;geográfica da organização. Pode-se
+criar
+grupos
+e subgrupos por estados,&nbsp;por municípios, regiões, gerências
+etc.&nbsp;Cada unidade será lotada num&nbsp;grupo final (grupo
+de mais
+baixo nível, também conhecido como grupo-folha). Um grupo final pode
+ter nenhuma ou&nbsp;uma unidade. Usuários poderão ser lotados em
+grupos
+finais, intermediários ou no próprio grupo raiz.</li>
+<li><span style="font-weight: bold;">Unidades:</span>
+Configuração fundamental do sistema. São as unidades de atendimento.
+Cada unidade deve ser lotada num
+grupo final (grupo-folha). Para facilitar o gerenciamento posterior,
+recomenda-se criar as unidades definindo o prefixo "Unidade". Exemplo:
+Unidade Vitória.</li>
+<li><span style="font-weight: bold;">Cargos:</span>&nbsp;Configuração
+fundamental do sistema. Nesta opção, o administrador deve definir a
+estrutura hierárquica de cargos. Cada cargo poderá acessar um ou mais
+módulos do sistema. Deve-se atentar para não definir cargos com excesso
+de permissão. O acesso ao próprio módulo config. global é um exemplo.
+Deve estar
+disponível apenas para o cargo administrador. Cargos típicos são:
+Admiministrador, Gerente, Triagem e Atendente.</li>
+<li><span style="font-weight: bold;">Serviços:</span>
+Configuração fundamental do sistema. &nbsp;São os serviços globais
+que
+estarão disponíveis para as unidades de atendimento. Macrosserviços são
+agrupamentos de subserviços afins.&nbsp;Após configurar, os
+serviços estarão disponíveis
+para os demais módulos do sistema.&nbsp;</li>
+<li><span style="font-weight: bold;">Mensagem
+Global: </span>Configuração opcional. Pode-se definir uma
+mensagem que será impressa no rodapé de&nbsp;todas as senhas
+emitidas nas unidades de
+atendimento, através do módulo Triagem. Pode-se definir uma mensagem
+institucional, por exemplo.</li>
+<li><span style="font-weight: bold;">Config.
+Atendimento:</span> Possui
+algumas opções extras, como "Reiniciar
+Senhas", que significa acumular imediatamente todos os atendimentos
+no histórico, e reiniciar o contador de senhas em todas as unidades.
+Essa opção existe para o caso da rotina automática (explicada no manual
+de instalação) falhar, ou para outros casos eventuais. Deve ser usada
+com atenção, pois "limpa" todas as filas de espera e senhas emitidas.
+Pessoas aguardando atendimento não serão chamadas.</li>
+</ul>
+<p></p>
+<p>Como pode ser percebido, a configuração do SGA é bastante
+flexível e customizável. Entretando, para um bom uso do sistema,
+deve-se planejar com cuidado como será a configuração global. Definir
+grupos, unidades, cargos e serviços exige conhecimento amplo do
+funcionamento da&nbsp;organização.</p>
+<br>
+<p class="topic">Administrando Grupos</p>
+<p>A opção "Grupos" permite que o administrador crie, edite e
+remova grupos do sistema.</p>
+<p>O primeiro passo é criar os grupos onde ficarão alocadas as
+unidades de atendimento. Pode-se criar uma estrutura hierárquica
+que reflita a estrutura interna e distribuição geográfica da
+organização. Os grupos já iniciam com um
+grupo padrão "Raiz". Criado durante a instalação, este grupo poderá ser
+editado, entretanto, nunca poderá ser excluído.</p>
+<p>Na janela criar grupo, o administrador do SGA Livre deverá
+definir o
+Superior (grupo superior) ao qual o novo grupo estará subordinado. Deve
+também definir o nome do novo grupo e a descrição. O primeiro grupo
+criado será subordinado ao grupo Raiz. Após a criação
+do primeiro grupo, já é possível criar uma unidade para ele.</p>
+<div id="img"><img class="max-width" alt="" src="imgs/config_img01_2.jpg"><br>
+</div>
+<p>Para editar um grupo, basta selecionar o grupo a ser alterado
+e acionar o botão
+"Editar", a janela de edição exibida é similar a janela de criação de
+grupos.</p>
+<p>Para remover um grupo criado o administrador deverá selecionar
+o grupo e acionar o botão "Remover". Porém, um grupo só poderá ser
+excluído se não houver unidades ou&nbsp;usuários&nbsp;ligados
+a
+ele.&nbsp;</p>
+Obs.: Na 1ª execução, a "Unidade Padrão" será deslocada para o primeiro grupo criado.<br>&nbsp;<br><br>
+<p class="topic">Administrando Unidades</p>
+<p>Obs.: Uma unidade chamada Padrão é criada automaticamente na
+instalação do SGA Livre. Essa unidade pode ser renomeada.</p>
+<p>A opção "Unidades" permite que o administrador gerencie as
+unidades do sistema. Para criar uma unidade basta acionar o botão
+"Criar Unidade" e após a exibição da janela de criação o administrador
+deverá incluir o código da unidade, o nome da unidade,
+definir&nbsp;qual
+grupo a unidade pertence e salvar as opções.&nbsp;</p>
+<p>Note que apenas grupos finais (grupos-folha) serão listados.</p>
+<div id="img"><img class="border" src="imgs/config_img03.jpg"></div>
+<p>Para editar uma unidade criada o administrador do SGA Livre
+deverá especificar se a busca pela unidade será "Por Nome" ou "Por
+Código" (ou
+parte deles) . A busca sem parâmetros retorna todas as unidades
+criadas. </p>
+<div id="img"><img class="border" alt="" src="imgs/usuario_global_img02.jpg"></div>
+<p>Ainda é possível desativar ou excluir unidades. Entretanto,
+não é possível excluir unidades que tenham atendimentos, usuários ou
+serviços associados a mesma.</p>
+<br>
+<p class="topic">Administrando Cargos</p>
+<p>A opção "Cargos" permite que o administrador do SGA Livre crie
+cargos para os usuários do sistema, restringindo o acesso deles a
+módulos específicos. Como acontece em Grupos - que
+na instalação do SGA cria o grupo "Raiz", o cargo Administrador também
+é criado automaticamente. O usuário criado na instalação possui esse
+cargo.</p>
+<p class="note">Deve-se atentar para não definir cargos
+com excesso de permissão. O módulo Config. Global é um exemplo. Deve
+estar disponível apenas para o cargo administrador.</p>
+<p> Para criar cargos, o administrador&nbsp;deve acionar
+o botão novo e inserir as informações, tais como:
+Superior (que indica a subordinação), nome e
+descrição. Importante também selecionar os módulos do SGA Livre que o
+cargo terá acesso.</p>
+<p>Cargo pode ser entendido como perfil de acesso.</p>
+<div id="img"><img class="border" src="imgs/config_img04.jpg"></div>
+<p></p>
+<p>Para editar um cargo o administrador deverá selecionar o cargo
+na árvore de cargos, acionar o botão Editar e alterar as informações
+que deseja na janela de edição, que é similar a janela de criação de
+cargos</p>
+<div id="img"><img class="border" alt="" src="imgs/usuario_global_img04.jpg"></div>
+<p></p>
+<br>
+<p>Para excluir um cargo, também é preciso selecionar na árvore
+de cargos e acionar o botão "Remover". O cargo só poderá ser removido
+se o mesmo não estiver sendo utilizado por nenhum grupo.</p>
+<br>
+<p class="topic">Administrando Serviços</p>
+<p>Esta opção permite que o administrador crie, edite e exclua
+Macrosserviços e Subserviços.&nbsp;</p>
+É uma configuração essencial e deve ser realizada em conjunto com
+pessoas/gestores com domínio dos
+tipos de atendimentos prestados.<br>
+<p>Macrosserviços são agrupamentos de subserviços afins.
+Subserviços são serviços, itens de um macro.&nbsp;</p>
+<p>Tanto macro como subserviços são disponibilizados e utilizados
+pelos demais módulos do sistema.</p>
+<p>No módulo Config. Unidade é possível habilitar e atribuir uma
+sigla para os serviços definidos em Config. Global.</p>
+<p><br>
+</p>
+<p>O administrador deverá criar os Macrosserviços e Subserviços
+globais. Clicando em Serviços e depois no botão novo,
+poderá criar novos macrosserviços e deverá inserir os dados: nome do
+serviço, marcar ou não a opção "ativo" - se desejar que o serviço já
+possa ser utilizado pelas unidades criadas, e também deverá preencher o
+campo descrição com um breve texto descrevendo o serviço.</p>
+<div id="img"><img class="border" src="imgs/config_img05.jpg"></div>
+<p></p>
+<p>O administrador poderá também excluir qualquer serviço criado,
+desde que este não tenha atendimentos, unidades ou usuários associados
+a ele.</p>
+<p>Após a criação de um macrosserviço, poderão ser criados os
+subserviços. Deve-se selecionar o macro para criar um sub.</p>
+<div id="img"><img class="border" alt="" src="imgs/config_img06.jpg"></div>
+<p></p>
+<p>Obs.: o número que aparece antes do nome do serviço é apenas o
+código interno do mesmo. </p>
+<p></p>
+<p>O macrosserviço selecionado aparecerá no campo "Macro" da
+janela de criação do subserviço. Entretanto, este campo pode ser
+editado, permitindo a seleção de outro macrosserviço. O administrador
+do SGA também deverá decidir o nome do subserviço, se deverá estar
+ativo&nbsp;&nbsp;e acrescentar a descrição do subserviço.</p>
+<div id="img"><img class="border" src="imgs/config_img07.jpg"></div>
+<p></p>
+<p></p>
+<p>Ao fim destes passos, realizados na Configuração Global do
+SGA, o administrador já terá em mãos:</p>
+<ul>
+<li>Grupos: locais que contém outros grupos ou unidades;</li>
+<li>Unidades: agências de atendimentos;</li>
+<li>Cargos: determina os perfis dos usuários. Cada cargo poderá
+acessar um grupo específico de módulos;</li>
+<li>Macro e Subserviços: serviços prestados pela organização em
+nível global.</li>
+</ul>
+<div class="attention">
+<p class="admonition-title">Atenção: Independentemente da
+lotação, qualquer usuário que tenha acesso ao módulo Config. Global
+terá poderes sobre todos os grupos, cargos, unidades e serviços globais
+do sistema. Por este motivo, recomenda-se que o acesso a esse módulo
+seja restrito ao administrador do sistema.</p>
+<br>
+</div>
+<br>
+<p class="topic"></p>
+<p class="topic">Config. Atendimento</p>
+<p>A opção "Config Atendimento"
+permite&nbsp;"Reiniciar
+Senhas", que significa zerar o contador de senhas em todas as unidades.
+Essa opção existe para o caso da rotina automática (explicada no manual
+de instalação) falhar, ou para outros casos eventuais. Deve ser usada
+com atenção, pois "zera" todas as filas de espera e senhas emitidas.
+Zerar significa acumular todos os atendimentos no histórico e reiniciar
+o contador de senhas de todas as unidades.</p>
+<p></p>
+<p style="font-weight: bold; text-decoration: underline;"><big>Mensagem
+Global</big></p>
+<p>A opção de "Mensagem Global" permite que o administrador crie
+uma mensagem global a ser impressa no rodapé das senhas emitidas no
+módulo Triagem.</p>
+<p></p>
+<div id="img"><img class="border" style="border: 1px solid ; width: 470px; height: 117px;" alt="" src="imgs/usuario_global_img03.jpg"><br>
+</div>
+</div>
+<br>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<div class="section" id="mod_cfgUni">
+<h1 class="tittle"><a name="cfg_local">Módulo
+Configuração da Unidade</a></h1>
+<div id="img"><br>
+<br>
+<img class="border" style="border: 1px solid ; width: 138px; height: 156px;" alt="" src="imgs/usuario_cfglocal_img01.jpg"></div>
+<div class="note" id="nota">
+<p>Nota: O acesso ao módulo Config. Unidade pode ser realizado
+pelo administrador ou por outros usuários definidos. Em grandes
+organizações, é comum delegar a gestão local para os chefes das
+unidades de atendimentos. Um exemplo seria&nbsp;criar um cargo
+chamado Gerente, definindo acesso aos módulos Config. Unidade e
+Usuários. E criar o usuário para o gerente no módulo Usuários. Assim,
+após essa configuração inicial, o próprio gerente da unidade de
+atendimento pode realizar as configurações locais, definindo quais
+serviços serão atendidos e criando os usários do sistema. Se esse for o
+seu caso, leia o Módulo Usuários, na seção abaixo.</p>
+<p>Para fins didáticos, utilizaremos um esquema de configuração
+mais simples, onde o próprio administrador realiza todas as
+configurações.</p>
+</div>
+<p>Configuração da Unidade é o módulo de gestão local da unidade,
+neste módulo o usuário do SGA Livre (possívelmente um gerente) poderá
+associar serviços à sua unidade, alterar localmente nomes de
+macrosserviços e subserviços adicionados, excluir ou desativar serviços
+locais, gerenciar a impressão de senhas e reiniciar as senhas da
+unidade. Toda gerência ou customização da unidade é feita através deste
+módulo, possibilitando que cada unidade possa se adequar a uma
+realidade ou ambiente específico de acordo com suas necessidades. Para
+utilizar este módulo o administrador do sistema já deve ter criado as
+unidades e serviços globais.</p>
+<p>Para ter acesso ao módulo Config. Unidade, o administrador
+deverá logar na unidade - neste ponto as unidades que foram criadas na
+Config. Global (no tópico anterior) serão exibidas numa lista, na
+página de início do sistema.</p>
+<div id="img"><img class="border" src="imgs/config_img08.jpg" align="top"></div>
+<p>Ao logar numa unidade o administrador terá acesso ao módulo
+Config. Unidade.&nbsp;</p>
+<p></p>
+<p></p>
+<div id="img"><img class="border" style="border: 1px solid black; width: 700px; height: 371px;" alt="" src="imgs/config_img08_2.jpg"></div>
+<p>As funcionalidades deste módulo são as seguintes:</p>
+<p class="topic">Gerenciando Serviços</p>
+<p>Com a opção "Serviços" o usuário poderá incluir, excluir,
+alterar, ativar ou desativar um serviço de sua unidade.</p>
+<p>Criar&nbsp;um serviço, significa habilitar um serviço
+previamente criado no módulo Config. Global. Significa disponibilizá-lo
+para os demais módulos locais do sistema, a saber: módulos Triagem,
+Atendimento e Usuários. Será disponibilizado também para o Painel de
+senhas, para chamar o cliente para atendimento.&nbsp;</p>
+<div class="note">A lista completa de Macro e Subserviços
+pode ser obtida no módulo Relatórios, Relatório&nbsp;de Serviços
+Disponíveis.</div>
+<p>Para criar um novo serviço na unidade o usuário deverá acionar
+o botão "Novo Serviço" e na janela exibida em seguida ele deverá
+especificar se irá adicionar um macrosserviço ou um serviço
+especializado (subserviço) - será exibida uma lista com os macro ou
+subserviços, de acordo com a seleção - adicionar um nome local ao
+serviço, determinar se o serviço estará ativo ou não, e determinar a
+sigla deste novo serviço. A sigla aparecerá no painel quando a senha
+for chamada. Também aparecerá nos módulos Triagem, Monitor e
+Atendimento.</p>
+<p></p>
+<div id="img"><img class="border" src="imgs/usuario_cfglocal_img04.jpg"></div>
+<br>
+<div class="note"><span style="font-weight: bold;">Importante
+compreender:</span><br>
+Ao habilitar um macrosserviço, ele estará disponível no módulo Triagem
+para emissão de senha. Também estará disponível para configuração dos
+perfis dos usuários no módulo próprio. Além disso, o macro também
+estará visível no módulo Monitor,
+como uma fila de atendimento.</div>
+<p></p>
+<p>Para editar algum serviço da unidade, o usuário deverá
+acionar o botão alterar e na janela exibida posteriormente
+poderão ser alterados o nome, o status (ativo ou não) e a sigla do
+serviço. Informações como código, nome global e tipo do serviço (se o
+serviço é um macro ou subserviço) também são exibidas na janela de
+edição do usuário, facilitando a identificação do serviço que será
+alterado.&nbsp;</p>
+<div id="img"><img class="border" src="imgs/usuario_cfglocal_img05.jpg"></div>
+<p></p>
+<p style="font-weight: bold;">A exclusão de um determinado
+serviço é possível. Porém, somente poderão ser
+excluidos os&nbsp;serviços que não tenham atendimentos realizados.</p>
+<div id="img"><img class="border" src="imgs/usuario_cfglocal_img06.jpg"></div>
+<p></p>
+<p><br>
+</p>
+<p></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Especializar
+subserviço:</span></p>
+Especializar subserviço é uma funcionalidade adicional.<br>
+Signigica torná-lo um pseudo macrosserviço. Ou seja, ao
+especializar um subserviço, será possível configurar os perfis dos
+usuários para atender apenas o subserviço específico. Além disso, uma
+fila de atendimento do subserviço será visível no módulo Monitor. Já no
+módulo Triagem, senhas poderão ser emitidas especificamente para essa
+fila.
+<p></p>
+<p class="topic">Gerenciar Mensagens e Impressão de Senhas</p>
+<p>Clicando na opção "Mensagem/Impressão Local" será exibida uma
+página onde o usuário poderá determinar uma frase para ser utilizada na
+impressão local.</p>
+<p>O botão Global existe para resgatar a mensagem definida no
+módulo Config. Global.</p>
+<p><span style="text-decoration: underline;">Um
+detalhe importante é a opção Impressão, que deve ser ativada para que
+no módulo Triagem as senhas sejam impressas. Essa opção é independente
+da definição ou não de mensagem padrão.</span></p>
+<div id="img"><img class="border" style="border: 1px solid ; width: 433px; height: 225px;" alt="" src="imgs/usuario_cfglocal_img02.jpg"></div>
+<p class="topic"></p>
+<p class="topic">Reiniciar Senhas</p>
+<p>Na opção "Config. Atendimento" o usuário poderá reiniciar as
+senhas da unidade.</p>
+<p>"Reiniciar
+Senhas"&nbsp;significa acumular imediatamente todos os atendimentos
+no histórico e&nbsp;zerar o contador de senhas.
+Essa opção existe para o caso da rotina automática (explicada no manual
+de instalação) falhar, ou para outros casos eventuais. Deve ser usada
+com atenção, pois "limpa" todas as filas de espera e senhas emitidas.</p>
+<p>Atenção: pessoas aguardando atendimento não serão chamadas,
+caso as senhas sejam reiniciadas.<br>
+</p>
+<div id="img"><img class="border" style="border: 1px solid ; width: 138px; height: 125px;" alt="" src="imgs/usuario_cfglocal_img03.jpg"></div>
+<br>
+</div>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<div class="section" id="mod_usu">
+<h1 class="tittle"><a name="usuario">Módulo
+Usuários</a></h1>
+<div id="img"><img class="border" src="imgs/usuario_usu_img01.jpg"></div>
+<br>
+<p>O módulo Usuários é&nbsp;um dos três módulos globais do
+SGA Livre. Nele é concentrada a gerência dos&nbsp;<em></em>usuários.
+O acesso ao módulo respeita a
+hierarquia de grupos e de cargos do SGA Livre. Sendo assim, um usuário
+de cargo inferior não poderá alterar as informações de um usuário de
+cargo
+superior, e um usuário de cargo superior não poderá alterar um usuário
+de um grupo que não descenda do seu.</p>
+<p>Ao acessar o módulo Usuários, são exibidos todos os grupos aos
+quais o usuário logado no momento possui acesso. Uma estrutura
+gráfica&nbsp;em&nbsp;árvore é exibida. <b>Note
+que ao selecionar um grupo na árvore, você estará restringindo a busca
+de usuários ao grupo selecionado e seus descendentes.</b></p>
+<br>
+<br>
+<br>
+<div style="text-align: center;"><img style="border: 1px solid ; width: 700px; height: 457px;" alt="" src="imgs/usuario_usu_img01b.jpg"></div>
+<p></p>
+<p><br>
+</p>
+<p>O administrador (ou outro usuário) do módulo poderá criar
+novos usuários do SGA
+Livre acionando o botão "Criar Usuário".&nbsp;</p>
+<p>As informações necessárias&nbsp;são: Usuário (acesso com o
+qual o usuário deverá
+acessar o sistema ), nome (primeiro nome do usuário), sobrenome, senha,
+confirmar senha.</p>
+<p> Na área Grupos/Cargos, deve-se adicionar e escolher um grupo
+e cargo para o novo
+usuário - <span style="font-weight: bold;">todo usuário
+deve estar lotado pelo menos num grupo, num cargo e numa
+unidade.&nbsp;</span></p>
+<p>Opcionalmente, deve-se&nbsp;adicionar (para cada unidade
+da lista) os serviços que o usuário atenderá. Serviços normalmente são
+adicionados para usuários que realizam atendimento (cargo atendente ou
+similar). Uma regra que facilita essa decisão: todos usuários definidos
+com cargos que acessam o módulo Atendimento devem ter&nbsp;serviços
+adicionados.</p>
+<p></p>
+<div id="img"><img class="border" style="width: 683px; height: 511px;" src="imgs/usuario_usu_img02.jpg"></div>
+<div id="img"><br>
+<div style="text-align: left;"></div>
+</div>
+<p><span style="font-weight: bold; text-decoration: underline;">Informações
+complementares</span></p>
+<p>Todas as ações&nbsp;efetuadas&nbsp;só surtirão efeito
+após clicar no botão "Salvar". Numa situação
+oposta, basta acionar o botão "Cancelar" para que as alterações no
+usuário sejam desfeitas.</p>
+<p>O sistema não
+permitirá que um usuário fique sem ao menos um grupo e cargo.</p>
+<p>Ao editar um usuário previamente criado, é possível alterar a
+senha do mesmo.</p>
+<p>Outra opção importante é "Desativar". Para que o histórico do
+sistema seja mantido íntegro, um usuário não poderá ser excluído.
+Porém, poderá ser desativado. Poderá ser novamente ativado quando
+desejado.</p>
+<br>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<h1 class="tittle"><a name="triagem">Módulo
+Triagem</a></h1>
+<div id="img"><img class="border" src="imgs/usuario_triag_img00.jpg"></div>
+<br>
+<p></p>
+<p>O
+módulo Triagem é um módulo local, operacional e de uma unidade
+específica. É o módulo dedicado ao pré-atendimento dos clientes. O
+usuário da Triagem deve emitir as senhas de acordo com o serviço
+pedido pelo cliente, além de determinar&nbsp;prioridade, se houver,
+ou
+mesmo a necessidade de atribuir o nome&nbsp;e o documento de
+identificação do cliente.&nbsp;</p>
+<p>Cancelar ou reativar
+senhas de clientes também é tarefa do usuário responsável pelo módulo
+Triagem, colaborando assim para minimizar as adversidades que chegam ao
+guichê de atendimento.</p>
+<p>Ao acessar o módulo, o
+usuário do SGA Livre verá na parte superior esquerda informações de
+identificação, que são comuns a todos os módulos. Abaixo destes haverá
+duas opções: Cancelar e Reativar Senhas.</p>
+<p>Antes
+de utilizar cada uma dessas funcionalidades o usuário do SGA Livre deve
+selecionar o serviço adequado ao cliente. Na parte central da tela de
+Triagem o usuário do SGA Livre poderá escolher entre todos os
+macrosserviços ativos na unidade. Também estarão dispoíveis os
+subserviços especializados.</p>
+<p> Clicando sobre o nome do serviço, o
+usuário&nbsp;verá uma descrição do mesmo e os seus subserviços,
+o que facilitará identificação do&nbsp;serviço. Ao lado do nome do
+serviço o
+usuário do SGA Livre terá duas opções para gerar a senha: </p>
+<div id="img"><img class="border" src="imgs/usuario_triag_img01.jpg"></div>
+<ul>
+<li>Normal - Onde é definido que o usuário não terá nenhum tipo
+de prioridade no atendimento; a senha será posicionada no final da fila.</li>
+<li>Prioridade
+- define que a senha terá uma prioridade no atendimento. Neste caso o
+usuário deverá selecionar uma das prioridades que são exibidas na
+página
+de triagem. As senhas com&nbsp;prioridade são colocadas no início
+da fila, atrás de outras eventuais senhas&nbsp;prioritárias
+emitadas anteriormente.</li>
+</ul>
+<p>Próximo
+aos botões "Normal" e "Prioridade" são exibidas informações sobre a
+quantidade de pessoas na fila daquele serviço e a quantidade total de
+pessoas que já foram triadas para aquele serviço. O SGA Livre permite
+também que sejam atribuídos nome e identificação (número de algum documento de identificação do mesmo) do cliente a uma senha.</p>
+<div id="img"><img class="border" src="imgs/usuario_triag_img03.jpg"></div>
+<p><br>
+</p>
+<div id="img"><br>
+<div style="text-align: left;"><span style="font-weight: bold; text-decoration: underline;"><br>
+Cancelar e Reativar senhas</span></div>
+<br>
+<div id="img"><img class="border" src="imgs/usuario_triag_img02.jpg"></div>
+<br>
+<br>
+<br>
+</div>
+<p><span style="font-weight: bold; text-decoration: underline;">Cancelar
+</span></p>
+<p>Caso o
+usuário tenha gerado de forma equivocada uma senha
+para o cliente, poderá cancelar esta senha e qualquer outra que não
+esteja sendo atendida.</p>
+<p>Para
+cancelar uma senha, o usuário&nbsp;deverá acionar a opção
+"Cancelar" exibida no menu esquerdo da tela da Triagem. Uma janela
+será exibida&nbsp;com algumas opções para pesquisar/localizar a
+senha a ser cancelada: "Por Senha" ou "Por Serviço". Na opção de
+cancelar senha "Por
+Senha" o usuário&nbsp;deverá apenas digitar o número da senha e
+clicar em "Procurar" e depois em "Confirmar"; no caso de cancelar senha
+"Por Serviço" o usuário do SGA Livre deverá informar o nome do serviço
+e selecionar entre todas as senhas emitidas daquele serviço
+(mostradas em uma lista). Depois, basta confirmar.</p>
+<p>Uma senha cancelada será armazenada no histórico do SGA Livre,
+e constará nas estatísticas e relatórios como senha cancelada.</p>
+<div id="img"><img class="border" src="imgs/usuario_triag_img04.jpg"><br>
+&nbsp;</div>
+<div id="img"><img class="border" src="imgs/usuario_triag_img05.jpg"></div>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-weight: bold; text-decoration: underline;">Reativar</span></p>
+<p> A opção de reativar senha permite reativar
+senhas&nbsp;que foram
+canceladas acidentalmente ou que foram chamadas para atendimento e
+marcada como "Não compareceu" (através do Módulo Atendimento).</p>
+Para
+reativar uma senha, o usuário&nbsp;deverá acionar a opção
+"Reativar" exibida no menu esquerdo da tela da Triagem. &nbsp;Uma
+janela
+será exibida com a opção de reativar a senha do cliente. O
+usuário&nbsp;deverá definir o serviço para o qual a senha foi
+emitida,
+depois escolher a senha (mostrada numa lista de senhas canceladas) e
+definir se a senha ao ser reativada terá ou não uma prioridade.
+Clicando em confirmar a senha será reativada, assumindo sua posição
+original na fila.
+<br>
+<br>
+<div id="img"><img class="border" src="imgs/usuario_triag_img06.jpg"></div>
+<p><span style="font-weight: bold;"></span></p>
+<p><span style="font-weight: bold;"></span></p>
+<br>
+<div class="section" id="mod_atd">
+<br>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<h1 class="tittle"><a name="atendimento">Módulo
+Atendimento</a></h1>
+<div id="img"><img class="border" src="imgs/usuario_atend_img08.jpg"></div>
+<p></p>
+<p>O
+módulo Atendimento é um módulo local, operacional e de uma unidade
+específica. Nele são
+realizados os atendimentos dos serviços oferecidos pela
+organização.&nbsp;</p>
+<p>Acessando
+pela primeira vez o módulo Atendimento, após efetuar o acesso ao
+sistema, o usuário - a partir de agora chamado "atendente" deverá
+definir o guichê onde estará prestando atendimento. A faixa de números
+que o atendente pode escolher para seu guichê vai de 1 a 255. Em
+futuros acessos ao módulo, o guichê não precisará ser definido
+novamente, pois será gravado pelo navegador como um "cookie". Porém,
+poderá ser alterado livremente, caso, por exemplo, o atendente tenha
+mudado fisicamente de guichê.</p>
+<p>Após
+escolher o guichê será exibida a tela do módulo Atendimento.&nbsp;</p>
+<p></p>
+<div id="img"><img class="border" src="imgs/usuario_atend.jpg"></div>
+<p></p>
+<p>Na
+parte inferior da tela, existe a área "Minha Fila", onde
+o&nbsp;atendente encontra
+informações referentes a fila de clientes, sobre os serviços que pode
+atender e a quantidade de pessoas aguardando cada serviço.</p>
+<p>Na
+parte central, o atendente encontrará o botão "Chamar Próximo" - que
+envia para o painel de senhas a&nbsp;próxima senha&nbsp;a ser
+chamada.</p>
+<p></p>
+<div style="text-align: center;"><img style="border: 1px solid ; width: 936px; height: 711px;" alt="" src="imgs/usuario_atend_img04.jpg"><br></div>
+<p></p>
+<p></p>
+<p>São exibidas ao atendente algumas informações do cliente
+como número da senha, se esta senha possui prioridade e qual a
+prioridade, qual o nome e identificação do cliente (número de algum
+documento de identificação do mesmo). Estas duas últimas informações só
+aparecerão se tiverem
+sido especificadas na triagem.&nbsp;</p>
+<p></p>
+<p>Após chamar o cliente, o usuário atendente poderá:<br>
+</p>
+<ul>
+<li><span style="font-weight: bold;">Erro Triagem</span>
+-&nbsp;Se
+ao iniciar um atendimento o atendente perceber que houve um erro na
+triagem, o atendente pode transferir o cliente para outro serviço.
+Neste caso o cliente será transferido para
+outra fila de atendimento,&nbsp;entretanto, não será prejudicado
+quanto a sua posição na
+fila, sendo atendido na mesma ordem de chegada. Quando um atendente
+aciona o "Erro Triagem" ele deverá especificar qual serviço o cliente
+realmente deseja.<span style="font-weight: bold;"></span></li><li><span style="font-weight: bold;">Não Compareceu</span>
+- Encerra o atendimento, marcando a senha como Não compareu. Constará
+nas estatísticas e relatórios;<span style="font-weight: bold;"></span></li><li><span style="font-weight: bold;">Chamar
+Novamente</span> - Enviará novamente a chamada de
+senha ao painel;</li>
+
+<li><span style="font-weight: bold;">Iniciar
+Atendimento</span> - Esta
+opção dá continuidade ao
+atendimento. O tempo efetivo de atendimento é contabilizado após
+acionar esse botão. Registra a hora de início do atendimento.&nbsp;</li>
+</ul>
+<br>
+<br>
+<div style="text-align: center;"><img style="width: 553px; height: 126px;" alt="" src="imgs/usuario_atend_img05.jpg"><br></div>
+<br><ul><li><span style="font-weight: bold;"></span><span style="font-weight: bold;">Encerrar
+Atendimento</span> -&nbsp;Encerra
+o atendimento e registra a hora final.&nbsp;Será exibida uma
+tela de codificação do atendimento. Uma lista de macrosserviços
+constando todos os macrosserviços do atendente. Para cada macrosserviço
+selecionado será exibida também uma lista com
+os subserviços. O atendente deverá então selecionar
+e inserir todos os subserviços atendidos, e confirmar para efetivamente
+encerrar
+o atendimento.&nbsp;<span style="font-weight: bold;"></span></li><li><span style="font-weight: bold;">Encerrar
+e Redirecionar </span>- É o mesmo que Encerrar Atendimento.&nbsp;Será
+exibida uma
+tela de codificação do atendimento. A diferença é que&nbsp;o usuário
+poderá redirecionar o cliente para outro serviço/fila. Normalmente esta
+opção é utilizada quando o usuário não está habilitado a atender todos
+os serviços desejados.</li></ul><div id="img"><br></div>
+</div>
+<div class="section" id="mod_mon"><div style="text-align: center;"><img style="border: 1px solid ; width: 984px; height: 628px;" alt="" src="imgs/usuario_atend_img07.jpg"><br></div>
+<br>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<h1 class="tittle"><a name="monitor">Módulo
+Monitor</a></h1>
+<div id="img"><img class="border" src="imgs/usuario_monit_img01.jpg"></div>
+<p></p>
+<p>O
+módulo Monitor é um módulo local, operacional e específico de uma
+unidade. É um módulo gerencial da unidade. Permite que os usuários
+gerenciais acompanhem o fluxo de atendimento em tempo real. Cada
+macrosserviço ou subserviço especializado é exibido como uma fila de
+atendimento.&nbsp;</p>
+<br>
+<div id="img"><img style="border: 1px solid ; width: 700px; height: 457px;" alt="" class="border" src="imgs/usuario_monit_img02.jpg"></div>
+<p class="legenda">Página do Módulo Monitor do SGA Livre.</p>
+<p class="legenda">&nbsp;</p>
+<p class="legenda">&nbsp; &nbsp; </p>
+<p class="legenda"></p>
+<div id="img"><img class="border" src="imgs/usuario_monit_img03.jpg"></div>
+<p class="legenda">A cor vermelha na senha acima indica
+que este cliente possui alguma prioridade.</p>
+<p class="legenda">&nbsp; &nbsp;</p>
+<p class="legenda">&nbsp; </p>
+<div id="img"><img class="border" src="imgs/usuario_monit_img04.jpg"></div>
+<p class="legenda">Os
+botões anterior e próximo fazem a navegação entre as filas. Ao centro é
+exibida a númeração da
+página atual.</p>
+<p></p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-decoration: underline; font-weight: bold;"><big>Funcionalidades.</big></p>
+<p class="topic"><small>Transferir Senhas</small></p>
+<p>Ao
+clicar sobre determinada senha uma janela é exibida. É possível
+selecionar um novo serviço (fila), definir prioridade e transferir a
+senha.&nbsp; </p>
+<div id="img"><img class="border" src="imgs/usuario_monit_img05.jpg"></div>
+<p class="topic"></p>
+<p class="topic"></p>
+<p class="topic"><small>Cancelar Senhas</small></p>
+<p>Semelhante ao&nbsp;módulo Triagem.&nbsp;</p>
+<p>Caso o
+usuário tenha gerado de forma equivocada uma senha
+para o cliente, poderá cancelar esta senha e qualquer outra que não
+esteja sendo atendida.</p>
+<p>Para
+cancelar uma senha, o usuário&nbsp;deverá acionar a opção
+"Cancelar" exibida no menu esquerdo da tela. Uma janela
+será exibida&nbsp;com algumas opções para pesquisar/localizar a
+senha a ser cancelada: "Por Senha" ou "Por Serviço". Na opção de
+cancelar senha "Por
+Senha" o usuário&nbsp;deverá apenas digitar o número da senha e
+clicar em "Procurar" e depois em "Confirmar"; no caso de cancelar senha
+"Por Serviço" o usuário do SGA Livre deverá informar o nome do serviço
+e selecionar entre todas as senhas emitidas daquele serviço
+(mostradas em uma lista). Depois, basta confirmar.</p>
+<p>Uma senha cancelada será armazenada no histórico do SGA Livre,
+e constará nas estatísticas e relatórios como senha cancelada.</p>
+<p></p>
+<div id="img"><img class="border" src="imgs/usuario_triag_img04.jpg"><br>
+</div>
+<p class="topic"></p>
+<p class="topic"></p>
+<p class="topic"><small>Reativar Senhas</small></p>
+<p>Semelhante ao&nbsp;módulo Triagem.&nbsp;</p>
+<p> A opção de reativar senha permite reativar
+senhas&nbsp;que foram
+canceladas acidentalmente ou que foram chamadas para atendimento e
+marcada como "Não compareceu" (através do Módulo Atendimento).</p>
+Para
+reativar uma senha, o usuário&nbsp;deverá acionar a opção
+"Reativar" exibida no menu esquerdo da tela. &nbsp;Uma
+janela
+será exibida com a opção de reativar a senha do cliente. O
+usuário&nbsp;deverá definir o serviço para o qual a senha foi
+emitida,
+depois escolher a senha (mostrada numa lista de senhas canceladas) e
+definir se a senha ao ser reativada terá ou não uma prioridade.
+Clicando em confirmar a senha será reativada, assumindo sua posição
+original na fila.<br>
+<div id="img"><br>
+<img class="border" src="imgs/usuario_triag_img06.jpg"></div>
+<br>
+<br>
+<p class="topic"><small>Consultar Senhas</small></p>
+<p>Essa opção possibilita ao usuário do SGA Livre consultar
+informações
+detalhadas sobre determinada senha. Clicando na opção "Consultar
+Senhas" será exibida uma janela na qual o usuário deverá informar a
+senha a ser pesquisada e o período no qual deseja que as informações
+referentes a senha sejam exibidas.</p>
+<div id="img"><img class="border" src="imgs/usuario_monit_img06.jpg"></div>
+<p>Após
+identificar a senha, será exibida uma tabela com as informações:</p>
+<ul>
+<li>Data em que a senha foi atendida;</li>
+<li>Serviços prestados para a senha;</li>
+<li>Prioridade do cliente;</li>
+<li>Status atual do atendimento. (para entender os status, veja
+o item Informações adicionais).</li>
+<li>Atendente;</li>
+<li>Guichê - número do guichê onde foi atendida esta senha;</li>
+<li>Chegada - Horário de emissão da senha;</li>
+<li>Inicio - Horário em que o atendimento foi iniciado;</li>
+<li>Fim - Horário em que o atendimento foi encerrado.</li>
+</ul>
+<div id="img"></div>
+<div id="img"><img class="max-width" src="imgs/usuario_monit_img07.jpg"></div>
+<p></p>
+</div>
+<div class="section" id="mod_rel"><br>
+<br>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<br>
+<br>
+<h1 class="tittle"><a name="relatorio">Módulo
+Relatórios</a></h1>
+<div id="img"><img class="border" src="imgs/usuario_rel_img01.jpg"></div>
+<p></p>
+<p>O módulo Relatórios é um módulo global e gerencial.
+Fornece&nbsp;uma diversidade de
+informações sobre o andamento dos serviços prestados pela organização.
+A perfeita interpretação dos dados apresentados&nbsp;pode ser o
+diferencial para que a organização direcione de forma correta seus
+investimentos em determinadas unidades ou serviços, ou mesmo para
+descobrir onde estão os gargalos no atendimento prestado, para que os esforços de gestão possam ser direcionadas ao ponto
+correto.</p>
+<p>O módulo Relatórios possui algumas categorias. A
+primeira trata de "Estatísticas", o segundo de "Relatórios" e o
+terceiro de "Gráficos", que serão detalhados mais adiante.&nbsp;</p>
+<p>O usuário do SGA Livre deverá escolher de quais grupos deseja
+gerar as informações, o período entre o qual as informações serão
+obtidas, o tipo de relatório, gráfico ou estatística que será gerado, se
+estas informações serão geradas em uma página HTML ou num arquivo PDF,
+e no caso da saída ser em HTML se as informações que serão exibidas
+ficarão na página atual ou em uma nova página, existem ainda as opções
+de exibição do resultado por unidade ou agregado - que mostrará o
+resultado conjunto de todas as unidades do(s) grupo(s) selecionado(s).</p>
+<div id="img"><img class="border" src="imgs/usuario_rel_img02.jpg"></div>
+<p>Em <ins>Estatísticas</ins> o usuário do SGA Livre
+poderá obter estatísticas dos serviços de atendimento por: Tempos
+Médios, Por Macrosserviços, Por Atendentes e Por Serviços Codificados.&nbsp;
+Segue abaixo uma breve descrição de cada uma das estatísticas
+fornecidas pelo SGA Livre: </p>
+<ul>
+<li>Estatística por Macrosserviços - exibe informações como
+quantidade de atendimentos de cada macrosserviço, tempo médio de espera
+(TME), tempo médio de deslocamento (TMD), tempo médio de atendimento
+(TMA) e tempo médio de permanência do cliente na unidade (TMP);</li>
+</ul><ul><li>Estatística
+por Serviços Codificados - exibe informações sobre os serviços
+codificados. Todos os serviços são exibidos nesta estatística , e não
+apenas os macrosserviços. São exibidos os TME, TMD, TMA e TMP dos
+atendimentos codificados;</li>
+</ul><br><ul><li>Estatística por Atendentes - com a opção de exibição do
+"resultado agregado" habilitada são exibidos os tempos médios de
+atendimento e de deslocamento e a quantidade de atendimentos
+realizados. Com a opção de "resultado por unidade" habilitada são
+exibidos apenas a quantidade de atendimentos realizados pelos
+atendentes;</li></ul><ul>
+<li>Estatística de Tempos Médios - exibe as informações
+referentes a média de tempo total de chamada, deslocamento, atendimento
+e de permanência do cliente na unidade.</li><br>
+</ul>
+<p>Em <ins>Relatórios</ins>
+o usuário do SGA Livre tem as seguintes opções: Senhas por Status,
+Atendimentos Concluídos, Atendimentos em todos os Status, Serviços
+Disponíveis - Global e Serviços Disponíveis - Unidade. Os relatórios em
+geral mostram informações detalhadas sobre serviços, atendimentos e
+senhas. Segue abaixo uma breve descrição dos Relatórios
+fornecidos pelo SGA Livre:</p>
+<ul>
+<li>Relatório de Senhas por Status - Este relatório mostra a
+quantidade de clientes em cada status de atendimento.&nbsp;</li><ul><li>Descrição dos status:
+<ul>
+<li>Senhas aguardando chamada - passou pela triagem, mas,
+ainda não foi chamado ao guichê;</li>
+<li>Senhas chamadas - foi chamado, mas, ainda não se
+apresentou ao guichê;</li>
+<li>Senhas em atendimento - cliente está sendo atendido;</li>
+<li>Senhas encerradas - o atendimento foi encerrado, mas,
+os serviços atendidos ainda não foram codificados;</li>
+<li>Senhas codificadas - o atendente já encerrou o
+atendimento e codificou no sistema os serviços atendidos. É o status final de um atendimento concluido corretamente.</li>
+<li>Senhas que não compareceram - clientes foram chamados,
+mas, não compareceram ao guichê;</li>
+<li>Senhas canceladas - Senhas canceladas pela triagem ou
+pelo monitor.</li>
+</ul>
+</li></ul>
+<li>Relatório de Atendimentos em Todos os Status - Este
+relatório é bem completo e traz diversas informações sobre como está o
+andamento dos atendimentos. Número da senha, data, serviço triado,
+status do atendimento, funcionário que prestou o atendimento, hora de
+chegada, chamada e saída do cliente , tempo de espera, deslocamento,
+atendimento e de permanência do cliente além do guichê onde o cliente
+foi atendido são as informações exibidas por este relatório.</li></ul><ul>
+<li>Relatório de Atendimentos Concluídos - Outro relatório
+bastante completo que traz informações sobre os atendimentos
+concluídos. Número da senha, nome do cliente, data, hora da chamada,
+início e fim do atendimento, duração do atendimento, serviço, guichê e
+funcionário são as informações exibidas neste relatório;</li></ul><ul>
+<li>Relatório de Serviços Disponíveis - Globais - Este
+relatório exibe todos os serviços do sistema, seus subserviços, o
+código destes, e se eles estão ativos ou não;</li></ul><ul>
+<li>Relatório de Serviços Disponíveis - Unidade - Este
+relatório exibe todos os serviços das unidades selecionadas, seus
+códigos, nomes destacados e originais e se ele está ativo ou inativo,
+agrupando por unidade.</li>
+</ul>
+<p>Abaixo segue como exemplo um dos relatórios do SGA Livre, o
+relatório de Atendimentos em todos os status.</p>
+<div id="img"><img class="max-width" src="imgs/usuario_rel_img08.jpg"></div>
+<p>&nbsp;</p><p></p><p>Em <ins>Gráficos</ins> o usuário do SGA Livre
+terá as seguintes opções: Variação dos Tempos Médios, Ranking das
+Unidades, Atendimentos Efetuados. Os gráficos propiciam uma visão
+comparativa diferenciada de diversas situações envolvendo os
+atendimentos em cada unidade ou cada serviço oferecido por uma unidade,
+a facilidade de abstração proporcionada pelos gráficos tornam-os
+ferramentas indispensáveis de apoio a análise em reuniões. Abaixo segue
+uma breve descrição de cada gráfico fornecido pelo SGA Livre:</p>
+<ul>
+<li>Gráfico de Variação dos Tempos Médios - este gráfico exibe
+a variação mensal agregada ou por unidade dos tempos médios de
+atendimento, espera e permanência na unidade;
+<div id="img"><img class="max-width" src="imgs/usuario_rel_img06.jpg"></div>
+<div id="img"><img class="max-width" src="imgs/usuario_rel_img07.jpg"></div></li></ul>&nbsp;<br><ul>
+<li>Gráfico de Atendimentos Efetuados - este gráfico exibe a
+quantidade de Atendimentos por macrosserviço efetuados de forma
+agregada ou
+por unidade;
+<div id="img"><img class="max-width" src="imgs/usuario_rel_img04.jpg"></div>
+<div id="img"><img class="max-width" src="imgs/usuario_rel_img05.jpg"></div>
+</li>
+</ul>&nbsp;<br><ul><li>Gráfico Ranking das Unidades - este gráfico exibe um
+ranking de unidades por tempo médio de espera, de deslocamento,
+atendimento e de permanência. O ranking mostra uma classificação
+diferente ordenada por cada parâmetro do gráfico - TME, TMD, TMA e TMP.
+Na figura abaixo contém apenas o gráfico
+ordenado pelo TME. Entretanto, no relatório é exibido um gráfico para
+cada parâmetro.
+<div id="img"><img class="max-width" src="imgs/usuario_rel_img03.jpg"></div>
+</li>
+</ul>
+</div>
+<br>
+<h1><small><a class="toc-backref" href="introducao.html#id3"><br>
+</a></small></h1>
+<p>Útima revisão deste documento: 18/06/2009</p>
+<div class="section" id="controle_versao"> <br>
+<a href="index.html">Retornar à página inicial</a> </div>
+<br>
+</div>
+</div>
+</body></html>

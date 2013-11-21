@@ -1,0 +1,380 @@
+
+/**
+ * 
+ * Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+ *
+ * Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+ *
+ * O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ * publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+ *
+ * Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ * MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a 
+ * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+ *
+**/
+
+html, body{
+    overflow:hidden;
+}
+/*
+	TRIAGEM
+*/
+#atendimento {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*
+	TRIAGEM > TOPO
+*/
+#atendimento #topo {
+	background: #000000;
+	border-bottom: 2px solid #CCCCCC;
+}
+
+#atendimento #topo h1 {
+	font: bold 16px Verdana, Arial, Sans-serif;
+	color: #FFFFFF;
+	padding: 5px 0px 5px 110px;
+	background: url(../imgs/sga_branco_79x25.png) no-repeat 20px center;
+}
+
+#atendimento #topo span {
+	font: 12px Verdana, Arial, Sans-serif;
+	color: #FFFFFF;
+	padding: 5px 10px 0px 0px;
+	float: right;
+}
+
+/*
+	TRIAGEM > MENU
+*/
+#atendimento #menu {
+	width: 200px;
+	height: 100%;
+	background: #F1F1F1;
+	border-right: 2px solid #CCCCCC;
+	float: left;
+}
+
+#atendimento #menu #info {
+	padding: 10px 0px 15px 0px;
+	background: #CCCCCC;
+}
+
+#atendimento #menu #info span {
+	width: 16px;
+	height: 16px;
+	margin: 0px 10px 0px 0px;
+	text-indent: -1000px;
+	overflow: hidden;
+	float: left;
+}
+
+#atendimento #menu #info #info_user { background: url(../imgs/user.gif) no-repeat; }
+#atendimento #menu #info #info_mat { background: url(../imgs/vcard.gif) no-repeat; }
+#atendimento #menu #info #info_guiche { background: url(../imgs/computer.gif) no-repeat; }
+
+#atendimento #menu #info #foto {
+	padding: 0px 0px 20px 0px;
+	text-align: center;
+}
+
+#atendimento #menu #info #foto img {
+	border: 2px solid #333333;
+}
+
+#atendimento #menu #info span {
+	font: 11px Verdana, Arial, Sans-serif;
+	color: #000000;
+	display: block;
+}
+
+#atendimento #menu #info h2 {
+	font: bold 14px Verdana, Arial, Sans-serif;
+	color: #000000;
+	padding: 2px 15px;
+}
+
+#atendimento #menu #info h3 {
+	font: bold 12px Verdana, Arial, Sans-serif;
+	color: #000000;
+	padding: 2px 15px;
+}
+
+#atendimento #menu ul {
+	padding: 10px 0px;
+}
+
+#atendimento #menu ul li a {
+	width: 180px;
+	font: 12px Verdana, Arial, Sans-serif;
+	color: #000000;
+	padding: 2px 10px;
+	text-decoration: none;
+	display: block;
+}
+
+#atendimento #menu ul li a:hover {
+	background: #DDDDDD;
+}
+
+/**
+	TRIAGEM > ULTIMA SENHA DISTRIBUIDA
+*/
+h1#ultima_senha {
+	background: #F5F5F5;
+	border-bottom: 3px double black;
+	font: 25px arial;
+	border-bottom: solid black thin;
+	margin-bottom: 3px;
+	
+}
+div#num_senha {
+	display: inline;
+	color: red;
+}
+
+#nome_ident {
+	padding-left: 3px;
+	margin-top: 7px;
+	margin-bottom: 3px;
+	font: 14px arial;
+}
+#nome_ident_desc {
+	font: 12px arial;
+}
+
+/**
+	TRIAGEM > CONTEUDO
+*/
+#template_conteudo {
+	padding: 0px;
+}
+
+div#conteudo_triagem {
+	text-align: left;
+	font: 70% Arial, Verdana, 'Sans-Serif';
+	width: auto;
+	float: left;
+	clear: both;
+}
+div#conteudo_servicos {
+	margin: 5px;
+}
+
+div#prioridade {
+	float: left;
+	background: #ebecec;
+	margin: 10px 0px 10px 0px;
+	font: 12px arial;
+}
+
+div#prioridade #div_prioridade {
+	margin:0px 10px 0px 10px;
+	float:left;
+	text-align: left;
+}
+
+
+/**
+	TRIAGEM > SUBSERVICO
+*/
+#form_triagem{
+	height: 100%;
+}
+#atendimento #conteudo #conteudo_sub_servico{
+	border-top: 3px double black;
+}
+#atendimento #conteudo #conteudo_sub_servico span{
+	color: #000000;
+}
+#atendimento #conteudo #conteudo_sub_servico span ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#atendimento #conteudo #conteudo_sub_servico h1{
+	background: #CCCCCC;
+	font-size: 20px;
+	border-bottom: 1px dotted black;
+}
+/**
+	TRIAGEM > POP_UP
+*/
+#window_popup_content #list_sub_serv ul {
+    padding: 20px 0px 15px 20px;
+}
+
+#window_popup_content #list_sub_serv ul li {
+    padding: 0px 2px;
+    display: block;
+    font: bold 12px Verdana, Arial, Sans-serif;
+}
+
+/**
+	TRIAGEM > CANCELAR SENHAS
+*/
+
+#triagem_cancela_senha{
+	/*text-align:center;*/
+	background-color: #6E7B8B;
+	border: 1px solid #000033;
+	position:relative;
+	z-index: 10;
+}
+#triagem_cancela_senha #select{
+	height: 40px;
+	padding-top: 15px;
+	padding-left: 5px;
+}
+#triagem_cancela_senha ul li{
+	list-style: none;
+	display: inline;
+	padding-left: 5px;
+}
+#triagem_cancela_senha h1{	
+	background: url(../imgs/vcard.gif) no-repeat;
+	background-color:#000033;
+	background-position: right;
+	color:#FFFFFF;
+	font-size: 14px;
+	height:20px;
+	font-weight: 900px;
+	padding-left: 5px;
+	text-align: left;
+}
+
+/*#atendimento #conteudo #conteudo_triagem #lista_serv {
+	text-align: center;
+	font:70% Arial, Verdana, 'Sans-Serif';
+	width: 800px;
+}*/
+
+/*
+Botões: NORMAL e PRIORIDADE
+
+#bt_normal{
+	background: #7394a1; 
+	color: white;
+	padding: 2px;
+	margin-bottom: 2px;
+	border: 0px;
+	cursor: pointer;
+}
+#bt_normal:hover{
+	background: #9abdff;
+}
+#bt_prior{
+	background: #e1873d;
+	color: white;
+	padding: 2px;
+	margin-bottom: 2px;
+	border: 0px;
+	cursor: pointer;
+}
+
+#bt_prior:hover{
+	background: #ff9946;
+}
+*/
+
+
+/**
+	TRIAGEM > IMPRESSÃO
+*/
+#imprime{
+	background: #ffffff;
+	margin: auto;
+	text-align:center;
+	width: 300px;
+	height: 170px;
+}
+#imprime #imp_unid{
+	font-family:arial, helvetica, sans-serif;
+	font-size: 8pt;
+	text-align:center;
+}
+#imprime #imp_senha{
+	font-size:35pt;
+	font-weight:bold;
+	font-family:arial, helvetica, sans-serif;
+}
+#imprime #imp_senha #imp_data{
+	text-align:center;
+	font-family:arial, helvetica, sans-serif;
+	font-size:10pt;
+}
+#imprime #imp_frase{
+	font-family:arial, helvetica, sans-serif;
+	font-size:8pt;
+	text-align:center;
+}
+
+/**
+	TRIAGEM > SERVI�OS
+*/
+h1#titulo_servicos {
+	font: 18px arial;
+	clear: both;
+}
+#servico {
+	width: 410px;
+	height: 45px;
+	float: left;
+	
+	margin-right: 5px;
+	margin-bottom: 5px;
+	
+	background-color: #f1f1f1;
+	border: solid #d1d1d1 1px;
+	
+	text-align: center;
+}
+#servico div {
+	padding-left: 3px;
+    *padding-left: 2px;
+	padding-right: 3px;
+    *padding-right: 2px;
+}
+#servico_nome_titulo, #servico_atendimento_titulo, #servico_fila_titulo, #servico_total_titulo {
+	height: 15px;
+	font: 11px bold;
+	color: #38a3e7;
+}
+#servico_nome_conteudo, #servico_atendimento_conteudo, #servico_fila_conteudo, #servico_total_conteudo {
+	height: 25px;
+	font-size: 11px;
+}
+#servico #servico_nome {
+	width: 38.2%;
+	float: left;
+	border-right: dotted #d1d1d1 1px;
+}
+#servico #servico_nome a {
+	color: black;
+}
+#servico #servico_nome a:hover {
+	color: red;
+}
+#servico #servico_atendimento {
+	width: 38%;
+	float: left;
+	border-right: dotted #d1d1d1 1px;
+}
+#servico #servico_atendimento input {
+	cursor: pointer;
+}
+#servico #servico_fila {
+	width: 8.5%;
+	float: left;
+	border-right: dotted #d1d1d1 1px;
+}
+#servico #servico_total {
+	width: 8.5%;
+	float: left;
+}

@@ -1,0 +1,371 @@
+
+/**
+ * 
+ * Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+ *
+ * Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+ *
+ * O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ * publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+ *
+ * Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ * MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a 
+ * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+ *
+**/
+html, body{
+    height:96%;
+    overflow: visible;
+}
+/**
+ *
+ *	MONITOR
+ *
+ */
+#monitor {
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+/*
+	MONITOR > TOPO
+*/
+#monitor #monitor_topo {
+	width: 100%;
+	height: 45px;
+	background: #F1F1F1;
+}
+
+#monitor #monitor_topo div { padding: 15px 10px; }
+
+#monitor #monitor_topo #topo_left {
+	font: 12px Verdana, Arial, Sans-serif;
+	width: 200px;
+	text-indent: -2000px;
+	overflow: hidden;
+	/*background: url(../imgs/sga_azul_125x40.png) no-repeat left center;
+	margin-left: 17px;*/
+	float: left;
+}
+
+#monitor #monitor_topo #topo_center { padding: 0px; }
+
+#monitor #monitor_topo #topo_center h1 {
+	font: bold 200% Verdana, Arial, Sans-serif;
+	text-align: center;
+}
+
+#monitor #monitor_topo #topo_right {
+	font: 12px Verdana, Arial, Sans-serif;
+	width: 200px;
+	float: right;
+}
+
+/*
+	MONITOR > CONTEUDO
+*/
+#monitor #monitor_conteudo {
+	width: 100%;
+	height: 80%;
+	border-bottom: 2px solid #CCCCCC;
+	overflow-y: auto;
+	overflow-x: auto;
+	float: left;
+}
+
+/*
+	MONITOR > CONTEUDO > ULTIMA_SENHA
+*/
+#monitor #monitor_conteudo #monitor_ultima_senha {
+	font: 12px Verdana, Arial, Sans-serif;
+	padding: 5px;
+	background: #CCCCCC;
+}
+
+#ultima_senha {
+	text-align: left;
+	float:left;
+	width: 50%
+}
+#fila{
+	text-align: right;
+	display:table;
+	width: 50%	
+}
+
+/*
+	MONITOR > CONTEUDO > FILAS
+*/
+#monitor #monitor_conteudo div.monitor_fila_servico {
+	width: 24%;
+	height: 95%;
+	border-left: 2px solid #CCCCCC;
+	padding: 0px 0px 20px 0px;
+	float: left;
+}
+
+
+#monitor #monitor_conteudo div.primeira { border-left: none }
+
+#monitor #monitor_conteudo div.monitor_fila_servico h3 {
+	font: bold 12px Verdana, Arial, Sans-serif;
+	padding: 10px 0px 10px 20px;
+	text-align: left;
+	color: #000000;
+}
+
+#monitor #monitor_conteudo div.monitor_fila_servico h3 span {
+	font: bold 12px Verdana, Arial, Sans-serif;
+	margin: 0px 0px 0px 10px;
+	padding: 2px 5px;
+	color: #000000;
+	background: #EEEEEE;
+}
+
+
+#monitor #monitor_conteudo div.monitor_fila_servico ul {
+	padding: 0px 10px;
+	float: left;
+}
+
+#monitor #monitor_conteudo div.monitor_fila_servico ul li {
+	list-style: none;
+	float: left;
+}
+
+/* senhas */
+#monitor #monitor_conteudo div.monitor_fila_servico ul li a {
+	font: 11px Verdana, Arial, Sans-serif;
+	color: #000000;
+	margin: 2px 3px;
+	padding: 18px 0px 0px 0px;
+	text-decoration: none;
+	background: url(../imgs/client1.gif) no-repeat center top;
+	float: left;
+}
+
+#monitor #monitor_conteudo div.monitor_fila_servico ul li a:hover {
+	color: #333333;
+	text-decoration: underline;
+	background-color: #F6F6F6 !important;
+}
+
+/* senhas > prioridade */
+#monitor #monitor_conteudo div.monitor_fila_servico ul li a.prioridade {
+	color: #FF0000;
+	background: url(../imgs/client2.gif) no-repeat center top;
+}
+
+
+/*
+	MONITOR > BAIXO
+*/
+#monitor #monitor_baixo {
+	float: left;
+}
+
+/*
+	MONITOR > CONTROL
+*/
+#monitor #monitor_baixo #monitor_control ul {
+	padding: 5px 0px;
+	text-align: center;
+}
+
+#monitor #monitor_baixo #monitor_control ul li {
+	list-style: none;
+	padding: 3px 5px;
+	display: inline;
+}
+
+#monitor #monitor_baixo #monitor_control #btn_proximo div {}
+
+#monitor #monitor_baixo #monitor_control #btn_proximo img {
+	float: right;	
+}
+
+#monitor_control select#goto_page {}
+
+
+/*
+	MONITOR > MENU
+*/
+#monitor #monitor_baixo {
+	width: 100%;
+	text-align: center;
+}
+
+#monitor #monitor_baixo #monitor_menu {
+	width: 100%;
+	text-align: center;
+}
+
+#monitor>#monitor_baixo #monitor_menu {
+	float: left;
+}
+
+#monitor #monitor_baixo #monitor_menu ul li {
+	list-style: none;
+	padding: 3px 5px;
+	display: inline;
+}
+
+#monitor #monitor_baixo #monitor_menu ul li a {
+	font: 12px Verdana, Arial, Sans-serif;
+	color: #000000;
+}
+
+#monitor #monitor_baixo #monitor_menu ul li a:hover {
+	color: #999999;
+	text-decoration: none;
+}
+
+/*
+	MONITOR > INFO
+*/
+#monitor #monitor_baixo #monitor_info {
+	width: 100%;
+	float: left;
+}
+
+#monitor #monitor_baixo #monitor_info p {
+	font: 12px Verdana, Arial, Sans-serif;
+	text-align: center;
+	color: #666666;
+}
+
+#monitor #monitor_baixo #monitor_info p span {
+	font: 12px Verdana, Arial, Sans-serif;
+	color: #000000;
+	padding: 0px 4px;
+	background: #E1E1E1;
+}
+
+
+/*
+	POPUP > TRANSFERE
+*/
+#transfere {    
+    background: #333333;
+    border: 1px solid #000000;
+}
+
+#transfere h1 {
+    color: white;
+    font: bold 14px Verdana, Arial, Sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#transfere div {
+    color: white;
+    font: bold 12px Verdana, Arial, Sans-serif;
+    padding: 3px 20px;
+}
+
+#transfere div span {
+    width: 120px;
+    height: 15px;
+    padding: 5px 0px 0px 10px;
+    float: left;
+}
+
+#transfere ul {
+    padding: 20px 0px 15px 20px;
+}
+
+#transfere ul li {
+    padding: 0px 2px;
+    list-style: none;
+    display: inline;
+}
+
+/*
+    WINDOW_POPUP -> Gerenciar Servicos
+*/
+#window_popup_content form{
+    color: black;
+    font: bold 12px Verdana, Arial, Sans-serif;
+    padding: 3px 20px;
+}
+#window_popup_content #id_text_sigla{
+	width: 20px;
+}
+#window_popup_content #id_text{
+	width: 40px;
+}
+
+/*
+	CONSULTAR SENHAS
+*/
+
+#id_button_procurar{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+div#periodo, div#servico_geral{
+	overflow: auto;
+}
+
+div#servico_geral{
+	min-width: 756px;
+}
+
+div#periodo_geral, div#servico_geral{
+	display:table;
+	border-collapse:inherit;
+}
+
+
+div#periodo_geral{
+	min-width: 756px;
+	max-width: 776px;
+        margin-bottom: 20px;
+}
+
+table#row_cabecalho thead, div#caption_serv{
+	background: #B0C4DE;
+	text-align: center;
+}
+table#row_cabecalho thead tr th{
+    border:1px solid black;
+    border-collapse: collapse;
+    width: 103px;
+}
+table#row_cabecalho tbody tr td{
+    border:1px solid black;
+    border-collapse: collapse;
+    width: 103px;
+}
+table#row_cabecalho tbody tr td{
+    text-align:center;
+}
+table#row_cabecalho thead tr th, div#cabecalho_servico div{
+	font: bold 14px Verdana, Arial, Sans-serif;
+}
+
+table#row_cabecalho tbody tr td{
+	font: 12px Verdana, Arial, Sans-serif;
+}
+
+div#caption_serv, div#data_top{
+	border: solid thin #000;
+}
+
+div#list_serv{
+	border-right: solid thin #000;
+	border-left: solid thin #000;
+        border-bottom:solid thin #000;
+}
+/*
+CANCELAR SENHA POR SENHA
+*/
+div#id_exibir_cancelar_senha_por_senha{
+	float: left;
+	width: 100%;
+	max-height:435px; 
+}

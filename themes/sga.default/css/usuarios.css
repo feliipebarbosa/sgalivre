@@ -1,0 +1,300 @@
+
+/**
+ * 
+ * Copyright (C) 2009 DATAPREV - Empresa de Tecnologia e Informações da Previdência Social - Brasil
+ *
+ * Este arquivo é parte do programa SGA Livre - Sistema de Gerenciamento do Atendimento - Versão Livre
+ *
+ * O SGA é um software livre; você pode redistribuí­-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU como 
+ * publicada pela Fundação do Software Livre (FSF); na versão 2 da Licença, ou (na sua opnião) qualquer versão.
+ *
+ * Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer
+ * MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU para maiores detalhes.
+ *
+ * Você deve ter recebido uma cópia da Licença Pública Geral GNU, sob o título "LICENCA.txt", junto com este programa, se não, escreva para a 
+ * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
+ *
+**/
+html, body {
+    overflow: hidden;
+}
+/**
+	ADMIN > Configurar Usuários
+*/
+div#criar_usuario {
+	margin-bottom: 5px;
+	border-bottom-width: thin;
+	border-bottom-color: #727272;
+
+	text-align: left;
+}
+#config_users #users_search {
+	width: 200px;
+	height: 100%;
+	background: #666666;
+	border-right: 2px solid #CCCCCC;
+	float: left;
+}
+
+#config_users #users_search #search_field {
+	background: url(../imgs/zoom.gif) no-repeat 10px center;
+}
+
+#config_users #config_user_search {
+    float: left;
+    width: 410px;
+}
+
+#config_users #config_user_search #users_list {
+    width: 200px;
+    height: 300px;
+    float: left;
+}
+
+ul.config_user_control {
+    padding: 10px 0px;
+    clear: both;
+}
+
+#config_users ul.config_user_control {
+/*border-bottom: dashed 1px #ccc;*/
+	text-align: center;
+}
+
+ul.config_user_control li {
+    padding: 0px 2px;
+    list-style: none;
+    display: inline;
+}
+
+#id_label_editar_grupos{
+	position: fixed;
+}
+
+.bts_edit input {
+	margin-left: 7px;
+}
+
+#editar_usuario {
+    width: 400px;
+    height: 100%;
+    clear: both;
+    top: 0px;
+    padding: 0 5px 0 5px;
+    background: #eee;
+}
+
+#view_user #editar_usuario {
+    background: #ffffff;
+}
+
+.cleaner {
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+#editar_usuario h1 {
+    font: bold 14px Verdana, Arial, Sans-serif;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+/*Originalmente os valores eram de 100px*/
+#editar_usuario #group_list{
+	width: 200px;
+}
+#editar_usuario #serv_list{
+	width: 200px;
+}
+#editar_usuario #serv_list #select_servicos_atendidos {
+	width: 200px;
+}
+#editar_usuario #group_list #select_grupos_usuario {
+	width: 200px;
+}
+
+#editar_usuario div{
+    padding: 3px 0px;
+}
+.grupos{
+	direction: ltr;
+	display: block;
+	float: left;
+}
+.grupos span, .servicos span{
+	font-weight: bold;
+}
+#editar_usuario span{
+    width: 100px;
+    font: 12px Verdana, Arial, Sans-serif;
+    padding: 3px 0px 0px 0px;
+    float: left;
+    display: block;
+}
+.botoes{
+	width: 60px;
+    font: 12px Verdana, Arial, Sans-serif;
+    display: block;
+    float: left;
+}
+
+.botoes input{
+	width: 100%;
+	display: block;
+	clear: both;
+}
+#select_user_serv_list_novo, #select_user_group_novo{
+	height: 100px;
+	width: 90px;
+	display: block;
+	float: left;
+}
+
+#editar_usuario #groups_list, .criar_usuario #groups_list{
+    height: 100px;
+    padding: 2px 20px;
+    overflow: auto;
+    border: 1px solid #000000;
+    background: #999999;
+    display: block;
+    clear: both;
+}
+
+#editar_usuario #groups_list li, .criar_usuario #groups_list li{
+    padding: 2px 0px;
+    list-style: none;
+}
+
+#editar_usuario #groups_list li label input, .criar_usuario #groups_list li label input
+{
+	margin: 0px 15px 0px 0px;
+}
+
+#conteudo_resultado_usuarios {
+	margin-top: 5px;
+}
+
+/*
+*		CRIAR USUÁRIO - adicionar/editar lotação
+*/
+
+#separador{
+	padding-top: 20px;	
+}
+#lotacao_novo_usu {
+    z-index: +1;
+}
+
+#lotacao_novo_usu_content {
+	background: #EEEEEE;
+    border: 1px solid #000000;
+}
+
+#lotacao_novo_usu_content h1 {
+    color: black;
+    font: bold 14px Verdana, Arial, Sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#lotacao_novo_usu_content div {
+    color: black;
+    font: bold 12px Verdana, Arial, Sans-serif;
+    padding: 3px 20px;
+}
+
+#lotacao_novo_usu_content div span {
+    width: 120px;
+    height: 15px;
+    padding: 5px 0px 0px 10px;
+    float: left;
+}
+
+#lotacao_novo_usu_content ul {
+    padding: 20px 0px 15px 20px;
+}
+
+#lotacao_novo_usu_content ul li {
+    padding: 0px 2px;
+    list-style: none;
+    display: inline;
+}
+span.btn_span{
+	padding-top: 10px;
+}
+
+/** GRUPOS TREEVIEW */
+.arvore_grupos {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.arvore_grupos ul {
+	background-color: white;
+	margin-top: 4px;
+}
+
+.arvore_grupos .hitarea {
+	background: url(../imgs/treeview-default.gif) -64px -25px no-repeat;
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+.arvore_grupos li {
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+}
+
+.arvore_grupos a.selected {
+	background-color: #eee;
+}
+
+.arvore_grupos .hover { color: red; cursor: pointer; }
+
+.arvore_grupos li { background: url(../imgs/treeview-default-line.gif) 0 0 no-repeat; }
+.arvore_grupos li.collapsable { background-position: 0 -176px; }
+
+.arvore_grupos .expandable-hitarea { background-position: -80px -3px; }
+
+.arvore_grupos li.last { background-position: 0 -1766px }
+.arvore_grupos li.lastCollapsable { background-image: url(../imgs/treeview-default.gif); }
+.arvore_grupos li.lastCollapsable { background-position: 0 -111px }
+.arvore_grupos li.lastExpandable { background-position: -32px -67px }
+
+.arvore_grupos div.lastCollapsable-hitarea { background-position: 0; }
+
+.arvore_grupos li {
+    padding: 3px 0 2px 16px;
+}
+.arvore_grupos a {
+    text-decoration: none;
+    color: #000000;
+    padding-left: 2px;
+}
+.arvore_grupos .item_grupo_pai, .arvore_grupos .item_grupo_filho {
+    padding: 1px 0 1px 16px;
+    display: block;
+}
+
+.arvore_grupos .item_grupo_pai { background: url(../imgs/grupo_pai.png) 0 0 no-repeat; }
+.arvore_grupos li.expandable .item_grupo_pai { background: url(../imgs/grupo_pai.png) 0 0 no-repeat; }
+.arvore_grupos .item_grupo_filho { background: url(../imgs/grupo_filho.png) 0 0 no-repeat; }
+
+/*POPUP SENHA*/
+#nova_senha{
+	margin-left: 67px;	
+}
+#confirmar_nova_senha{
+	margin-left: 3px;	
+}
