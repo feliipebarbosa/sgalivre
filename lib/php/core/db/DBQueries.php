@@ -194,6 +194,8 @@ interface DBQueries {
 	 * @return String (SQL Query)
 	 */
 	public function inserir_usuario();
+
+	public function criar_agenda();
 	
 	/**
 	 * Retorna a Query para atualizar um usuario

@@ -385,7 +385,7 @@ Usuarios.criarUsuario = function() {
     Usuarios.limpaInfoUsuario();
 	var popup = window.popup("usu_view_user");
 
-	Ajax.simpleLoad(USUARIOS_PATH + "info_usuario.php", popup.getAttribute("id"), "POST", "", true, Usuarios.seleciona,'nm_user');
+	Ajax.simpleLoad(USUARIOS_PATH + "criar_usuario.php", popup.getAttribute("id"), "POST", "", true, Usuarios.seleciona,'nm_user');
 }
 /**
  * colocar foco num determinado campo

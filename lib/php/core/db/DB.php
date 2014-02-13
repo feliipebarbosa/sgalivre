@@ -973,6 +973,8 @@ abstract class DB {
      * @return Usuario
      */
 	public abstract function inserir_usuario($login_usu, $nm_usu, $ult_nm_usu, $senha_usu);
+
+	public abstract function criar_agenda($dia, $hora_ini_manha, $hora_fim_manha, $hora_ini_tarde, $hora_fim_tarde, $id_usu, $id_uni);
 	
 	public function atualizar_usuario($id_usu, $login_usu, $nm_usu, $ult_nm_usu) {
 		$sql = $this->get_queries()->atualizar_usuario();

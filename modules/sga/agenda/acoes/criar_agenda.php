@@ -16,20 +16,28 @@
  * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
  *
 **/
-
-@SGA::check_login('sga.atendimento');
+SGA::check_login('sga.agenda');
 
 /**
- * Configuracoes do Atendente
- * ex.: numero guiche
+ * Redireciona para a tela inicial de atendimento
  */
-
 try {
 
-	echo "<p>Widget de Configuracoes</p>";
-
-} catch(Exception $e) {
-	TAtendimento::display_exception($e);
+	$usuario = SGA::get_current_user();
+	$dia = $_POST['day'];
+	$hora_ini_manha = $_POST['hour_start_morning'];
+	$hora_fim_manha = $_POST['hour_end_morning'];
+	$hora_ini_tarde = $_POST['hour_start_afternoon'];
+	$hora_fim_tarde = $_POST['hour_end_afternoon'];
+    $id_usu = $usuario->get_id();
+    $id_uni = SGA::get_current_user()->get_unidade()->get_id();
+    
+    $agenda = DB::getInstance()->criar_agenda($dia, $hora_ini_manha, $hora_fim_manha, $hora_ini_tarde, $hora_fim_tarde, $id_usu, $id_uni);
+    
+    SGA::_include("modules/sga/agenda/index.php");
+}
+catch (Exception $e) {
+	TAgenda::display_exception($e);
 }
 
 ?>

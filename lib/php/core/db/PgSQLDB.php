@@ -142,6 +142,27 @@ class PgSQLDB extends DB {
 		}
 	}
     
+    public function criar_agenda($dia, $hora_ini_manha, $hora_fim_manha, $hora_ini_tarde, $hora_fim_tarde, $id_usu, $id_uni) {
+		$sql = $this->get_queries()->criar_agenda();
+		$statement = $this->get_connection()->prepare($sql);
+		
+		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
+		$statement->bindValue(':hora_ini_manha', $hora_ini_manha, PDO::PARAM_STR);
+		$statement->bindValue(':hora_fim_manha', $hora_fim_manha, PDO::PARAM_STR);
+		$statement->bindValue(':hora_ini_tarde', $hora_ini_tarde, PDO::PARAM_STR);
+		$statement->bindValue(':hora_fim_tarde', $hora_fim_tarde, PDO::PARAM_STR);
+		$statement->bindValue(':id_usu', $id_usu, PDO::PARAM_STR);
+		$statement->bindValue(':id_uni', $id_uni, PDO::PARAM_STR);
+		$statement->execute();
+		
+		$id = $this->get_connection()->lastInsertId('agendas_id_agen_seq');
+		if($statement->rowCount() === 1){
+			$agenda =  DB::getInstance()->get_agenda_by_id($id);
+			return $agenda;
+		}else{
+			return null;
+		}
+	}
 }
 
 ?>

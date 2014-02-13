@@ -554,6 +554,19 @@ class PgSQLQueries implements DBQueries {
 					:ult_nm_usu, md5(:senha_usu), 1
 				)";
 	}
+
+	public function criar_agenda() {
+		return "INSERT INTO agendas
+				( 
+					dia, hora_ini_manha, hora_fim_manha, 
+					hora_ini_tarde, hora_fim_tarde, id_usu, id_uni 
+				) 
+				VALUES 
+				(
+					:dia, :hora_ini_manha, :hora_fim_manha, 
+					:hora_ini_tarde, :hora_fim_tarde, :id_usu, :id_uni
+				)";
+	}
 	
 	public function atualizar_usuario() {
 		return "UPDATE usuarios

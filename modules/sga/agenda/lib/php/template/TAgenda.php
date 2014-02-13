@@ -50,7 +50,7 @@ class TAgenda extends Template{
 	 */
 	public static function display_agenda_menu() {
 		$usuario = SGA::get_current_user();
-		TAtendimento::display_user_info($usuario);
+		TAgenda::display_user_info($usuario);
 		Template::display_menu_padrao($modulo, $usuario);
 	}
 
@@ -58,29 +58,58 @@ class TAgenda extends Template{
 	 * Mostra conteúdo do método agenda
 	 */
 	public static function display_agenda_content() {
-		?>
-			<div id="conteudo">
-		        <?php
-		            SGA::_include("modules/sga/agenda/content_loader.php");
-		        ?>
-			</div>
-		<?php
+		TAgenda::display_conteudo();
+		SGA::_include("modules/sga/agenda/content_loader.php");
+		       
 	}
 
 	public static function display_conteudo() {
         $id_uni = SGA::get_current_user()->get_unidade()->get_id();
 		$serv = DB::getInstance()->get_servicos_unidade($id_uni, array(1));
 		
-		Template::display_page_title('Serviços'); ?>
+		Template::display_page_title('Criar Agenda'); 
+		$horas = array('07:00'=>'07:00','08:00'=>'08:00','09:00'=>'09:00','10:00'=>'10:00','11:00'=>'11:00','12:00'=>'12:00','13:00'=>'13:00','14:00'=>'14:00','15:00'=>'15:00','16:00'=>'16:00','17:00'=>'17:00','18:00'=>'18:00','19:00'=>'19:00');
+		?>
+		
 
-		<div id="conteudo_servicos">			
+		<div id="conteudo_servicos">
+		<form id="frm_criar_agenda" method="post" action="" onsubmit="Agenda.criar_agen(); return false;">			
 			
-			<div id="nome_ident_desc">Nome e identificação do cliente:</div>
-			<label>Nome:</label> <input title="Nome do cliente" type="text" id="client_name" name="client_name" value="" maxlength="100" />
-			<label>Ident:</label> <input title="Doc. Identificação do cliente" type="text" id="client_ident" name="client_ident" value="" maxlength="11" />
+			<span>Dia:</span>
+            <span><?php echo Template::display_date_field('day', date("d/m/Y", time() - 24*60*60), '');?></span>
 			
-			<h1 id="titulo_servicos">Servi&ccedil;os</h1>
-			<div id="conteudo_triagem"><?php TAgenda::servicos($serv);?></div>
+			<span title="Selecione o horario início da manhã"><span>Hora Início Manhã:</span>
+				<?php
+					echo parent::display_jump_menu($horas,'hour_start_morning', $default, '');
+				?>
+			</span>
+
+			<span title="Selecione o horario fim da manhã"><span>Hora Fim Manhã:</span>
+				<?php
+					echo parent::display_jump_menu($horas,'hour_end_morning', $default, '');
+				?>
+			</span>
+
+			<span title="Selecione o horario início da tarde"><span>Hora Início Tarde:</span>
+				<?php
+					echo parent::display_jump_menu($horas,'hour_start_afternoon', $default, '');
+				?>
+			</span>
+
+			<span title="Selecione o horario fim da tarde"><span>Hora Fim Tarde:</span>
+				<?php
+					echo parent::display_jump_menu($horas,'hour_end_afternoon', $default, '');
+				?>
+			</span>
+			<br>
+			<br>
+			<div>
+				<?php
+					Template::display_action_button("Confirmar", "images/tick.png", "Agenda.criar_agen();",'button','',true,'Clique para confirmar a criação da agenda.');
+            		Template::display_action_button("Voltar", "images/cross.png", "Agenda.cancelarErroTriagem()",'button','',true,'Clique para voltar.');
+				?>
+			</div>
+		</form>	
 		</div>
 		<?php
 	}

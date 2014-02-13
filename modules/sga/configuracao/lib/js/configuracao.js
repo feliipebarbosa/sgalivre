@@ -122,7 +122,7 @@ Configuracao.setBotoesGrupoDisabled = function(b) {
  *
  */
 Configuracao.refreshGrupo = function () {
-	Ajax.simpleLoad(CONF_GRUPOS_PATH + "group_control.php", "config_groups_list", "GET", "", true, Configuracao.onLoadGrupos);
+	Ajax.simpleLoad(CONF_GRUPOS_PATH + "group_control.php", "config_groups_list", "POST", "", true, Configuracao.onLoadGrupos);
 }
 
 /**

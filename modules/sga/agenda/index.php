@@ -10,7 +10,6 @@ try {
 
     $usuario = Session::getInstance()->get(SGA::K_CURRENT_USER);
 
-    TAgenda::display_input_dialog("Informe o número do seu guiche.", "Atendimento", "Atendimento.setGuiche", $n);
 
     TAgenda::display_agenda(Session::getInstance()->get(SGA::K_CURRENT_USER));
 
