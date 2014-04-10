@@ -22,30 +22,18 @@ var Agenda = function() {
 Agenda.criar_agen = function(button){
 
     var form = document.getElementById('frm_criar_agenda');
-    var day = document.getElementById("day").value;
-    var hour_start_morning = document.getElementById("hour_start_morning").value;
-    var hour_end_morning = document.getElementById("hour_end_morning").value;
-    var hour_start_afternoon = document.getElementById("hour_start_afternoon").value;
-    var hour_end_afternoon = document.getElementById("hour_end_afternoon").value;
+    //var dia_semana = document.getElementById("segunda_08_00").checked;
+    var itens = "";
 
-
-    if (hour_end_morning <= hour_start_morning){
-        window.showErrorDialog("O horário de início não pode ser maior ou igual ao final.", "ERRO");
-        return;
+    var listaMarcados = document.getElementsByTagName("INPUT");  
+    for (i = 0; i < listaMarcados.length; i++) {  
+        var item = listaMarcados[i];  
+        if (item.type == "checkbox" && item.checked) {  
+            itens += item.id;  
+            itens +=", ";
+        }  
     }
-    else if (hour_end_afternoon <= hour_start_afternoon){
-        window.showErrorDialog("O horário de início não pode ser maior ou igual ao final.", "ERRO");
-        return;
-    }
-    else if(hour_start_afternoon <= hour_start_morning){
-        window.showErrorDialog("O horário de início não pode ser maior ou igual ao final.", "ERRO");
-        return;
-    }
-    else if(hour_start_afternoon <= hour_end_morning){
-        window.showErrorDialog("O horário de início não pode ser maior ou igual ao final.", "ERRO");
-        return;
-    }
-
+    itens = itens.substr(0,itens.length -2);
 
     Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "conteudo_servicos", "POST", Ajax.encodeFormAsPost(form), false);
 

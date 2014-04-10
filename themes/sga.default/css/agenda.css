@@ -1,4 +1,3 @@
-<?php
 
 /**
  * 
@@ -16,46 +15,21 @@
  * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
  *
 **/
-SGA::check_login('sga.agenda');
 
-/**
- * Redireciona para a tela inicial de atendimento
- */
-try {
-
-	$usuario = SGA::get_current_user();
-	echo "<script>alert('test');</script>";
-	$itens = $_POST['itens'];
-
-	$dias = split (",",$itens);
-
-	echo "<script>alert($dias);</script>";
-
-	$dia_semana = 'segunda'
-	switch ( $numero ){
-  		case 'segunda':
-    		$dia = '07/04/2014';
-  		case 'terca':
-    		$dia = '08/04/2014';
-  		case 'quarta':
-    		$dia = '09/04/2014';
-  		case 'quinta':
-    		$dia = '10/04/2014';
-  		case 'sexta':
-    		$dia = '11/04/2014';
-    	case 'sabado':
-    		$dia = '12/04/2014';	
-	}
-
-    $id_usu = $usuario->get_id();
-    $id_uni = SGA::get_current_user()->get_unidade()->get_id();
-    
-    $agenda = DB::getInstance()->criar_agenda($dia, $dia_semana);
-    
-    SGA::_include("modules/sga/agenda/index.php");
+html, body{
+    overflow:hidden;
 }
-catch (Exception $e) {
-	TAgenda::display_exception($e);
+/*
+	TRIAGEM
+*/
+
+
+.agenda{
+	float: center;
+	background: #ebecec;
+	margin: 10px 10px 10px 10px;
+	font: 12px arial;
+	text-align: center;
+	border: solid #d1d1d1 1px;
 }
 
-?>
