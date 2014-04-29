@@ -16,46 +16,28 @@
  * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
  *
 **/
-SGA::check_login('sga.agenda');
 
+@SGA::check_login('sga.agendamento');
+ 
 /**
- * Redireciona para a tela inicial de atendimento
+ * Carregador de conteudo
+ * 
+ * Carrega o conteudo do pagina atual na pagina a partir do link do menu
+ * 
  */
+
 try {
-
-	$usuario = SGA::get_current_user();
-	echo "<script>alert('test');</script>";
-	$dia_semana = $_POST['dia_semana'];
-
-	#$dias = split (",",$dia_semana);
-
-	echo "<script>alert($dia_semana);</script>";
-
-	$dia_semana = 'segunda'
-	switch ( $numero ){
-  		case 'segunda':
-    		$dia = '07/04/2014';
-  		case 'terca':
-    		$dia = '08/04/2014';
-  		case 'quarta':
-    		$dia = '09/04/2014';
-  		case 'quinta':
-    		$dia = '10/04/2014';
-  		case 'sexta':
-    		$dia = '11/04/2014';
-    	case 'sabado':
-    		$dia = '12/04/2014';	
-	}
-
-    $id_usu = $usuario->get_id();
-    $id_uni = SGA::get_current_user()->get_unidade()->get_id();
-    
-    $agenda = DB::getInstance()->criar_agenda($dia, $dia_semana);
-    
-    SGA::_include("modules/sga/agenda/index.php");
-}
-catch (Exception $e) {
+	if (Session::getInstance()->exists('AGENDAMENTO_PAGINA')) {
+       $link = "modules/sga/agendamento/" . DB::getInstance()->get_menu_link(Session::getInstance()->get('AGENDAMENTO_PAGINA'));
+        if (file_exists($link)) {
+        	SGA::_include("$link");        	
+        } else {
+      	  	Session::getInstance()->del('AGENDAMENTO_PAGINA');
+            throw new Exception("Pagina nao encontrada.");
+        }
+        Session::getInstance()->del('AGENDAMENTO_PAGINA');
+    }
+} catch(Exception $e) {
 	TAgenda::display_exception($e);
 }
-
 ?>

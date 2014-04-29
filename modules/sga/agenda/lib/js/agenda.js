@@ -33,9 +33,12 @@ Agenda.criar_agen = function(button){
             itens +=", ";
         }  
     }
-    itens = itens.substr(0,itens.length -2);
+    dia_semana = itens.substr(0,itens.length -2);
+
+
 
     Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "conteudo_servicos", "POST", Ajax.encodeFormAsPost(form), false);
+
 
 
 }

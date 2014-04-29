@@ -23,7 +23,7 @@
  * Contem as informacoes da Agenda do Sistema
  *
  */
-class Agenda {
+class Agendamento {
     private $id;	
 	private $day;
 	private $dia_semana;
@@ -49,7 +49,7 @@ class Agenda {
 		if (is_int($id) && $id > 0)
 			$this->id = $id;
 		else
-			throw new Exception("Erro ao definir id da Agenda. Deve ser um n&uacute;mero maior que zero.");
+			throw new Exception("Erro ao definir id do Agendamento. Deve ser um n&uacute;mero maior que zero.");
 	}
 
 	/**

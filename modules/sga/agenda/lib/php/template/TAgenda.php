@@ -268,7 +268,7 @@ class TAgenda extends Template{
 					<td><input type="checkbox" id="sabado_17_30" value="sabado_17:30" /></td>
 				</tr>
 			</table>	
-			<span title="Selecione o horario início da manhã"><span>Hora Início Manhã:</span>
+			<!--<span title="Selecione o horario início da manhã"><span>Hora Início Manhã:</span>
 				<?php
 					echo parent::display_jump_menu($horas,'hour_start_morning', $default, '');
 				?>
@@ -290,7 +290,7 @@ class TAgenda extends Template{
 				<?php
 					echo parent::display_jump_menu($horas,'hour_end_afternoon', $default, '');
 				?>
-			</span>
+			</span>-->
 			<br>
 			<br>
 			<div>
