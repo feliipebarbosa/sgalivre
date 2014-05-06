@@ -73,54 +73,32 @@ class TAgendamento extends Template{
 		
 
 		<div id="conteudo_servicos">
-		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">	
-			<span>De 07/04/2014 à 12/04/2014</span>			
+		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">						
 			<table class="agendamento">
 				<thead>
-					<tr>
-						<td> Hora</td>
-						<td> Segunda</td>
-						<td> Terça</td>
-						<td> Quarta</td>
-						<td> Quinta</td>
-						<td> Sexta</td>
-						<td> Sábado</td>
+					<tr style="padding-button:30px;">
+						<td style="width:30px; text-align:center; font-weight:bold; padding-button:30px;"> </td>
+						<td style="width:80px; text-align:center; font-weight:bold; padding-button:30px;"> Dia/Mês/Ano</td>
+						<td style="width:50px; text-align:center; font-weight:bold; padding-button:30px;"> Hora</td>
+						<td style="width:80px; text-align:center; font-weight:bold; padding-button:30px;" > Atendente</td>
+						<td style="width:80px; text-align:center; font-weight:bold; padding-button:30px;" > Unidade</td>
 					</tr>		
 				</thead>
 				<tr style="border: solid #d1d1d1 1px;">
-					<td>08:00</td>
-					<td><input type="checkbox" id="segunda_08_00" value="segunda_08:00" /></td>
-					<td><input type="checkbox" id="terca_08_00" value="terca_08:00" /></td>
-					<td><input type="checkbox" id="quarta_08_00" value="quarta_08:00" /></td>
-					<td><input type="checkbox" id="quinta_08_00" value="quinta_08:00" /></td>
-					<td><input type="checkbox" id="sexta_08_00" value="sexta_08:00" /></td>
-					<td><input type="checkbox" id="sabado_08_00" value="sabado_08:00" /></td>
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="1" value="1" /></td>
+					<td style="width:80px; text-align:center;" > 05/05/2014 </td>
+					<td style="width:50px; text-align:center;"> 08:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
 				</tr>
-				
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 05/05/2014 </td>
+					<td style="width:50px; text-align:center;"> 08:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
 			</table>	
-			<!--<span title="Selecione o horario início da manhã"><span>Hora Início Manhã:</span>
-				<?php
-					echo parent::display_jump_menu($horas,'hour_start_morning', $default, '');
-				?>
-			</span>
-
-			<span title="Selecione o horario fim da manhã"><span>Hora Fim Manhã:</span>
-				<?php
-					echo parent::display_jump_menu($horas,'hour_end_morning', $default, '');
-				?>
-			</span>
-
-			<span title="Selecione o horario início da tarde"><span>Hora Início Tarde:</span>
-				<?php
-					echo parent::display_jump_menu($horas,'hour_start_afternoon', $default, '');
-				?>
-			</span>
-
-			<span title="Selecione o horario fim da tarde"><span>Hora Fim Tarde:</span>
-				<?php
-					echo parent::display_jump_menu($horas,'hour_end_afternoon', $default, '');
-				?>
-			</span>-->
 			<br>
 			<br>
 			<div>

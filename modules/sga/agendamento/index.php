@@ -6,14 +6,14 @@ try {
     # verifica se o modulo esta devidamente instalado   
     Session::getInstance()->get(SGA::K_CURRENT_MODULE)->verifica();
 
-    TAgenda::display_header("Agendamento");
+    TAgendamento::display_header("Agendamento");
 
     $usuario = Session::getInstance()->get(SGA::K_CURRENT_USER);
 
 
-    TAgenda::display_agendamento(Session::getInstance()->get(SGA::K_CURRENT_USER));
+    TAgendamento::display_agendamento(Session::getInstance()->get(SGA::K_CURRENT_USER));
 
-    TAgenda::display_footer();
+    TAgendamento::display_footer();
     
     
    
