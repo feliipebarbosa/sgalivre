@@ -76,13 +76,23 @@ class TAgendamento extends Template{
 		</br>	
 
 		<SCRIPT LANGUAGE="JavaScript">
+
+			$(document).ready(function(){
+				$("#carrega_agenda").toggle();
+			})
+
+			function carrega_agenda(){
+				$('#carrega_agenda').show();	
+				//$('#carrega_agenda').load($(this).attr('href'));
+			}
+
 			<!-- Begin
 			var day_of_week = new Array('Dom','Seg','Ter','Qua','Qui','Sex','Sab');
 			var month_of_year = new Array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro');
  
 			var Calendar = new Date();
  
-			var year = Calendar.getYear();       // Retorna o ano
+			var year = Calendar.getFullYear();   // Retorna o ano
 			var month = Calendar.getMonth();    // Retorna mes (0-11)
 			var today = Calendar.getDate();     // Retorna dias (1-31)
 			var weekday = Calendar.getDay();   // Retorna dias (1-31)
@@ -104,8 +114,8 @@ class TAgendamento extends Template{
  
 			cal =  '<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 BORDERCOLOR=BBBBBB><TR><TD>';
 			cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>' + TR_start;
-			cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER><B>';
-			cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+			cal += ' <TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="#EFEFEF"><CENTER> << <B>';
+			cal += month_of_year[month]  + '   ' + year + '</B> >>' + TD_end + TR_end;
 			cal += TR_start;
  
 			for(index=0; index < DAYS_OF_WEEK; index++)
@@ -132,9 +142,9 @@ class TAgendamento extends Template{
   					if(week_day != DAYS_OF_WEEK){
   						var day  = Calendar.getDate();
   						if( today==Calendar.getDate() )
-  							cal += highlight_start + day + highlight_end + TD_end;
+  							cal += highlight_start + '<a onclick="carrega_agenda();">'+day+'<\a>' + highlight_end + TD_end;
   						else
-  							cal += TD_start + day + TD_end;
+  							cal += TD_start + '<a onclick="carrega_agenda();">'+day+'<\a>' + TD_end;
   					}
   					if(week_day == DAYS_OF_WEEK)
   						cal += TR_end;
@@ -150,7 +160,7 @@ class TAgendamento extends Template{
 
 		</br>
 		</br>
-
+		<div id = "carrega_agenda">
 		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">						
 			<table class="agendamento">
 				<thead>
@@ -186,6 +196,7 @@ class TAgendamento extends Template{
 				?>
 			</div>
 		</form>	
+		</div>
 		</div>
 		<?php
 	}
