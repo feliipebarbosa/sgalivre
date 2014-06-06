@@ -131,6 +131,35 @@ class TAdmin extends Template {
 		<?php
 	}
 
+	public static function config_prioridade($unidade){
+		Template::display_page_title('Configurar Prioridade');
+
+		$conf_prioridade = DB::getInstance()->get_conf_prio($unidade->get_id());
+
+		if($conf_prioridade ==1){
+			$sim = "checked='checked'";
+		}else{
+			$nao = "checked='checked'";
+		}
+
+		?>
+		<div>
+			<h3>Configuração de Prioridade</h3>
+			Configure o tipo de prioridade desta unidade.
+			<div id="alterar_ativa_imp">
+				<div>
+					<input type="radio" id="bt_sim" name="confirm_opcao" value="sim" <?php echo $sim;?>/>
+					<label for ="bt_sim">Prioridade sempre na frente</label>
+					<input type="radio" id="bt_nao" name="confirm_opcao" value="nao" <?php echo $nao;?>/>
+					<label for="bt_nao">Prioridade alternada com atendimento normal</label>
+					<?php Template::display_action_button("Salvar", "images/tick.png", "window.showYesNoDialog('Admin.alteraImp()','Deseja confirmar a configuração da prioridade?','Confirmar Alteração');",'button','',true,'Clique para confirmar a escolha.')?>
+				</div>
+			</div>
+		</div>
+		<?php
+	}
+
+
 	/**
 	 * Exibe o popup para gerenciar serviços
 	 * @param $servicos array

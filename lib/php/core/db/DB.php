@@ -3320,6 +3320,25 @@ abstract class DB {
     	$statement->bindValue(':status_imp',$status_imp, PDO::PARAM_INT);
     	$statement->execute();
 	}
+
+	public function get_conf_prio($id_uni){
+		$sql = $this->get_queries()->get_conf_prio();
+		$statement = $this->m_connection->prepare($sql);
+    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->execute();
+    	
+    	$status = $this->to_array($statement);
+		$status = $status[0][0];
+		return $status;
+	}
+	
+	public function set_conf_prio($id_uni,$conf_prioridade){
+		$sql = $this->get_queries()->set_conf_prio();
+		$statement = $this->m_connection->prepare($sql);
+    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->bindValue(':conf_prioridade',$conf_prioridade, PDO::PARAM_INT);
+    	$statement->execute();
+	}
 	
 	public function get_nm_pri($id_pri){
 		$sql = $this->get_queries()->get_nm_pri();

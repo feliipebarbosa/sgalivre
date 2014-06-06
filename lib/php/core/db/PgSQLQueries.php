@@ -1578,6 +1578,20 @@ public function get_senha_msg_loc(){
 				WHERE 
 					id_uni = :id_uni";
 	}
+
+	public function get_conf_prio(){
+		return "SELECT prioridade_sempre_topo 
+				FROM unidades 
+				WHERE id_uni = :id_uni";
+	}
+	
+	public function set_conf_prio(){
+		return "UPDATE unidades 
+				SET 
+					prioridade_sempre_topo = :conf_prioridade
+				WHERE 
+					id_uni = :id_uni";
+	}
 	
 	public function get_nm_pri(){
 		return "SELECT nm_pri

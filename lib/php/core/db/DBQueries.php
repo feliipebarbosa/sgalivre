@@ -866,6 +866,20 @@ interface DBQueries {
 	 */
 	public function set_msg_status();
 	
+
+	/**
+	 * Retorna Configuração Prioridade
+	 * @return String (SQL Query)
+	 */
+	public function get_conf_prio();
+	
+	/**
+	 * Modifica Configuração Prioridade
+	 * @return String (SQL Query)
+	 */
+	public function set_conf_prio();
+
+
 	/**
 	 * Retorna nome da prioridade especificada
 	 * @return 	String (SQL Query)
