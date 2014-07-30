@@ -165,7 +165,7 @@ class TTriagem extends Template {
 			$fila = DB::getInstance()->get_quantidade_fila($servico->get_id(),$id_uni);
 			$total = DB::getInstance()->get_quantidade_total($servico->get_id(),$id_uni);
 			?>
-			<div id="servico">
+			<div id="servico ">
 				<div title="Nome do serviço" id="servico_nome">
 					<div id="servico_nome_titulo">Serviço</div>
 					<div id="servico_nome_conteudo"><?php echo '<a href="javascript:Triagem.subServico('.$servico->get_id().');">'.$servico->get_sigla()." - ".$servico->get_nome().'</a>'; ?></div>

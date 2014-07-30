@@ -149,9 +149,9 @@ class TAdmin extends Template {
 			<div id="alterar_ativa_imp">
 				<div>
 					<input type="radio" id="bt_sim" name="confirm_opcao" value="sim" <?php echo $sim;?>/>
-					<label for ="bt_sim">Prioridade sempre na frente</label>
+					<label for ="bt_sim"> Prioridade sempre na frente &nbsp;</label>
 					<input type="radio" id="bt_nao" name="confirm_opcao" value="nao" <?php echo $nao;?>/>
-					<label for="bt_nao">Prioridade alternada com atendimento normal</label>
+					<label for="bt_nao"> Prioridade alternada com atendimento normal &nbsp;</label>
 					<?php Template::display_action_button("Salvar", "images/tick.png", "window.showYesNoDialog('Admin.alteraImp()','Deseja confirmar a configuração da prioridade?','Confirmar Alteração');",'button','',true,'Clique para confirmar a escolha.')?>
 				</div>
 			</div>

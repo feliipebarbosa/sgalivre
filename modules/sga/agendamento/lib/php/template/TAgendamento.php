@@ -71,7 +71,13 @@ class TAgendamento extends Template{
 		$horas = array('07:00'=>'07:00','08:00'=>'08:00','09:00'=>'09:00','10:00'=>'10:00','11:00'=>'11:00','12:00'=>'12:00','13:00'=>'13:00','14:00'=>'14:00','15:00'=>'15:00','16:00'=>'16:00','17:00'=>'17:00','18:00'=>'18:00','19:00'=>'19:00');
 		?>
 		
-
+		<label style="font-weight:bold;">Unidade: </label><select> <option> Cariacica </option>
+										 <option>Vitória</option>
+								</select>
+		</br>
+		</br>
+		</br>
+								
 		<div id="conteudo_servicos">
 		</br>	
 
@@ -174,18 +180,119 @@ class TAgendamento extends Template{
 				</thead>
 				<tr style="border: solid #d1d1d1 1px;">
 					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="1" value="1" /></td>
-					<td style="width:80px; text-align:center;" > 05/05/2014 </td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
 					<td style="width:50px; text-align:center;"> 08:00 </td>
 					<td style="width:80px; text-align:center;"> Kamila </td>
 					<td style="width:80px; text-align:center;"> Cariacica </td>
 				</tr>
 				<tr style="border: solid #d1d1d1 1px;">
 					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
-					<td style="width:80px; text-align:center;" > 05/05/2014 </td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
 					<td style="width:50px; text-align:center;"> 08:30 </td>
 					<td style="width:80px; text-align:center;"> Kamila </td>
 					<td style="width:80px; text-align:center;"> Cariacica </td>
 				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 09:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 09:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 10:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 10:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 11:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 11:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 13:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 13:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 14:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 14:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 15:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 15:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 16:00 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+				<tr style="border: solid #d1d1d1 1px;">
+					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
+					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
+					<td style="width:50px; text-align:center;"> 16:30 </td>
+					<td style="width:80px; text-align:center;"> Kamila </td>
+					<td style="width:80px; text-align:center;"> Cariacica </td>
+				</tr>
+
+
+
 			</table>	
 			<br>
 			<br>

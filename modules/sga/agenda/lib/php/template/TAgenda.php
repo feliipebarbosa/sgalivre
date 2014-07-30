@@ -72,200 +72,203 @@ class TAgenda extends Template{
 		?>
 		
 
-		<div id="conteudo_servicos">
+		<div class="agendamento">
 		<form id="frm_criar_agenda" method="post" action="" onsubmit="Agenda.criar_agen(); return false;">	
-			<span>De 07/04/2014 à 12/04/2014</span>			
-			<table class="agenda">
+		
+				<h3>De 29/07/2014 à 02/08/2014 &nbsp; <a> >> </a> </h3>
+			
+
+			<table class="agendamento">
 				<thead>
 					<tr>
-						<td> Hora</td>
-						<td> Segunda</td>
-						<td> Terça</td>
-						<td> Quarta</td>
-						<td> Quinta</td>
-						<td> Sexta</td>
-						<td> Sábado</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Hora</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Segunda</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Terça</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Quarta</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Quinta</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Sexta</td>
+						<td style="width:40px; text-align:center; font-weight:bold; padding-button:30px;"> Sábado</td>
 					</tr>		
 				</thead>
 				<tr style="border: solid #d1d1d1 1px;">
-					<td>08:00</td>
-					<td><input type="checkbox" id="segunda_08_00" value="segunda_08:00" /></td>
-					<td><input type="checkbox" id="terca_08_00" value="terca_08:00" /></td>
-					<td><input type="checkbox" id="quarta_08_00" value="quarta_08:00" /></td>
-					<td><input type="checkbox" id="quinta_08_00" value="quinta_08:00" /></td>
-					<td><input type="checkbox" id="sexta_08_00" value="sexta_08:00" /></td>
-					<td><input type="checkbox" id="sabado_08_00" value="sabado_08:00" /></td>
+					<td style="width:40px; text-align:center;">08:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_08_00" value="segunda_08:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_08_00" value="terca_08:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_08_00" value="quarta_08:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_08_00" value="quinta_08:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_08_00" value="sexta_08:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_08_00" value="sabado_08:00" /></td>
 				</tr>
 				<tr>
-					<td>08:30</td>
-					<td><input type="checkbox" id="segunda_08_30" value="segunda_08:30" /></td>
-					<td><input type="checkbox" id="terca_08_30" value="terca_08:30" /></td>
-					<td><input type="checkbox" id="quarta_08_30" value="quarta_08:30" /></td>
-					<td><input type="checkbox" id="quinta_08_30" value="quinta_08:30" /></td>
-					<td><input type="checkbox" id="sexta_08_30" value="sexta_08:30" /></td>
-					<td><input type="checkbox" id="sabado_08_30" value="sabado_08:30" /></td>
+					<td style="width:40px; text-align:center;">08:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_08_30" value="segunda_08:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_08_30" value="terca_08:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_08_30" value="quarta_08:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_08_30" value="quinta_08:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_08_30" value="sexta_08:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_08_30" value="sabado_08:30" /></td>
 				</tr>
 				<tr>
-					<td>09:00</td>
-					<td><input type="checkbox" id="segunda_09_00" value="segunda_09:00" /></td>
-					<td><input type="checkbox" id="terca_09_00" value="terca_09:00" /></td>
-					<td><input type="checkbox" id="quarta_09_00" value="quarta_09:00" /></td>
-					<td><input type="checkbox" id="quinta_09_00" value="quinta_09:00" /></td>
-					<td><input type="checkbox" id="sexta_09_00" value="sexta_09:00" /></td>
-					<td><input type="checkbox" id="sabado_09_00" value="sabado_09:00" /></td>
+					<td style="width:40px; text-align:center;">09:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_09_00" value="segunda_09:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_09_00" value="terca_09:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_09_00" value="quarta_09:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_09_00" value="quinta_09:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_09_00" value="sexta_09:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_09_00" value="sabado_09:00" /></td>
 				</tr>
 				<tr>
-					<td>09:30</td>
-					<td><input type="checkbox" id="segunda_09_30" value="segunda_09:30" /></td>
-					<td><input type="checkbox" id="terca_09_30" value="terca_09:30" /></td>
-					<td><input type="checkbox" id="quarta_09_30" value="quarta_09:30" /></td>
-					<td><input type="checkbox" id="quinta_09_30" value="quinta_09:30" /></td>
-					<td><input type="checkbox" id="sexta_09_30" value="sexta_09:30" /></td>
-					<td><input type="checkbox" id="sabado_09_30" value="sabado_09:30" /></td>
+					<td style="width:40px; text-align:center;">09:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_09_30" value="segunda_09:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_09_30" value="terca_09:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_09_30" value="quarta_09:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_09_30" value="quinta_09:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_09_30" value="sexta_09:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_09_30" value="sabado_09:30" /></td>
 				</tr>
 				<tr>
-					<td>10:00</td>
-					<td><input type="checkbox" id="segunda_10_00" value="segunda_10:00" /></td>
-					<td><input type="checkbox" id="terca_10_00" value="terca_10:00" /></td>
-					<td><input type="checkbox" id="quarta_10_00" value="quarta_10:00" /></td>
-					<td><input type="checkbox" id="quinta_10_00" value="quinta_10:00" /></td>
-					<td><input type="checkbox" id="sexta_10_00" value="sexta_10:00" /></td>
-					<td><input type="checkbox" id="sabado_10_00" value="sabado_10:00" /></td>
+					<td style="width:40px; text-align:center;">10:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_10_00" value="segunda_10:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_10_00" value="terca_10:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_10_00" value="quarta_10:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_10_00" value="quinta_10:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_10_00" value="sexta_10:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_10_00" value="sabado_10:00" /></td>
 				</tr>
 				<tr>
-					<td>10:30</td>
-					<td><input type="checkbox" id="segunda_10_30" value="segunda_10:30" /></td>
-					<td><input type="checkbox" id="terca_10_30" value="terca_10:30" /></td>
-					<td><input type="checkbox" id="quarta_10_30" value="quarta_10:30" /></td>
-					<td><input type="checkbox" id="quinta_10_30" value="quinta_10:30" /></td>
-					<td><input type="checkbox" id="sexta_10_30" value="sexta_10:30" /></td>
-					<td><input type="checkbox" id="sabado_10_30" value="sabado_10:30" /></td>
+					<td style="width:40px; text-align:center;">10:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_10_30" value="segunda_10:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_10_30" value="terca_10:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_10_30" value="quarta_10:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_10_30" value="quinta_10:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_10_30" value="sexta_10:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_10_30" value="sabado_10:30" /></td>
 				</tr>
 				<tr>
-					<td>11:00</td>
-					<td><input type="checkbox" id="segunda_11_00" value="segunda_11:00" /></td>
-					<td><input type="checkbox" id="terca_11_00" value="terca_11:00" /></td>
-					<td><input type="checkbox" id="quarta_11_00" value="quarta_11:00" /></td>
-					<td><input type="checkbox" id="quinta_11_00" value="quinta_11:00" /></td>
-					<td><input type="checkbox" id="sexta_11_00" value="sexta_11:00" /></td>
-					<td><input type="checkbox" id="sabado_11_00" value="sabado_11:00" /></td>
+					<td style="width:40px; text-align:center;">11:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_11_00" value="segunda_11:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_11_00" value="terca_11:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_11_00" value="quarta_11:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_11_00" value="quinta_11:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_11_00" value="sexta_11:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_11_00" value="sabado_11:00" /></td>
 				</tr>
 				<tr>
-					<td>11:30</td>
-					<td><input type="checkbox" id="segunda_11_30" value="segunda_11:30" /></td>
-					<td><input type="checkbox" id="terca_11_30" value="terca_11:30" /></td>
-					<td><input type="checkbox" id="quarta_11_30" value="quarta_11:30" /></td>
-					<td><input type="checkbox" id="quinta_11_30" value="quinta_11:30" /></td>
-					<td><input type="checkbox" id="sexta_11_30" value="sexta_11:30" /></td>
-					<td><input type="checkbox" id="sabado_11_30" value="sabado_11:30" /></td>
+					<td style="width:40px; text-align:center;">11:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_11_30" value="segunda_11:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_11_30" value="terca_11:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_11_30" value="quarta_11:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_11_30" value="quinta_11:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_11_30" value="sexta_11:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_11_30" value="sabado_11:30" /></td>
 				</tr>
 				<tr>
-					<td>12:00</td>
-					<td><input type="checkbox" id="segunda_12_00" value="segunda_12:00" /></td>
-					<td><input type="checkbox" id="terca_12_00" value="terca_12:00" /></td>
-					<td><input type="checkbox" id="quarta_12_00" value="quarta_12:00" /></td>
-					<td><input type="checkbox" id="quinta_12_00" value="quinta_12:00" /></td>
-					<td><input type="checkbox" id="sexta_12_00" value="sexta_12:00" /></td>
-					<td><input type="checkbox" id="sabado_12_00" value="sabado_12:00" /></td>
+					<td style="width:40px; text-align:center;">12:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_12_00" value="segunda_12:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_12_00" value="terca_12:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_12_00" value="quarta_12:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_12_00" value="quinta_12:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_12_00" value="sexta_12:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_12_00" value="sabado_12:00" /></td>
 				</tr>
 				<tr>
-					<td>12:30</td>
-					<td><input type="checkbox" id="segunda_12_30" value="segunda_12:30" /></td>
-					<td><input type="checkbox" id="terca_12_30" value="terca_12:30" /></td>
-					<td><input type="checkbox" id="quarta_12_30" value="quarta_12:30" /></td>
-					<td><input type="checkbox" id="quinta_12_30" value="quinta_12:30" /></td>
-					<td><input type="checkbox" id="sexta_12_30" value="sexta_12:30" /></td>
-					<td><input type="checkbox" id="sabado_12_30" value="sabado_12:30" /></td>
+					<td style="width:40px; text-align:center;">12:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_12_30" value="segunda_12:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_12_30" value="terca_12:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_12_30" value="quarta_12:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_12_30" value="quinta_12:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_12_30" value="sexta_12:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_12_30" value="sabado_12:30" /></td>
 				</tr>
 				<tr>
-					<td>13:00</td>
-					<td><input type="checkbox" id="segunda_13_00" value="segunda_13:00" /></td>
-					<td><input type="checkbox" id="terca_13_00" value="terca_13:00" /></td>
-					<td><input type="checkbox" id="quarta_13_00" value="quarta_13:00" /></td>
-					<td><input type="checkbox" id="quinta_13_00" value="quinta_13:00" /></td>
-					<td><input type="checkbox" id="sexta_13_00" value="sexta_13:00" /></td>
-					<td><input type="checkbox" id="sabado_13_00" value="sabado_13:00" /></td>
+					<td style="width:40px; text-align:center;">13:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_13_00" value="segunda_13:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_13_00" value="terca_13:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_13_00" value="quarta_13:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_13_00" value="quinta_13:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_13_00" value="sexta_13:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_13_00" value="sabado_13:00" /></td>
 				</tr>
 				<tr>
-					<td>13:30</td>
-					<td><input type="checkbox" id="segunda_13_30" value="segunda_13:30" /></td>
-					<td><input type="checkbox" id="terca_13_30" value="terca_13:30" /></td>
-					<td><input type="checkbox" id="quarta_13_30" value="quarta_13:30" /></td>
-					<td><input type="checkbox" id="quinta_13_30" value="quinta_13:30" /></td>
-					<td><input type="checkbox" id="sexta_13_30" value="sexta_13:30" /></td>
-					<td><input type="checkbox" id="sabado_13_30" value="sabado_13:30" /></td>
+					<td style="width:40px; text-align:center;">13:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_13_30" value="segunda_13:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_13_30" value="terca_13:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_13_30" value="quarta_13:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_13_30" value="quinta_13:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_13_30" value="sexta_13:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_13_30" value="sabado_13:30" /></td>
 				</tr>
 				<tr>
-					<td>14:00</td>
-					<td><input type="checkbox" id="segunda_14_00" value="segunda_14:00" /></td>
-					<td><input type="checkbox" id="terca_14_00" value="terca_14:00" /></td>
-					<td><input type="checkbox" id="quarta_14_00" value="quarta_14:00" /></td>
-					<td><input type="checkbox" id="quinta_14_00" value="quinta_14:00" /></td>
-					<td><input type="checkbox" id="sexta_14_00" value="sexta_14:00" /></td>
-					<td><input type="checkbox" id="sabado_14_00" value="sabado_14:00" /></td>
+					<td style="width:40px; text-align:center;">14:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_14_00" value="segunda_14:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_14_00" value="terca_14:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_14_00" value="quarta_14:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_14_00" value="quinta_14:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_14_00" value="sexta_14:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_14_00" value="sabado_14:00" /></td>
 				</tr>
 				<tr>
-					<td>14:30</td>
-					<td><input type="checkbox" id="segunda_14_30" value="segunda_14:30" /></td>
-					<td><input type="checkbox" id="terca_14_30" value="terca_14:30" /></td>
-					<td><input type="checkbox" id="quarta_14_30" value="quarta_14:30" /></td>
-					<td><input type="checkbox" id="quinta_14_30" value="quinta_14:30" /></td>
-					<td><input type="checkbox" id="sexta_14_30" value="sexta_14:30" /></td>
-					<td><input type="checkbox" id="sabado_14_30" value="sabado_14:30" /></td>
+					<td style="width:40px; text-align:center;">14:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_14_30" value="segunda_14:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_14_30" value="terca_14:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_14_30" value="quarta_14:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_14_30" value="quinta_14:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_14_30" value="sexta_14:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_14_30" value="sabado_14:30" /></td>
 				</tr>
 				<tr>
-					<td>15:00</td>
-					<td><input type="checkbox" id="segunda_15_00" value="segunda_15:00" /></td>
-					<td><input type="checkbox" id="terca_15_00" value="terca_15:00" /></td>
-					<td><input type="checkbox" id="quarta_15_00" value="quarta_15:00" /></td>
-					<td><input type="checkbox" id="quinta_15_00" value="quinta_15:00" /></td>
-					<td><input type="checkbox" id="sexta_15_00" value="sexta_15:00" /></td>
-					<td><input type="checkbox" id="sabado_15_00" value="sabado_15:00" /></td>
+					<td style="width:40px; text-align:center;">15:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_15_00" value="segunda_15:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_15_00" value="terca_15:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_15_00" value="quarta_15:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_15_00" value="quinta_15:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_15_00" value="sexta_15:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_15_00" value="sabado_15:00" /></td>
 				</tr>
 				<tr>
-					<td>15:30</td>
-					<td><input type="checkbox" id="segunda_15_30" value="segunda_15:30" /></td>
-					<td><input type="checkbox" id="terca_15_30" value="terca_15:30" /></td>
-					<td><input type="checkbox" id="quarta_15_30" value="quarta_15:30" /></td>
-					<td><input type="checkbox" id="quinta_15_30" value="quinta_15:30" /></td>
-					<td><input type="checkbox" id="sexta_15_30" value="sexta_15:30" /></td>
-					<td><input type="checkbox" id="sabado_15_30" value="sabado_15:30" /></td>
+					<td style="width:40px; text-align:center;">15:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_15_30" value="segunda_15:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_15_30" value="terca_15:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_15_30" value="quarta_15:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_15_30" value="quinta_15:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_15_30" value="sexta_15:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_15_30" value="sabado_15:30" /></td>
 				</tr>
 				<tr>
-					<td>16:00</td>
-					<td><input type="checkbox" id="segunda_16_00" value="segunda_16:00" /></td>
-					<td><input type="checkbox" id="terca_16_00" value="terca_16:00" /></td>
-					<td><input type="checkbox" id="quarta_16_00" value="quarta_16:00" /></td>
-					<td><input type="checkbox" id="quinta_16_00" value="quinta_16:00" /></td>
-					<td><input type="checkbox" id="sexta_16_00" value="sexta_16:00" /></td>
-					<td><input type="checkbox" id="sabado_16_00" value="sabado_16:00" /></td>
+					<td style="width:40px; text-align:center;">16:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_16_00" value="segunda_16:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_16_00" value="terca_16:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_16_00" value="quarta_16:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_16_00" value="quinta_16:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_16_00" value="sexta_16:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_16_00" value="sabado_16:00" /></td>
 				</tr>
 				<tr>
-					<td>16:30</td>
-					<td><input type="checkbox" id="segunda_16_30" value="segunda_16:30" /></td>
-					<td><input type="checkbox" id="terca_16_30" value="terca_16:30" /></td>
-					<td><input type="checkbox" id="quarta_16_30" value="quarta_16:30" /></td>
-					<td><input type="checkbox" id="quinta_16_30" value="quinta_16:30" /></td>
-					<td><input type="checkbox" id="sexta_16_30" value="sexta_16:30" /></td>
-					<td><input type="checkbox" id="sabado_16_30" value="sabado_16:30" /></td>
+					<td style="width:40px; text-align:center;">16:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_16_30" value="segunda_16:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_16_30" value="terca_16:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_16_30" value="quarta_16:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_16_30" value="quinta_16:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_16_30" value="sexta_16:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_16_30" value="sabado_16:30" /></td>
 				</tr>
 				<tr>
-					<td>17:00</td>
-					<td><input type="checkbox" id="segunda_17_00" value="segunda_17:00" /></td>
-					<td><input type="checkbox" id="terca_17_00" value="terca_17:00" /></td>
-					<td><input type="checkbox" id="quarta_17_00" value="quarta_17:00" /></td>
-					<td><input type="checkbox" id="quinta_17_00" value="quinta_17:00" /></td>
-					<td><input type="checkbox" id="sexta_17_00" value="sexta_17:00" /></td>
-					<td><input type="checkbox" id="sabado_17_00" value="sabado_17:00" /></td>
+					<td style="width:40px; text-align:center;">17:00</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_17_00" value="segunda_17:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_17_00" value="terca_17:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_17_00" value="quarta_17:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_17_00" value="quinta_17:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_17_00" value="sexta_17:00" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_17_00" value="sabado_17:00" /></td>
 				</tr>
 				<tr>
-					<td>17:30</td>
-					<td><input type="checkbox" id="segunda_17_30" value="segunda_17:30" /></td>
-					<td><input type="checkbox" id="terca_17_30" value="terca_17:30" /></td>
-					<td><input type="checkbox" id="quarta_17_30" value="quarta_17:30" /></td>
-					<td><input type="checkbox" id="quinta_17_30" value="quinta_17:30" /></td>
-					<td><input type="checkbox" id="sexta_17_30" value="sexta_17:30" /></td>
-					<td><input type="checkbox" id="sabado_17_30" value="sabado_17:30" /></td>
+					<td style="width:40px; text-align:center;">17:30</td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda_17_30" value="segunda_17:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terca_17_30" value="terca_17:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta_17_30" value="quarta_17:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta_17_30" value="quinta_17:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta_17_30" value="sexta_17:30" /></td>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_17_30" value="sabado_17:30" /></td>
 				</tr>
 			</table>	
 			<!--<span title="Selecione o horario início da manhã"><span>Hora Início Manhã:</span>
