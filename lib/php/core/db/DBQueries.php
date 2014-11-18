@@ -859,6 +859,8 @@ interface DBQueries {
 	 * @return String (SQL Query)
 	 */
 	public function get_msg_status();
+
+	public function get_agenda();
 	
 	/**
 	 * Modifica status da impressão

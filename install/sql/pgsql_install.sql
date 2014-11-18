@@ -1367,6 +1367,23 @@ ALTER SEQUENCE usuarios_id_usu_seq OWNED BY usuarios.id_usu;
 SELECT pg_catalog.setval('usuarios_id_usu_seq', 2, true);
 
 
+CREATE SEQUENCE agendas_id_agen_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+--
+-- TOC entry 2076 (class 0 OID 0)
+-- Dependencies: 1605
+-- Name: usuarios_id_usu_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE agendas_id_agen_seq OWNED BY agendas.id_agen;
+
+SELECT pg_catalog.setval('agendas_id_agen_seq', 2, true);
+
 --
 -- TOC entry 1888 (class 2604 OID 27365)
 -- Dependencies: 1573 1574 1574

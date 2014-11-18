@@ -19,10 +19,14 @@ var Agenda = function() {
     }
 }
 
-Agenda.criar_agen = function(button){
+Agenda.criar_agen = function(){
+
+    var sucesso = function() {
+        window.showInfoDialog('Agenda criada com sucesso.');
+    }
 
     var form = document.getElementById('frm_criar_agenda');
-    //var dia_semana = document.getElementById("segunda_08_00").checked;
+    var p = new Object();
     var itens = "";
 
     var listaMarcados = document.getElementsByTagName("INPUT");  
@@ -33,11 +37,17 @@ Agenda.criar_agen = function(button){
             itens +=", ";
         }  
     }
-    dia_semana = itens.substr(0,itens.length -2);
 
+    var dias_semana = itens.substr(0,itens.length -2);
 
+    var dias =  dias_semana.split(",");
 
-    Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "conteudo_servicos", "POST", Ajax.encodeFormAsPost(form), false);
+    for(i = 0; i < dias.length; i++){
+
+        p['dias_semana'] = dias[i];
+        Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "", "POST", Ajax.encodePostParameters(p), true); 
+
+    }
 
 
 

@@ -974,7 +974,7 @@ abstract class DB {
      */
 	public abstract function inserir_usuario($login_usu, $nm_usu, $ult_nm_usu, $senha_usu);
 
-	public abstract function criar_agenda($dia, $hora_ini_manha, $hora_fim_manha, $hora_ini_tarde, $hora_fim_tarde, $id_usu, $id_uni);
+	public abstract function criar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni);
 	
 	public function atualizar_usuario($id_usu, $login_usu, $nm_usu, $ult_nm_usu) {
 		$sql = $this->get_queries()->atualizar_usuario();
@@ -3306,6 +3306,20 @@ abstract class DB {
 		$sql = $this->get_queries()->get_msg_status();
 		$statement = $this->m_connection->prepare($sql);
     	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->execute();
+    	
+    	$status = $this->to_array($statement);
+		$status = $status[0][0];
+		return $status;
+	}
+
+	public function get_agenda($dia, $horario, $id_uni, $id_usuario){
+		$sql = $this->get_queries()->get_agenda();
+		$statement = $this->m_connection->prepare($sql);
+		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
+		$statement->bindValue(':horario', $horario, PDO::PARAM_STR);
+    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->bindValue(':id_usuario',$id_usuario, PDO::PARAM_INT);
     	$statement->execute();
     	
     	$status = $this->to_array($statement);

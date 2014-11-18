@@ -18,41 +18,19 @@
 **/
 SGA::check_login('sga.agenda');
 
-/**
- * Redireciona para a tela inicial de atendimento
- */
+
 try {
 
-	$usuario = SGA::get_current_user();
-	echo "<script>alert('test');</script>";
-	$dia_semana = $_POST['dia_semana'];
-
-	#$dias = split (",",$dia_semana);
-
-	echo "<script>alert($dia_semana);</script>";
-
-	$dia_semana = 'segunda'
-	switch ( $numero ){
-  		case 'segunda':
-    		$dia = '07/04/2014';
-  		case 'terca':
-    		$dia = '08/04/2014';
-  		case 'quarta':
-    		$dia = '09/04/2014';
-  		case 'quinta':
-    		$dia = '10/04/2014';
-  		case 'sexta':
-    		$dia = '11/04/2014';
-    	case 'sabado':
-    		$dia = '12/04/2014';	
-	}
-
-    $id_usu = $usuario->get_id();
-    $id_uni = SGA::get_current_user()->get_unidade()->get_id();
+	$dias_semana = $_POST['dias_semana'];
+  
+  $id_usu = SGA::get_current_user()->get_id();
+  $id_uni = SGA::get_current_user()->get_unidade()->get_id();
+  
+  $campos = split ("_",$dias_semana);
+  DB::getInstance()->criar_agenda($campos[2], $campos[0], $campos[1],  $id_usu, $id_uni);  
+  
     
-    $agenda = DB::getInstance()->criar_agenda($dia, $dia_semana);
-    
-    SGA::_include("modules/sga/agenda/index.php");
+  SGA::_include("modules/sga/agenda/index.php");
 }
 catch (Exception $e) {
 	TAgenda::display_exception($e);

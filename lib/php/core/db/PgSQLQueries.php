@@ -558,13 +558,11 @@ class PgSQLQueries implements DBQueries {
 	public function criar_agenda() {
 		return "INSERT INTO agendas
 				( 
-					dia, hora_ini_manha, hora_fim_manha, 
-					hora_ini_tarde, hora_fim_tarde, id_usu, id_uni 
+					dia, dia_semana, hora, id_usu, id_uni 
 				) 
 				VALUES 
 				(
-					:dia, :hora_ini_manha, :hora_fim_manha, 
-					:hora_ini_tarde, :hora_fim_tarde, :id_usu, :id_uni
+					:dia, :dia_semana, :hora, :id_usu, :id_uni
 				)";
 	}
 	
@@ -1569,6 +1567,15 @@ public function get_senha_msg_loc(){
 		return "SELECT status_imp 
 				FROM senha_uni_msg 
 				WHERE id_uni = :id_uni";
+	}
+
+	public function get_agenda(){
+		return "SELECT id_agen
+				FROM agendas 
+				WHERE dia = :dia
+					AND hora = :horario
+					AND id_uni = :id_uni
+					AND id_usu = :id_usuario";
 	}
 	
 	public function set_msg_status(){

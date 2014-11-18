@@ -25,16 +25,16 @@
  */
 class Agenda {
     private $id;	
-	private $day;
+	private $dia;
 	private $dia_semana;
 	private $hour;
 	private $id_usu;
 	private $id_uni;
 	private $id_cliente;
 
-	public function __construct($id, $day = '', $hour = '', $id_usu='', $id_uni='',$id_cliente='') {
+	public function __construct($id, $dia = '', $hour = '', $id_usu='', $id_uni='',$id_cliente='') {
 	    $this->set_id($id);
-		$this->set_day($day);
+		$this->set_dia($dia);
 		$this->set_hour_start_morning($hour);
 		$this->set_hour_end_morning($id_usu);
 		$this->set_hour_start_afternoon($id_uni);
@@ -64,16 +64,16 @@ class Agenda {
 	 * Define o dia da Agenda
 	 * 
 	 */
-	public function set_day($day) {
-			$this->day = $day;
+	public function set_dia($dia) {
+			$this->dia = $dia;
 	}
 
 	/**
 	 * Retorna o dia da Agenda
 	 * 
 	 */
-	public function get_day() {
-		return $this->day;
+	public function get_dia() {
+		return $this->dia;
 	}
 
 	public function set_dia_semana($dia_semana) {
