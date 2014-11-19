@@ -45,7 +45,11 @@ Agenda.criar_agen = function(){
     for(i = 0; i < dias.length; i++){
 
         p['dias_semana'] = dias[i];
-        Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "", "POST", Ajax.encodePostParameters(p), true); 
+
+        var dados = p['dias_semana'].split('_');        
+        if (dados[3] == ''){
+            Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "", "POST", Ajax.encodePostParameters(p), true);
+        } 
 
     }
 
