@@ -196,6 +196,8 @@ interface DBQueries {
 	public function inserir_usuario();
 
 	public function criar_agenda();
+
+	public function desmarcar_agenda();
 	
 	/**
 	 * Retorna a Query para atualizar um usuario

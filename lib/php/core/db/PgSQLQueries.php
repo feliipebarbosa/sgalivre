@@ -565,6 +565,15 @@ class PgSQLQueries implements DBQueries {
 					:dia, :dia_semana, :hora, :id_usu, :id_uni
 				)";
 	}
+
+	public function desmarcar_agenda() {
+		return "DELETE FROM agendas
+				WHERE dia = :dia
+					AND dia_semana = :dia_semana
+					AND hora = :hora
+					AND id_usu = :id_usu
+					AND id_uni = :id_uni";
+	}
 	
 	public function atualizar_usuario() {
 		return "UPDATE usuarios

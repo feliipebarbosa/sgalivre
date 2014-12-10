@@ -46,13 +46,37 @@ Agenda.criar_agen = function(){
 
         p['dias_semana'] = dias[i];
 
-        var dados = p['dias_semana'].split('_');        
+        var dados = p['dias_semana'].split('_');
+                
         if (dados[3] == ''){
             Ajax.simpleLoad(AGEN_PATH + "acoes/criar_agenda.php", "", "POST", Ajax.encodePostParameters(p), true);
         } 
 
     }
 
+    var d = new Object();
+    var itensDesmarcado = "";
+    var listaDesmarcados = document.getElementsByTagName("INPUT");  
+    for (i = 0; i < listaDesmarcados.length; i++) {  
+        var itemDesmarcado = listaDesmarcados[i];  
+        if (itemDesmarcado.type == "checkbox" && !itemDesmarcado.checked) {
+            var dias_desmarcados = itemDesmarcado.id.split('_');
 
+            if (dias_desmarcados[3] == "checked='checked'"){
+                itensDesmarcado += itemDesmarcado.id;   
+                itensDesmarcado +=", ";
+            }
+        }  
+    }  
+
+    var dias_semana_desmarcados = itensDesmarcado.substr(0,itensDesmarcado.length -2);
+    var dias_desmarcados =  dias_semana_desmarcados.split(",");
+
+    for(i = 0; i < dias_desmarcados.length; i++){
+        d['dias_desmarcados'] = dias_desmarcados[i];
+        alert(d['dias_desmarcados']);
+        Ajax.simpleLoad(AGEN_PATH + "acoes/desmarcar_agenda.php", "", "POST", Ajax.encodePostParameters(d), true);        
+    }  
+    
 
 }
