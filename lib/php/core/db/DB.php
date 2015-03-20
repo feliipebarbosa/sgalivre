@@ -1780,8 +1780,11 @@ abstract class DB {
 		$statement->execute();
 	}
 
-	public abstract function desmarcar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni) {
+	public function desmarcar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni) {
 		$sql = $this->get_queries()->desmarcar_agenda();
+
+		#echo "<script type='javascript'> alert('Dados editados com sucesso');</script>";
+		echo "Teste";
 
 		$statement = $this->m_connection()->prepare($sql);		
 		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);

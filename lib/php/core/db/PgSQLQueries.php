@@ -567,6 +567,7 @@ class PgSQLQueries implements DBQueries {
 	}
 
 	public function desmarcar_agenda() {
+		
 		return "DELETE FROM agendas
 				WHERE dia = :dia
 					AND dia_semana = :dia_semana
