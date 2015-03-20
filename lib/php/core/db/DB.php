@@ -975,8 +975,6 @@ abstract class DB {
 	public abstract function inserir_usuario($login_usu, $nm_usu, $ult_nm_usu, $senha_usu);
 
 	public abstract function criar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni);
-
-	public abstract function desmarcar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni);
 	
 	public function atualizar_usuario($id_usu, $login_usu, $nm_usu, $ult_nm_usu) {
 		$sql = $this->get_queries()->atualizar_usuario();
@@ -1780,6 +1778,20 @@ abstract class DB {
 		$statement->bindValue(':id_uni', $id_uni, PDO::PARAM_INT);
 		$statement->bindValue(':id_serv', $id_serv, PDO::PARAM_INT);
 		$statement->execute();
+	}
+
+	public abstract function desmarcar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni) {
+		$sql = $this->get_queries()->desmarcar_agenda();
+
+		$statement = $this->m_connection()->prepare($sql);		
+		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
+		$statement->bindValue(':dia_semana', $dia_semana, PDO::PARAM_STR);
+		$statement->bindValue(':hora', $hora, PDO::PARAM_STR);
+		$statement->bindValue(':id_usu', $id_usu, PDO::PARAM_INT);
+		$statement->bindValue(':id_uni', $id_uni, PDO::PARAM_INT);
+		$statement->execute();
+		
+		
 	}
 	
 	

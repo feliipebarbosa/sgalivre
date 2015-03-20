@@ -74,7 +74,6 @@ Agenda.criar_agen = function(){
 
     for(i = 0; i < dias_desmarcados.length; i++){
         d['dias_desmarcados'] = dias_desmarcados[i];
-        alert(d['dias_desmarcados']);
         Ajax.simpleLoad(AGEN_PATH + "acoes/desmarcar_agenda.php", "", "POST", Ajax.encodePostParameters(d), true);        
     }  
     

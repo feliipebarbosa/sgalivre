@@ -28,7 +28,6 @@ try {
   
   $campos = split ("_",$dias_semana);
   DB::getInstance()->criar_agenda($campos[2], $campos[0], $campos[1],  $id_usu, $id_uni);  
-  
     
   SGA::_include("modules/sga/agenda/index.php");
 }
@@ -36,4 +35,4 @@ catch (Exception $e) {
 	TAgenda::display_exception($e);
 }
 
-?>
+?> 
