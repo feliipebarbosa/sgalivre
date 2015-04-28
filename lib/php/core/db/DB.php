@@ -271,8 +271,8 @@ abstract class DB {
 		return $servico;
 	}
 
-	public function criar_agenda($linha){
-		/*$id_agen	= (int) $linha['id_agen'];
+	public function new_agenda($linha){
+		$id_agen	= (int) $linha['id_agen'];
 		$dia    = $linha['dia'];
 		$hora 		= $linha['hora'];
 		$id_usu 	= (int) $linha['id_usu'];
@@ -283,7 +283,7 @@ abstract class DB {
         $agenda 	= new Agenda($id_agen, $dia, $hora, $id_usu, $id_uni, $dia_semana, $id_cliente);
         
 		
-		return $agenda;*/
+		return $agenda;
 	}
 	
 	public function criar_senha($linha){
@@ -2176,7 +2176,7 @@ abstract class DB {
 		$tmp 		= $this->to_array($statement);
 		foreach ($tmp as $a) {
 			$id 			= (int) $a['id_agen'];
-			$agenda 		= DB::getInstance()->criar_agenda($a);
+			$agenda 		= DB::getInstance()->new_agenda($a);
 			$agendas[$id] 	= $agenda;
 
 		}
