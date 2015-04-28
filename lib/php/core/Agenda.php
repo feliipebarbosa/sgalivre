@@ -26,19 +26,20 @@
 class Agenda {
     private $id;	
 	private $dia;
-	private $dia_semana;
-	private $hour;
+	private $hora;
 	private $id_usu;
 	private $id_uni;
+	private $dia_semana;
 	private $id_cliente;
 
-	public function __construct($id, $dia = '', $hour = '', $id_usu='', $id_uni='',$id_cliente='') {
+	public function __construct($id, $dia = '', $hora = '', $id_usu='', $id_uni='', $dia_semana='', $id_cliente='') {
 	    $this->set_id($id);
 		$this->set_dia($dia);
-		$this->set_hour_start_morning($hour);
-		$this->set_hour_end_morning($id_usu);
-		$this->set_hour_start_afternoon($id_uni);
-		$this->set_hour_end_afternoon($id_cliente);
+		$this->set_hora($hora);
+		$this->set_id_usu($id_usu);
+		$this->set_id_uni($id_uni);
+		$this->set_dia_semana($dia_semana);
+		$this->set_id_cliente($id_cliente);
 	}
 	
 	/**
@@ -76,32 +77,20 @@ class Agenda {
 		return $this->dia;
 	}
 
-	public function set_dia_semana($dia_semana) {
-			$this->dia_semana = $dia_semana;
-	}
-
-	/**
-	 * Retorna o dia da Agenda
-	 * 
-	 */
-	public function get_dia_semana() {
-		return $this->dia_semana;
-	}
-
 	/**
 	 * Define a hora início manhã da Agenda
 	 * 
 	 */
-	public function set_hour($hour) {
-		$this->hour = $hour;
+	public function set_hora($hora) {
+		$this->hora = $hora;
 	}
 
 	/**
 	 * Retorna a hora início manhã da Agenda
 	 * 
 	 */
-	public function get_hour() {
-		return $this->hour;
+	public function get_hora() {
+		return $this->hora;
 	}
 
 	/**
@@ -134,6 +123,18 @@ class Agenda {
 	 */
 	public function get_id_uni() {
 		return $this->id_uni;
+	}
+
+	public function set_dia_semana($dia_semana) {
+			$this->dia_semana = $dia_semana;
+	}
+
+	/**
+	 * Retorna o dia da Agenda
+	 * 
+	 */
+	public function get_dia_semana() {
+		return $this->dia_semana;
 	}
 	
 	/**

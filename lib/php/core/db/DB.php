@@ -270,6 +270,21 @@ abstract class DB {
 		
 		return $servico;
 	}
+
+	public function criar_agenda($linha){
+		/*$id_agen	= (int) $linha['id_agen'];
+		$dia    = $linha['dia'];
+		$hora 		= $linha['hora'];
+		$id_usu 	= (int) $linha['id_usu'];
+		$id_uni 	= (int) $linha['id_uni'];
+        $dia_semana 	= $linha['dia_semana'];
+        $id_cliente 	= (int) $linha['id_cliente'];
+        
+        $agenda 	= new Agenda($id_agen, $dia, $hora, $id_usu, $id_uni, $dia_semana, $id_cliente);
+        
+		
+		return $agenda;*/
+	}
 	
 	public function criar_senha($linha){
 		$sigla 	= $linha['sigla_serv'];
@@ -1772,19 +1787,21 @@ abstract class DB {
 	 * @return void
 	 */
 	public function remover_servico_uni($id_uni,$id_serv) {
+
 		$sql = $this->get_queries()->remover_servico_uni();
 		
 		$statement = $this->m_connection->prepare($sql);
 		$statement->bindValue(':id_uni', $id_uni, PDO::PARAM_INT);
 		$statement->bindValue(':id_serv', $id_serv, PDO::PARAM_INT);
 		$statement->execute();
+
 	}
 
 	public function desmarcar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni) {
-		$sql = $this->get_queries()->desmarcar_agenda();
 
-		#echo "<script type='javascript'> alert('Dados editados com sucesso');</script>";
-		echo "Teste";
+		//Template::display_confirm_dialog("Aqui",$hora,true);
+
+		$sql = $this->get_queries()->desmarcar_agenda();		
 
 		$statement = $this->m_connection()->prepare($sql);		
 		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
@@ -1793,7 +1810,6 @@ abstract class DB {
 		$statement->bindValue(':id_usu', $id_usu, PDO::PARAM_INT);
 		$statement->bindValue(':id_uni', $id_uni, PDO::PARAM_INT);
 		$statement->execute();
-		
 		
 	}
 	
@@ -2144,6 +2160,29 @@ abstract class DB {
 	 * 
 	 * @return array
 	 */
+
+	public function get_agendas($dia, $horario, $id_uni, $id_usuario) {
+		$sql = $this->get_queries()->get_agendas();
+
+		$statement = $this->m_connection->prepare($sql);
+		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
+		$statement->bindValue(':horario', $horario, PDO::PARAM_STR);
+    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->bindValue(':id_usuario',$id_usuario, PDO::PARAM_INT);
+		
+		$statement->execute();
+		
+		$agendas 	= array();
+		$tmp 		= $this->to_array($statement);
+		foreach ($tmp as $a) {
+			$id 			= (int) $a['id_agen'];
+			$agenda 		= DB::getInstance()->criar_agenda($a);
+			$agendas[$id] 	= $agenda;
+
+		}
+		return $agendas;
+	}
+
 	public function get_servicos() {
 		$sql = $this->get_queries()->get_servicos();
 		

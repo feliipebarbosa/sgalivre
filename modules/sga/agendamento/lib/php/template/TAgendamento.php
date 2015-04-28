@@ -148,7 +148,7 @@ class TAgendamento extends Template{
   					if(week_day != DAYS_OF_WEEK){
   						var day  = Calendar.getDate();
   						if( today==Calendar.getDate() )
-  							cal += highlight_start + '<a onclick="carrega_agenda();">'+day+'<\a>' + highlight_end + TD_end;
+  							cal += highlight_start + '<a onclick="carrega_agenda();" id="data">'+day+'<\a>' + highlight_end + TD_end;
   						else
   							cal += TD_start + '<a onclick="carrega_agenda();">'+day+'<\a>' + TD_end;
   					}
@@ -168,6 +168,12 @@ class TAgendamento extends Template{
 		</br>
 		<div id = "carrega_agenda">
 		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">						
+			<? $agendas = DB::getInstance()->get_agendas('2014-11-04', null, $id_uni, null); ?>
+			<pre>
+				<? print_r($id_uni); ?>
+				<? print_r($agendas); ?>
+			</pre>
+			
 			<table class="agendamento">
 				<thead>
 					<tr style="padding-button:30px;">
@@ -178,13 +184,16 @@ class TAgendamento extends Template{
 						<td style="width:80px; text-align:center; font-weight:bold; padding-button:30px;" > Unidade</td>
 					</tr>		
 				</thead>
-				<tr style="border: solid #d1d1d1 1px;">
-					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="1" value="1" /></td>
-					<td style="width:80px; text-align:center;" > 29/07/2014 </td>
-					<td style="width:50px; text-align:center;"> 08:00 </td>
-					<td style="width:80px; text-align:center;"> Kamila </td>
-					<td style="width:80px; text-align:center;"> Cariacica </td>
-				</tr>
+				<? foreach($agendas as $agenda){ ?>
+					
+					<tr style="border: solid #d1d1d1 1px;">
+						<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="1" value="1" /></td>
+						<td style="width:80px; text-align:center;" > <?  ?> </td>
+						<td style="width:50px; text-align:center;"> 08:00 </td>
+						<td style="width:80px; text-align:center;"> Kamila </td>
+						<td style="width:80px; text-align:center;"> Cariacica </td>
+					</tr>
+				<? } ?>	
 				<tr style="border: solid #d1d1d1 1px;">
 					<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="2" value="2" /></td>
 					<td style="width:80px; text-align:center;" > 29/07/2014 </td>

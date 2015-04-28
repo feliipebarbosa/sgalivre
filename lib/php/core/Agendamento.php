@@ -25,20 +25,21 @@
  */
 class Agendamento {
     private $id;	
-	private $day;
-	private $dia_semana;
-	private $hour;
+	private $dia;
+	private $hora;
 	private $id_usu;
 	private $id_uni;
+	private $dia_semana;
 	private $id_cliente;
 
-	public function __construct($id, $day = '', $hour = '', $id_usu='', $id_uni='',$id_cliente='') {
+	public function __construct($id, $dia = '', $hora = '', $id_usu='', $id_uni='', $dia_semana='', $id_cliente='') {
 	    $this->set_id($id);
-		$this->set_day($day);
-		$this->set_hour_start_morning($hour);
-		$this->set_hour_end_morning($id_usu);
-		$this->set_hour_start_afternoon($id_uni);
-		$this->set_hour_end_afternoon($id_cliente);
+		$this->set_dia($dia);
+		$this->set_hora($hora);
+		$this->set_id_usu($id_usu);
+		$this->set_id_uni($id_uni);
+		$this->set_dia_semana($dia_semana);
+		$this->set_id_cliente($id_cliente);
 	}
 	
 	/**
@@ -49,7 +50,7 @@ class Agendamento {
 		if (is_int($id) && $id > 0)
 			$this->id = $id;
 		else
-			throw new Exception("Erro ao definir id do Agendamento. Deve ser um n&uacute;mero maior que zero.");
+			throw new Exception("Erro ao definir id da Agenda. Deve ser um n&uacute;mero maior que zero.");
 	}
 
 	/**
@@ -64,44 +65,32 @@ class Agendamento {
 	 * Define o dia da Agenda
 	 * 
 	 */
-	public function set_day($day) {
-			$this->day = $day;
+	public function set_dia($dia) {
+			$this->dia = $dia;
 	}
 
 	/**
 	 * Retorna o dia da Agenda
 	 * 
 	 */
-	public function get_day() {
-		return $this->day;
-	}
-
-	public function set_dia_semana($dia_semana) {
-			$this->dia_semana = $dia_semana;
-	}
-
-	/**
-	 * Retorna o dia da Agenda
-	 * 
-	 */
-	public function get_dia_semana() {
-		return $this->dia_semana;
+	public function get_dia() {
+		return $this->dia;
 	}
 
 	/**
 	 * Define a hora início manhã da Agenda
 	 * 
 	 */
-	public function set_hour($hour) {
-		$this->hour = $hour;
+	public function set_hora($hora) {
+		$this->hora = $hora;
 	}
 
 	/**
 	 * Retorna a hora início manhã da Agenda
 	 * 
 	 */
-	public function get_hour() {
-		return $this->hour;
+	public function get_hora() {
+		return $this->hora;
 	}
 
 	/**
@@ -134,6 +123,18 @@ class Agendamento {
 	 */
 	public function get_id_uni() {
 		return $this->id_uni;
+	}
+
+	public function set_dia_semana($dia_semana) {
+			$this->dia_semana = $dia_semana;
+	}
+
+	/**
+	 * Retorna o dia da Agenda
+	 * 
+	 */
+	public function get_dia_semana() {
+		return $this->dia_semana;
 	}
 	
 	/**

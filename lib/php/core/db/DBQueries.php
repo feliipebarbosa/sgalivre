@@ -197,7 +197,6 @@ interface DBQueries {
 
 	public function criar_agenda();
 
-	public function desmarcar_agenda();
 	
 	/**
 	 * Retorna a Query para atualizar um usuario
@@ -480,6 +479,8 @@ interface DBQueries {
 	 * @return String (SQL Query)
 	 */
 	public function remover_servico_uni();
+
+	public function desmarcar_agenda();
 	
 	
 	/**
@@ -536,6 +537,8 @@ interface DBQueries {
 	 * @return String (SQL Query)
 	 */
 	public function get_servico();
+
+	public function get_agendas();
 	
 	/**
 	 * Retorna a Query para pegar o Servico especificado pelo id do servico

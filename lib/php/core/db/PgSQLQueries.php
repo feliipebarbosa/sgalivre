@@ -566,15 +566,6 @@ class PgSQLQueries implements DBQueries {
 				)";
 	}
 
-	public function desmarcar_agenda() {
-		
-		return "DELETE FROM agendas
-				WHERE dia = :dia
-					AND dia_semana = :dia_semana
-					AND hora = :hora
-					AND id_usu = :id_usu
-					AND id_uni = :id_uni";
-	}
 	
 	public function atualizar_usuario() {
 		return "UPDATE usuarios
@@ -856,6 +847,16 @@ class PgSQLQueries implements DBQueries {
 		return "DELETE FROM uni_serv
 				WHERE id_uni = :id_uni
 					AND id_serv = :id_serv";
+	}
+
+	public function desmarcar_agenda() {		
+		
+		return "DELETE FROM agendas
+				WHERE dia = :dia
+					AND dia_semana = :dia_semana
+					AND hora = :hora
+					AND id_usu = :id_usu
+					AND id_uni = :id_uni";
 	}
 	
 	public function inserir_permissao_modulo_cargo() {
@@ -1586,6 +1587,15 @@ public function get_senha_msg_loc(){
 					AND hora = :horario
 					AND id_uni = :id_uni
 					AND id_usu = :id_usuario";
+	}
+
+	public function get_agendas(){
+		return "SELECT id_agen, dia, hora, id_usu, id_uni, dia_semana, id_cliente
+				FROM agendas 
+				WHERE dia = :dia
+					AND (hora = :horario OR 0 = 0)
+					AND id_uni = :id_uni
+					AND (id_usu = :id_usuario OR 0 = 0)";
 	}
 	
 	public function set_msg_status(){

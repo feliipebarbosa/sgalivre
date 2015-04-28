@@ -27,7 +27,7 @@ try {
   	$id_uni = SGA::get_current_user()->get_unidade()->get_id();
   
   	$campos = split ("_",$dias_semana);
-
+  	
   	DB::getInstance()->desmarcar_agenda($campos[2], $campos[0], $campos[1],  $id_usu, $id_uni);  
     
   	SGA::_include("modules/sga/agenda/index.php");

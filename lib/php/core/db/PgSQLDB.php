@@ -143,8 +143,9 @@ class PgSQLDB extends DB {
 	}
     
     public function criar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni) {
+
 		$sql = $this->get_queries()->criar_agenda();
-		$statement = $this->get_connection()->prepare($sql);
+		$statement = $this->get_connection()->prepare($sql);        
 		
 		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
 		$statement->bindValue(':dia_semana', $dia_semana, PDO::PARAM_STR);
