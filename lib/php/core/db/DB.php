@@ -831,7 +831,8 @@ abstract class DB {
 		$statement->bindValue(':id_usu', $id_usu, PDO::PARAM_INT);
 		$statement->execute();
 		
-		$u = $this->to_array($statement);
+		$u = DB::to_array($statement);
+		$usuarios = array();
 		
 		if (count($u) > 0) {
 			$u = $u[0];
@@ -839,6 +840,8 @@ abstract class DB {
 		}
 		return null;
 	}
+
+	
 	
 	/**
 	 * Retorna uma lista de usuarios através do nome
@@ -2182,6 +2185,8 @@ abstract class DB {
 		}
 		return $agendas;
 	}
+
+	
 
 	public function get_servicos() {
 		$sql = $this->get_queries()->get_servicos();
