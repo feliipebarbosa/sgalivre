@@ -67,13 +67,18 @@ class TAgendamento extends Template{
         $id_uni = SGA::get_current_user()->get_unidade()->get_id();
 		$serv = DB::getInstance()->get_servicos_unidade($id_uni, array(1));
 		
-		Template::display_page_title('Criar Agendamento'); 
-		$horas = array('07:00'=>'07:00','08:00'=>'08:00','09:00'=>'09:00','10:00'=>'10:00','11:00'=>'11:00','12:00'=>'12:00','13:00'=>'13:00','14:00'=>'14:00','15:00'=>'15:00','16:00'=>'16:00','17:00'=>'17:00','18:00'=>'18:00','19:00'=>'19:00');
+		Template::display_page_title('Criar Agendamento'); 		
 		?>
 		
-		<label style="font-weight:bold;">Unidade: </label><select> <option> Cariacica </option>
-										 <option>Vitória</option>
-								</select>
+		<? $unidades = DB::getInstance()->get_unidades(); ?>
+		<label style="font-weight:bold;">Unidade: </label>
+		<select id="unidade">
+			<? foreach ($unidades as $uni) { ?>
+				<option value = <? echo $uni->get_id();?> > <? echo $uni->get_nome(); ?> </option>
+			<? } ?> 														
+		</select>
+		<input type="hidden" id="unidade" value="">
+
 		</br>
 		</br>
 		</br>
@@ -81,14 +86,19 @@ class TAgendamento extends Template{
 		<div id="conteudo_servicos">
 		</br>	
 
-		<SCRIPT LANGUAGE="JavaScript">
+		<SCRIPT LANGUAGE="JavaScript"> 
+
 
 			$(document).ready(function(){
 				$("#carrega_agenda").toggle();
 			})
 
+
 			function carrega_agenda(){
-				$('#carrega_agenda').show();	
+				$('#carrega_agenda').show();
+				
+				var unidade = document.getElementById("unidade");
+				unidade = $("#unidade option:selected").val();
 				//$('#carrega_agenda').load($(this).attr('href'));
 			}
 
@@ -168,7 +178,9 @@ class TAgendamento extends Template{
 		</br>
 		<div id = "carrega_agenda">
 		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">						
-			<? $agendas = DB::getInstance()->get_agendas('2014-11-04', null, $id_uni, null); ?>
+			<? $unidade = $_POST["unidade"];
+				echo $unidade;
+			   $agendas = DB::getInstance()->get_agendas('2014-11-04', null, $id_uni, null); ?>
 			
 			<table class="agendamento">
 				<thead>
@@ -186,10 +198,10 @@ class TAgendamento extends Template{
 					
 					<tr style="border: solid #d1d1d1 1px;">
 						<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="1" value="1" /></td>
-						<td style="width:80px; text-align:center;" > <? echo $agenda->get_dia(); ?> </td>
-						<td style="width:50px; text-align:center;"> <? echo $agenda->get_hora(); ?> </td>
+						<td style="width:80px; text-align:center;" > <? echo date('d/m/Y', strtotime($agenda->get_dia())); ?> </td>
+						<td style="width:50px; text-align:center;"> <? echo date('H:i', strtotime($agenda->get_hora())); ?> </td>
 						<td style="width:80px; text-align:center;"> <? echo $usu_name->get_nome(); ?> </td>
-						<td style="width:80px; text-align:center;"> <? echo $uni_name->get_nome(); ?> </td>
+						<td style="width:100px; text-align:center;"> <? echo $uni_name->get_nome(); ?> </td>
 					</tr>
 				<? } ?>	
 				
