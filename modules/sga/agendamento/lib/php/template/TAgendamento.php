@@ -64,23 +64,14 @@ class TAgendamento extends Template{
 	}
 
 	public static function display_conteudo() {
-        $id_uni = SGA::get_current_user()->get_unidade()->get_id();
-		$serv = DB::getInstance()->get_servicos_unidade($id_uni, array(1));
+        //$id_uni = SGA::get_current_user()->get_unidade()->get_id();
+		//$serv = DB::getInstance()->get_servicos_unidade($id_uni, array(1));
 		
 		Template::display_page_title('Criar Agendamento'); 		
 		?>
 		
-		<? $unidades = DB::getInstance()->get_unidades(); ?>
-		<label style="font-weight:bold;">Unidade: </label>
-		<select id="unidade">
-			<? foreach ($unidades as $uni) { ?>
-				<option value = <? echo $uni->get_id();?> > <? echo $uni->get_nome(); ?> </option>
-			<? } ?> 														
-		</select>
 		<input type="hidden" id="unidade" value="">
 
-		</br>
-		</br>
 		</br>
 								
 		<div id="conteudo_servicos">
@@ -89,17 +80,14 @@ class TAgendamento extends Template{
 		<SCRIPT LANGUAGE="JavaScript"> 
 
 
-			$(document).ready(function(){
+			/*$(document).ready(function(){
 				$("#carrega_agenda").toggle();
-			})
+			})*/
 
 
 			function carrega_agenda(){
-				$('#carrega_agenda').show();
 				
-				var unidade = document.getElementById("unidade");
-				unidade = $("#unidade option:selected").val();
-				//$('#carrega_agenda').load($(this).attr('href'));
+				$("#carrega_agenda").load("Agendamento.buscar_agenda.php");
 			}
 
 			<!-- Begin
@@ -119,7 +107,12 @@ class TAgendamento extends Template{
  
 			Calendar.setDate(1);    // Comecar o calendario no dia '1'
 			Calendar.setMonth(month);    // Comecar o calendario com o mes atual
- 
+ 			
+ 			if(month < 10){
+ 				var mes = ('0'+month);
+ 			}else{
+ 				var mes = month;
+ 			}
  
 			var TR_start = '<TR>';
 			var TR_end = '</TR>';
@@ -145,7 +138,7 @@ class TAgendamento extends Template{
  
 			cal += TD_end + TR_end;
 			cal += TR_start;
- 
+ 			
 			for(index=0; index < Calendar.getDay(); index++)
 				cal += TD_start + '  ' + TD_end;
  
@@ -157,10 +150,17 @@ class TAgendamento extends Template{
   						cal += TR_start;
   					if(week_day != DAYS_OF_WEEK){
   						var day  = Calendar.getDate();
+  						if(day < 10){
+ 							var dia = '0'+day;
+ 						}else{
+ 							var dia = day;
+ 						}
+  						var data = (dia+'-'+mes+'-'+year).toString();
+  						
   						if( today==Calendar.getDate() )
-  							cal += highlight_start + '<a onclick="carrega_agenda();" id="data">'+day+'<\a>' + highlight_end + TD_end;
+  							cal += highlight_start + '<a onclick="Agendamento.buscarAgenda('+data+');">'+day+'<\a>' + highlight_end + TD_end;
   						else
-  							cal += TD_start + '<a onclick="carrega_agenda();">'+day+'<\a>' + TD_end;
+  							cal += TD_start + '<a onclick="Agendamento.buscarAgenda('+data+');">'+day+'<\a>' + TD_end;
   					}
   					if(week_day == DAYS_OF_WEEK)
   						cal += TR_end;
@@ -174,13 +174,23 @@ class TAgendamento extends Template{
 			//  End -->
 		</SCRIPT>
 
+		<?php Template::display_action_button("Buscar", "images/zoom.gif", "Agendamento.buscarAgenda('day');",'button','carrega_agenda',true,'Clique para BUSCAR a agenda.')?>
+
+		 
+		</div>	
 		</br>
 		</br>
+		<?
+	}
+
+	public static function display_agenda_dia($dia){
+	?>	
+
 		<div id = "carrega_agenda">
 		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">						
-			<? $unidade = $_POST["unidade"];
-				echo $unidade;
-			   $agendas = DB::getInstance()->get_agendas('2014-11-04', null, $id_uni, null); ?>
+			<? 
+			$id_uni = SGA::get_current_user()->get_unidade()->get_id();
+			$agendas = DB::getInstance()->get_agendas('2014-11-04', null, $id_uni, null); ?>
 			
 			<table class="agendamento">
 				<thead>
@@ -216,7 +226,7 @@ class TAgendamento extends Template{
 			</div>
 		</form>	
 		</div>
-		</div>
+		
 		<?php
 	}
 

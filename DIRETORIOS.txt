@@ -48,6 +48,8 @@ sga3
 |   |   |   |   |-- php             // Classes (php) do módulo
 |   |   |   |   |   |-- template    // Classes (php) de template do módulo
 |   |   |   |-- mensagens           // Arquivos relativos as mensagens do monitor 
+|   |   |-- agendamento             // Diretório do modulo de Agendamento do Sistema
+|   |   |-- agenda                  // Diretório do modulo de Agendamento do Sistema
 |   |   |-- configuracao            // Diretório do modulo de Configuração do Sistema 
 |   |   |   |-- atendimento         // Reinicialização de senhas de atendimento
 |   |   |   |-- cargos              // Gerenciamento dos cargos

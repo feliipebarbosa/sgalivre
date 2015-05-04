@@ -16,24 +16,17 @@
  * Fundação do Software Livre(FSF) Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA.
  *
 **/
-SGA::check_login('sga.agendamento');
 
-/**
- * Redireciona para a tela inicial de atendimento
- */
+SGA::check_login("sga.agendamento");
+
 try {
-
-	$usuario = SGA::get_current_user();
 	
-	$dia_semana = $_POST['dia_semana'];
+	
+	$dia = $_POST['dia'];
+	echo $dia;	
 
-  $id_usu = $usuario->get_id();
-  $id_uni = SGA::get_current_user()->get_unidade()->get_id();
-    
-  $agendamento = DB::getInstance()->criar_agendamento($dia_semana);
-    
-  SGA::_include("modules/sga/agendamento/index.php");
-
+	TAgendamento::display_agenda_dia($dia);
+}
 catch (Exception $e) {
 	TAgendamento::display_exception($e);
 }
