@@ -347,3 +347,23 @@ Admin.alteraImp = function() {
 	Ajax.simpleLoad(ADM_PATH + "triagem/altera_imp.php", '', "POST", Ajax
 			.encodePostParameters(p), false, Admin.atualizaConfMsg);
 }
+
+Admin.atualizaTipoPriori = function() {
+
+	Ajax.simpleLoad(ADM_PATH + 'prioridade/index.php', 'template_conteudo', "POST", "", true);
+}
+
+Admin.alterarTipoPriori = function() {
+
+	var p = new Object();
+	var status;
+	if (document.getElementById('bt_sim').checked) {
+		status = 1; // status 1 Prioridade sempre na frente
+	} else {
+		status = 0; // status 0 Prioridade alternada com atendimento normal
+	}
+
+	p['tipo_priori'] = status;
+	Ajax.simpleLoad(ADM_PATH + "prioridade/alterar_tipo_priori.php", '', "POST", Ajax
+			.encodePostParameters(p), false, Admin.atualizaTipoPriori);
+}

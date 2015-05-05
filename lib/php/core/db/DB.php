@@ -996,7 +996,7 @@ abstract class DB {
 
 	public function criar_agendamento($id_agendamento, $id_usu){
 		$sql = $this->get_queries()->criar_agendamento();	
-		//Template::display_confirm_dialog("Aqui",$sql,true);
+		
 		$statement = $this->m_connection()->prepare($sql); 
 		$statement->bindValue(':id_agen', $id_agendamento, PDO::PARAM_INT);
 		$statement->bindValue(':id_cliente', $id_usu, PDO::PARAM_INT);
@@ -3407,6 +3407,14 @@ abstract class DB {
     	$statement->execute();
 	}
 
+	public function set_conf_prio($id_uni,$tipo_priori){
+		$sql = $this->get_queries()->set_conf_prio();
+		$statement = $this->m_connection->prepare($sql);
+    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->bindValue(':tipo_priori',$tipo_priori, PDO::PARAM_INT);
+    	$statement->execute();
+	}
+
 	public function get_conf_prio($id_uni){
 		$sql = $this->get_queries()->get_conf_prio();
 		$statement = $this->m_connection->prepare($sql);
@@ -3416,14 +3424,6 @@ abstract class DB {
     	$status = $this->to_array($statement);
 		$status = $status[0][0];
 		return $status;
-	}
-	
-	public function set_conf_prio($id_uni,$conf_prioridade){
-		$sql = $this->get_queries()->set_conf_prio();
-		$statement = $this->m_connection->prepare($sql);
-    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
-    	$statement->bindValue(':conf_prioridade',$conf_prioridade, PDO::PARAM_INT);
-    	$statement->execute();
 	}
 	
 	public function get_nm_pri($id_pri){
