@@ -566,6 +566,12 @@ class PgSQLQueries implements DBQueries {
 				)";
 	}
 
+	public function criar_agendamento() {
+		return "UPDATE agendas
+					SET id_cliente =  :id_cliente
+				WHERE id_agen = :id_agen";
+	}
+
 	
 	public function atualizar_usuario() {
 		return "UPDATE usuarios

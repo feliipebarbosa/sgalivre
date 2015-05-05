@@ -22,19 +22,17 @@ SGA::check_login('sga.agendamento');
  * Redireciona para a tela inicial de atendimento
  */
 try {
-
-	$usuario = SGA::get_current_user();
 	
-	$dia_semana = $_POST['dia_semana'];
+	$id_agendamento = $_POST['id'];
 
-  $id_usu = $usuario->get_id();
-  $id_uni = SGA::get_current_user()->get_unidade()->get_id();
+ 	$id_usu = SGA::get_current_user()->get_id();
+  	
+  	DB::getInstance()->criar_agendamento($id_agendamento, $id_usu);
     
-  $agendamento = DB::getInstance()->criar_agendamento($dia_semana);
-    
-  SGA::_include("modules/sga/agendamento/index.php");
 
-catch (Exception $e) {
+
+
+}catch (Exception $e) {
 	TAgendamento::display_exception($e);
 }
 

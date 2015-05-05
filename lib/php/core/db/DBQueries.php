@@ -197,6 +197,8 @@ interface DBQueries {
 
 	public function criar_agenda();
 
+	public function criar_agendamento();
+
 	
 	/**
 	 * Retorna a Query para atualizar um usuario

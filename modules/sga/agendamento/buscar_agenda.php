@@ -22,8 +22,7 @@ SGA::check_login("sga.agendamento");
 try {
 	
 	
-	$dia = $_POST['dia'];
-	echo $dia;	
+	$dia = $_POST['dia'];	
 
 	TAgendamento::display_agenda_dia($dia);
 }

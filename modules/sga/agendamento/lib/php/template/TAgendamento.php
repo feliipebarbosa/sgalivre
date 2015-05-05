@@ -69,8 +69,6 @@ class TAgendamento extends Template{
 		
 		Template::display_page_title('Criar Agendamento'); 		
 		?>
-		
-		<input type="hidden" id="unidade" value="">
 
 		</br>
 								
@@ -79,16 +77,6 @@ class TAgendamento extends Template{
 
 		<SCRIPT LANGUAGE="JavaScript"> 
 
-
-			/*$(document).ready(function(){
-				$("#carrega_agenda").toggle();
-			})*/
-
-
-			function carrega_agenda(){
-				
-				$("#carrega_agenda").load("Agendamento.buscar_agenda.php");
-			}
 
 			<!-- Begin
 			var day_of_week = new Array('Dom','Seg','Ter','Qua','Qui','Sex','Sab');
@@ -157,10 +145,11 @@ class TAgendamento extends Template{
  						}
   						var data = (dia+'-'+mes+'-'+year).toString();
   						
-  						if( today==Calendar.getDate() )
-  							cal += highlight_start + '<a onclick="Agendamento.buscarAgenda('+data+');">'+day+'<\a>' + highlight_end + TD_end;
-  						else
-  							cal += TD_start + '<a onclick="Agendamento.buscarAgenda('+data+');">'+day+'<\a>' + TD_end;
+  						if( today==Calendar.getDate() ){
+  							cal += highlight_start + '<a onclick="Agendamento.buscarAgenda(\''+data+'\');">'+day+'<\a>' + highlight_end + TD_end;
+  						}else{
+  							cal += TD_start + '<a onclick="Agendamento.buscarAgenda(\''+data+'\');">'+day+'<\a>' + TD_end;
+  						}	
   					}
   					if(week_day == DAYS_OF_WEEK)
   						cal += TR_end;
@@ -173,11 +162,9 @@ class TAgendamento extends Template{
 			document.write(cal);
 			//  End -->
 		</SCRIPT>
-
-		<?php Template::display_action_button("Buscar", "images/zoom.gif", "Agendamento.buscarAgenda('day');",'button','carrega_agenda',true,'Clique para BUSCAR a agenda.')?>
-
-		 
-		</div>	
+		</div>
+		<div id = "carrega_agenda"></div>		 
+			
 		</br>
 		</br>
 		<?
@@ -186,11 +173,10 @@ class TAgendamento extends Template{
 	public static function display_agenda_dia($dia){
 	?>	
 
-		<div id = "carrega_agenda">
-		<form id="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criar_agendamento(); return false;">						
+		<form id="frm_criar_agendamento" name="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criarAgendamento(); return false;" >						
 			<? 
 			$id_uni = SGA::get_current_user()->get_unidade()->get_id();
-			$agendas = DB::getInstance()->get_agendas('2014-11-04', null, $id_uni, null); ?>
+			$agendas = DB::getInstance()->get_agendas('2015-05-11', null, $id_uni, null); ?>
 			
 			<table class="agendamento">
 				<thead>
@@ -207,7 +193,7 @@ class TAgendamento extends Template{
 					<? $uni_name = DB::getInstance()->get_unidade($agenda->get_id_uni()); ?>
 					
 					<tr style="border: solid #d1d1d1 1px;">
-						<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="1" value="1" /></td>
+						<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="<? echo $agenda->get_id(); ?>" value="<? echo $agenda->get_id(); ?>" /></td>
 						<td style="width:80px; text-align:center;" > <? echo date('d/m/Y', strtotime($agenda->get_dia())); ?> </td>
 						<td style="width:50px; text-align:center;"> <? echo date('H:i', strtotime($agenda->get_hora())); ?> </td>
 						<td style="width:80px; text-align:center;"> <? echo $usu_name->get_nome(); ?> </td>
@@ -220,12 +206,11 @@ class TAgendamento extends Template{
 			<br>
 			<div>
 				<?php
-					Template::display_action_button("Confirmar", "images/tick.png", "Agendamento.criar_agendamento();",'button','',true,'Clique para confirmar a criação do agendamento.');
+					Template::display_action_button("Confirmar", "images/tick.png", "Agendamento.criarAgendamento();",'button','',true,'Clique para confirmar a criação do agendamento.');
             		Template::display_action_button("Voltar", "images/cross.png", "Agendamento.cancelarErroTriagem()",'button','',true,'Clique para voltar.');
 				?>
 			</div>
 		</form>	
-		</div>
 		
 		<?php
 	}

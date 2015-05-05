@@ -993,6 +993,17 @@ abstract class DB {
 	public abstract function inserir_usuario($login_usu, $nm_usu, $ult_nm_usu, $senha_usu);
 
 	public abstract function criar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni);
+
+	public function criar_agendamento($id_agendamento, $id_usu){
+		$sql = $this->get_queries()->criar_agendamento();	
+		//Template::display_confirm_dialog("Aqui",$sql,true);
+		$statement = $this->m_connection()->prepare($sql); 
+		$statement->bindValue(':id_agen', $id_agendamento, PDO::PARAM_INT);
+		$statement->bindValue(':id_cliente', $id_usu, PDO::PARAM_INT);
+		$statement->execute();
+		return $statement->rowCount() === 1;
+
+	}
 	
 	public function atualizar_usuario($id_usu, $login_usu, $nm_usu, $ult_nm_usu) {
 		$sql = $this->get_queries()->atualizar_usuario();
