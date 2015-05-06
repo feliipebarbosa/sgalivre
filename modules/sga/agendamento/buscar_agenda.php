@@ -19,8 +19,7 @@
 
 SGA::check_login("sga.agendamento");
 
-try {
-	
+try {	
 	
 	$dia = $_POST['dia'];	
 

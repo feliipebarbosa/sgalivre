@@ -555,7 +555,7 @@ class PgSQLQueries implements DBQueries {
 				)";
 	}
 
-	public function criar_agenda() {
+	public function criar_agenda(){
 		return "INSERT INTO agendas
 				( 
 					dia, dia_semana, hora, id_usu, id_uni 
@@ -566,12 +566,12 @@ class PgSQLQueries implements DBQueries {
 				)";
 	}
 
-	public function criar_agendamento() {
+	public function marcar_agendamento(){
 		return "UPDATE agendas
-					SET id_cliente =  :id_cliente
-				WHERE id_agen = :id_agen";
+					SET 
+						id_cliente =  :id_cli
+				WHERE id_agen = :id_agenda";
 	}
-
 	
 	public function atualizar_usuario() {
 		return "UPDATE usuarios
@@ -1602,6 +1602,17 @@ public function get_senha_msg_loc(){
 					AND (hora = :horario OR 0 = 0)
 					AND id_uni = :id_uni
 					AND (id_usu = :id_usuario OR 0 = 0)";
+	}
+
+	public function get_agendas_disponiveis(){
+		return "SELECT id_agen, dia, hora, id_usu, id_uni, dia_semana, id_cliente
+				FROM agendas 
+				WHERE dia = :dia
+					AND (hora = :horario OR 0 = 0)
+					AND id_uni = :id_uni
+					AND (id_usu = :id_usuario OR 0 = 0)
+					AND (id_cliente is null or id_cliente = :id_cliente)
+					ORDER BY dia, hora";
 	}
 	
 	public function set_msg_status(){

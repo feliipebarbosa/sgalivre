@@ -994,15 +994,13 @@ abstract class DB {
 
 	public abstract function criar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni);
 
-	public function criar_agendamento($id_agendamento, $id_usu){
-		$sql = $this->get_queries()->criar_agendamento();	
-		
-		$statement = $this->m_connection()->prepare($sql); 
-		$statement->bindValue(':id_agen', $id_agendamento, PDO::PARAM_INT);
-		$statement->bindValue(':id_cliente', $id_usu, PDO::PARAM_INT);
-		$statement->execute();
-		return $statement->rowCount() === 1;
+	public function marcar_agendamento($id_agendamento, $id_usu){
+		$sql = $this->get_queries()->marcar_agendamento();	
 
+		$statement = $this->m_connection->prepare($sql); 
+		$statement->bindValue(':id_agenda', $id_agendamento, PDO::PARAM_INT);
+		$statement->bindValue(':id_cli', $id_usu, PDO::PARAM_INT);
+		$statement->execute();
 	}
 	
 	public function atualizar_usuario($id_usu, $login_usu, $nm_usu, $ult_nm_usu) {
@@ -2183,6 +2181,29 @@ abstract class DB {
 		$statement->bindValue(':horario', $horario, PDO::PARAM_STR);
     	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
     	$statement->bindValue(':id_usuario',$id_usuario, PDO::PARAM_INT);
+		
+		$statement->execute();
+		
+		$agendas 	= array();
+		$tmp 		= $this->to_array($statement);
+		foreach ($tmp as $a) {
+			$id 			= (int) $a['id_agen'];
+			$agenda 		= DB::getInstance()->new_agenda($a);
+			$agendas[$id] 	= $agenda;
+
+		}
+		return $agendas;
+	}
+
+	public function get_agendas_disponiveis($dia, $horario, $id_uni, $id_usuario, $id_cliente) {
+		$sql = $this->get_queries()->get_agendas_disponiveis();
+
+		$statement = $this->m_connection->prepare($sql);
+		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
+		$statement->bindValue(':horario', $horario, PDO::PARAM_STR);
+    	$statement->bindValue(':id_uni',$id_uni, PDO::PARAM_INT);
+    	$statement->bindValue(':id_usuario',$id_usuario, PDO::PARAM_INT);
+    	$statement->bindValue(':id_cliente',$id_cliente, PDO::PARAM_INT);
 		
 		$statement->execute();
 		

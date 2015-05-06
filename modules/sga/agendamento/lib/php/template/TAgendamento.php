@@ -64,8 +64,6 @@ class TAgendamento extends Template{
 	}
 
 	public static function display_conteudo() {
-        //$id_uni = SGA::get_current_user()->get_unidade()->get_id();
-		//$serv = DB::getInstance()->get_servicos_unidade($id_uni, array(1));
 		
 		Template::display_page_title('Criar Agendamento'); 		
 		?>
@@ -97,9 +95,9 @@ class TAgendamento extends Template{
 			Calendar.setMonth(month);    // Comecar o calendario com o mes atual
  			
  			if(month < 10){
- 				var mes = ('0'+month);
+ 				var mes = ('0'+(month+1));
  			}else{
- 				var mes = month;
+ 				var mes = (month+1);
  			}
  
 			var TR_start = '<TR>';
@@ -143,7 +141,7 @@ class TAgendamento extends Template{
  						}else{
  							var dia = day;
  						}
-  						var data = (dia+'-'+mes+'-'+year).toString();
+  						var data = (year+'-'+mes+'-'+dia).toString();
   						
   						if( today==Calendar.getDate() ){
   							cal += highlight_start + '<a onclick="Agendamento.buscarAgenda(\''+data+'\');">'+day+'<\a>' + highlight_end + TD_end;
@@ -176,7 +174,9 @@ class TAgendamento extends Template{
 		<form id="frm_criar_agendamento" name="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criarAgendamento(); return false;" >						
 			<? 
 			$id_uni = SGA::get_current_user()->get_unidade()->get_id();
-			$agendas = DB::getInstance()->get_agendas('2015-05-11', null, $id_uni, null); ?>
+			$usuario_logado = SGA::get_current_user()->get_id();
+			$agendas = DB::getInstance()->get_agendas_disponiveis($dia, null, $id_uni, null, $usuario_logado); ?>
+			<input type="hidden" id="dia" value="<? echo $dia ?>" />
 			
 			<table class="agendamento">
 				<thead>
@@ -188,18 +188,25 @@ class TAgendamento extends Template{
 						<td style="width:80px; text-align:center; font-weight:bold; padding-button:30px;" > Unidade</td>
 					</tr>		
 				</thead>
-				<? foreach($agendas as $agenda){ ?>
-					<? $usu_name = DB::getInstance()->get_usuario_by_id($agenda->get_id_usu()); ?>
-					<? $uni_name = DB::getInstance()->get_unidade($agenda->get_id_uni()); ?>
+				<? foreach($agendas as $agenda){ 
+					$usu_name = DB::getInstance()->get_usuario_by_id($agenda->get_id_usu()); 
+					$uni_name = DB::getInstance()->get_unidade($agenda->get_id_uni()); 		
+
+					if($usuario_logado == $agenda->get_id_cliente()){
+						$sim = "checked='checked'";
+					}
+				?>
 					
 					<tr style="border: solid #d1d1d1 1px;">
-						<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="<? echo $agenda->get_id(); ?>" value="<? echo $agenda->get_id(); ?>" /></td>
+						<td style="width:30px; text-align:center;" ><input type="radio" name="agendamento" id="<? echo $agenda->get_id(); ?>" value="<? echo $agenda->get_id(); ?>" <?php echo $sim;?>/></td>
 						<td style="width:80px; text-align:center;" > <? echo date('d/m/Y', strtotime($agenda->get_dia())); ?> </td>
 						<td style="width:50px; text-align:center;"> <? echo date('H:i', strtotime($agenda->get_hora())); ?> </td>
 						<td style="width:80px; text-align:center;"> <? echo $usu_name->get_nome(); ?> </td>
 						<td style="width:100px; text-align:center;"> <? echo $uni_name->get_nome(); ?> </td>
 					</tr>
-				<? } ?>	
+			<?
+				$sim = null; 
+				} ?>	
 				
 			</table>	
 			<br>

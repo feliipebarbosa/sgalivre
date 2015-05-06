@@ -27,13 +27,10 @@ try {
 
  	$id_usu = SGA::get_current_user()->get_id();
   	
-  	DB::getInstance()->criar_agendamento($id_agendamento, $id_usu);
-    
-
-
-
-}catch (Exception $e) {
-	TAgendamento::display_exception($e);
+  	DB::getInstance()->marcar_agendamento($id_agendamento, $id_usu);
+}
+catch (Exception $e) {
+	Template::display_exception($e);
 }
 
 ?>

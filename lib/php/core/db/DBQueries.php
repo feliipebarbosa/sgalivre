@@ -197,7 +197,11 @@ interface DBQueries {
 
 	public function criar_agenda();
 
-	public function criar_agendamento();
+	/**
+	 * Cria agendamento
+	 * @return String (SQL Query)
+	 */
+	public function marcar_agendamento();
 
 	
 	/**
@@ -541,6 +545,8 @@ interface DBQueries {
 	public function get_servico();
 
 	public function get_agendas();
+
+	public function get_agendas_disponiveis();
 	
 	/**
 	 * Retorna a Query para pegar o Servico especificado pelo id do servico

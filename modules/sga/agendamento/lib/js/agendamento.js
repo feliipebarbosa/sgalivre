@@ -13,6 +13,11 @@ var Agendamento = function() {
 
 }
 
+Agendamento.atualizaTela = function(p) {
+
+	Ajax.simpleLoad(AGENDAM_PATH + 'buscar_agenda.php', 'carrega_agenda', "POST", Ajax.encodePostParameters(p), true);
+}
+
 Agendamento.buscarAgenda = function(dia){
 
 	var p = new Object();
@@ -22,24 +27,22 @@ Agendamento.buscarAgenda = function(dia){
 
 }
 
-Agendamento.criarAgendamento = function(){
-
-	var callbackOk = function() {
-        //Agendamento.onSelecionaUsuario();
-        window.showInfoDialog("Agendamento criado com sucesso.");
-    }
-
+Agendamento.criarAgendamento = function() {    
+  
     var p = new Object();
     var form = document.frm_criar_agendamento;
 	var Radio=null;
 
 	Radio = form.agendamento;
-	for(var i=0;i<Radio.length;i++) {
+	for(var i=0;i<Radio.length;i++){
 		if(Radio[i].checked) {
 			p['id'] = Radio[i].id;
 		}
 	}
 
-	Ajax.simpleLoad(AGENDAM_PATH + "acoes/criar_agendamento.php", "", "POST", Ajax.encodePostParameters(p), false); 
+	p['dia'] = document.getElementById('dia').value;
+
+	Ajax.simpleLoad(AGENDAM_PATH + "acoes/criar_agendamento.php", '', "POST", Ajax
+		.encodePostParameters(p), false, Agendamento.atualizaTela(p)); 
     
 }
