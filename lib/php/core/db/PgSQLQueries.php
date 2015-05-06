@@ -855,11 +855,10 @@ class PgSQLQueries implements DBQueries {
 					AND id_serv = :id_serv";
 	}
 
-	public function desmarcar_agenda() {		
+	public function desmarcar_agen() {		
 		
 		return "DELETE FROM agendas
 				WHERE dia = :dia
-					AND dia_semana = :dia_semana
 					AND hora = :hora
 					AND id_usu = :id_usu
 					AND id_uni = :id_uni";

@@ -486,7 +486,7 @@ interface DBQueries {
 	 */
 	public function remover_servico_uni();
 
-	public function desmarcar_agenda();
+	public function desmarcar_agen();
 	
 	
 	/**

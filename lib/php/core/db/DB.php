@@ -1809,22 +1809,17 @@ abstract class DB {
 
 	}
 
-	public function desmarcar_agenda($dia, $dia_semana, $hora, $id_usu, $id_uni) {
-
-		//Template::display_confirm_dialog("Aqui",$hora,true);
-
-		$sql = $this->get_queries()->desmarcar_agenda();		
-
-		$statement = $this->m_connection()->prepare($sql);		
+	public function desmarcar_agen($dia, $dia_semana, $hora, $id_usu, $id_uni) {
+		$sql = $this->get_queries()->desmarcar_agen();		
+		
+		$statement = $this->m_connection->prepare($sql);		
 		$statement->bindValue(':dia', $dia, PDO::PARAM_STR);
-		$statement->bindValue(':dia_semana', $dia_semana, PDO::PARAM_STR);
 		$statement->bindValue(':hora', $hora, PDO::PARAM_STR);
 		$statement->bindValue(':id_usu', $id_usu, PDO::PARAM_INT);
 		$statement->bindValue(':id_uni', $id_uni, PDO::PARAM_INT);
 		$statement->execute();
 		
-	}
-	
+	}	
 	
 	/**
 	 * Retorna a PermissaoModuloGrupo com base na unidade passada como referência,

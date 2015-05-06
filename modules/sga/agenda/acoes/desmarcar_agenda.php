@@ -28,12 +28,10 @@ try {
   
   	$campos = split ("_",$dias_semana);
   	
-  	DB::getInstance()->desmarcar_agenda($campos[2], $campos[0], $campos[1],  $id_usu, $id_uni);  
-    
-  	SGA::_include("modules/sga/agenda/index.php");
+  	DB::getInstance()->desmarcar_agen($campos[2], $campos[0], $campos[1],  $id_usu, $id_uni);  
 }
 catch (Exception $e) {
-	TAgenda::display_exception($e);
+	Template::display_exception($e);
 }
 
 ?>
