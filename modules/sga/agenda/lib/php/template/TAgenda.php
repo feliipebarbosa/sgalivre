@@ -436,30 +436,174 @@ class TAgenda extends Template{
 				</tr>
 				<tr>
 					<td style="width:40px; text-align:center;">11:00</td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda-feira_11:00_<? echo $dia_inicio ?>" value="segunda_11:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="terça-feira_11:00_<? echo date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))); ?>" value="terca_11:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta-feira_11:00_<? echo date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))); ?>" value="quarta_11:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta-feira_11:00_<? echo date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))); ?>" value="quinta_11:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta-feira_11:00_<? echo date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))); ?>" value="sexta_11:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_11:00_<? echo date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))); ?>" value="sabado_11:00" /></td>
+					
+					<? $segunda_11_00 = DB::getInstance()->get_agenda($dia_inicio, '11:00', $id_uni, $id_usuario); ?>
+					<?	if ($segunda_11_00 != null) {
+							$check_segunda_11_00 = "checked='checked'";
+						}else{
+							$check_segunda_11_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda-feira_11:00_<? echo $dia_inicio ?>_<?php echo $check_segunda_11_00;?>" value="segunda_11:00" <?php echo $check_segunda_11_00;?>/></td>
+					
+					<? $terca_11_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))), '11:00', $id_uni, $id_usuario); ?>
+					<?	if ($terca_11_00 != null) {
+							$check_terca_11_00 = "checked='checked'";
+						}else{
+							$check_terca_11_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terça-feira_11:00_<? echo date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))); ?>_<?php echo $check_terca_11_00;?>" value="terca_11:00" <?php echo $check_terca_11_00;?>/></td>
+					
+					<? $quarta_11_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))), '11:00', $id_uni, $id_usuario); ?>
+					<?	if ($quarta_11_00 != null) {
+							$check_quarta_11_00 = "checked='checked'";
+						}else{
+							$check_quarta_11_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta-feira_11:00_<? echo date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))); ?>_<?php echo $check_quarta_11_00;?>" value="quarta_11:00" <?php echo $check_quarta_11_00;?>/></td>
+					
+					<? $quinta_11_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))), '11:00', $id_uni, $id_usuario); ?>
+					<?	if ($quinta_11_00 != null) {
+							$check_quinta_11_00 = "checked='checked'";
+						}else{
+							$check_quinta_11_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta-feira_11:00_<? echo date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))); ?>_<?php echo $check_quinta_11_00;?>" value="quinta_11:00" <?php echo $check_quinta_11_00;?>/></td>
+					
+					<? $sexta_11_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))), '11:00', $id_uni, $id_usuario); ?>
+					<?	if ($sexta_11_00 != null) {
+							$check_sexta_11_00 = "checked='checked'";
+						}else{
+							$check_sexta_11_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta-feira_11:00_<? echo date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))); ?>_<?php echo $check_sexta_11_00;?>" value="sexta_11:00" <?php echo $check_sexta_11_00;?>/></td>
+					
+					<? $sabado_11_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))), '11:00', $id_uni, $id_usuario); ?>
+					<?	if ($sabado_11_00 != null) {
+							$check_sabado_11_00 = "checked='checked'";
+						}else{
+							$check_sabado_11_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_11:00_<? echo date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))); ?>_<?php echo $check_sabado_11_00;?>" value="sabado_11:00" <?php echo $check_sabado_11_00;?>/></td>
 				</tr>
 				<tr>
 					<td style="width:40px; text-align:center;">11:30</td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda-feira_11_30_<? echo $dia_inicio ?>" value="segunda_11:30" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="terça-feira_11_30_<? echo date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))); ?>" value="terca_11:30" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta-feira_11_30_<? echo date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))); ?>" value="quarta_11:30" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta-feira_11_30_<? echo date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))); ?>" value="quinta_11:30" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta-feira_11_30_<? echo date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))); ?>" value="sexta_11:30" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_11_30_<? echo date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))); ?>" value="sabado_11:30" /></td>
+					
+					<? $segunda_11_30 = DB::getInstance()->get_agenda($dia_inicio, '11:30', $id_uni, $id_usuario); ?>
+					<?	if ($segunda_11_30 != null) {
+							$check_segunda_11_30 = "checked='checked'";
+						}else{
+							$check_segunda_11_30 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda-feira_11:30_<? echo $dia_inicio ?>_<?php echo $check_segunda_11_30;?>" value="segunda_11:30" <?php echo $check_segunda_11_30;?>/></td>
+					
+					<? $terca_11_30 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))), '11:30', $id_uni, $id_usuario); ?>
+					<?	if ($terca_11_30 != null) {
+							$check_terca_11_30 = "checked='checked'";
+						}else{
+							$check_terca_11_30 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terça-feira_11:30_<? echo date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))); ?>_<?php echo $check_terca_11_30;?>" value="terca_11:30" <?php echo $check_terca_11_30;?>/></td>
+					
+					<? $quarta_11_30 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))), '11:30', $id_uni, $id_usuario); ?>
+					<?	if ($quarta_11_30 != null) {
+							$check_quarta_11_30 = "checked='checked'";
+						}else{
+							$check_quarta_11_30 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta-feira_11:30_<? echo date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))); ?>_<?php echo $check_quarta_11_30;?>" value="quarta_11:30" <?php echo $check_quarta_11_30;?>/></td>
+					
+					<? $quinta_11_30 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))), '11:30', $id_uni, $id_usuario); ?>
+					<?	if ($quinta_11_30 != null) {
+							$check_quinta_11_30 = "checked='checked'";
+						}else{
+							$check_quinta_11_30 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta-feira_11:30_<? echo date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))); ?>_<?php echo $check_quinta_11_30;?>" value="quinta_11:30" <?php echo $check_quinta_11_30;?>/></td>
+					
+					<? $sexta_11_30 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))), '11:30', $id_uni, $id_usuario); ?>
+					<?	if ($sexta_11_30 != null) {
+							$check_sexta_11_30 = "checked='checked'";
+						}else{
+							$check_sexta_11_30 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta-feira_11:30_<? echo date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))); ?>_<?php echo $check_sexta_11_30;?>" value="sexta_11:30" <?php echo $check_sexta_11_30;?>/></td>
+					
+					<? $sabado_11_30 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))), '11:30', $id_uni, $id_usuario); ?>
+					<?	if ($sabado_11_30 != null) {
+							$check_sabado_11_30 = "checked='checked'";
+						}else{
+							$check_sabado_11_30 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_11:30_<? echo date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))); ?>_<?php echo $check_sabado_11_30;?>" value="sabado_11:30" <?php echo $check_sabado_11_30;?>/></td>
 				</tr>
 				<tr>
 					<td style="width:40px; text-align:center;">12:00</td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda-feira_12_00_<? echo $dia_inicio ?>" value="segunda_12:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="terça-feira_12_00_<? echo date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))); ?>" value="terca_12:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta-feira_12_00_<? echo date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))); ?>" value="quarta_12:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta-feira_12_00_<? echo date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))); ?>" value="quinta_12:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta-feira_12_00_<? echo date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))); ?>" value="sexta_12:00" /></td>
-					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_12_00_<? echo date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))); ?>" value="sabado_12:00" /></td>
+					
+					<? $segunda_12_00 = DB::getInstance()->get_agenda($dia_inicio, '12:00', $id_uni, $id_usuario); ?>
+					<?	if ($segunda_12_00 != null) {
+							$check_segunda_12_00 = "checked='checked'";
+						}else{
+							$check_segunda_12_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="segunda-feira_12:00_<? echo $dia_inicio ?>_<?php echo $check_segunda_12_00;?>" value="segunda_12:00" <?php echo $check_segunda_12_00;?>/></td>
+					
+					<? $terca_12_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))), '12:00', $id_uni, $id_usuario); ?>
+					<?	if ($terca_12_00 != null) {
+							$check_terca_12_00 = "checked='checked'";
+						}else{
+							$check_terca_12_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="terça-feira_12:00_<? echo date('Y/m/d', strtotime("+1 days",strtotime($dia_inicio))); ?>_<?php echo $check_terca_12_00;?>" value="terca_12:00" <?php echo $check_terca_12_00;?>/></td>
+					
+					<? $quarta_12_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))), '12:00', $id_uni, $id_usuario); ?>
+					<?	if ($quarta_12_00 != null) {
+							$check_quarta_12_00 = "checked='checked'";
+						}else{
+							$check_quarta_12_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quarta-feira_12:00_<? echo date('Y/m/d', strtotime("+2 days",strtotime($dia_inicio))); ?>_<?php echo $check_quarta_12_00;?>" value="quarta_12:00" <?php echo $check_quarta_12_00;?>/></td>
+					
+					<? $quinta_12_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))), '12:00', $id_uni, $id_usuario); ?>
+					<?	if ($quinta_12_00 != null) {
+							$check_quinta_12_00 = "checked='checked'";
+						}else{
+							$check_quinta_12_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="quinta-feira_12:00_<? echo date('Y/m/d', strtotime("+3 days",strtotime($dia_inicio))); ?>_<?php echo $check_quinta_12_00;?>" value="quinta_12:00" <?php echo $check_quinta_12_00;?>/></td>
+					
+					<? $sexta_12_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))), '12:00', $id_uni, $id_usuario); ?>
+					<?	if ($sexta_12_00 != null) {
+							$check_sexta_12_00 = "checked='checked'";
+						}else{
+							$check_sexta_12_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sexta-feira_12:00_<? echo date('Y/m/d', strtotime("+4 days",strtotime($dia_inicio))); ?>_<?php echo $check_sexta_12_00;?>" value="sexta_12:00" <?php echo $check_sexta_12_00;?>/></td>
+					
+					<? $sabado_12_00 = DB::getInstance()->get_agenda(date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))), '12:00', $id_uni, $id_usuario); ?>
+					<?	if ($sabado_12_00 != null) {
+							$check_sabado_12_00 = "checked='checked'";
+						}else{
+							$check_sabado_12_00 = "";
+						}	
+					?>
+					<td style="width:40px; text-align:center;"><input type="checkbox" id="sabado_12:00_<? echo date('Y/m/d', strtotime("+5 days",strtotime($dia_inicio))); ?>_<?php echo $check_sabado_12_00;?>" value="sabado_12:00" <?php echo $check_sabado_12_00;?>/></td>
 				</tr>
 				<tr>
 					<td style="width:40px; text-align:center;">12:30</td>
