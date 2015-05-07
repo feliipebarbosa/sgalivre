@@ -173,7 +173,7 @@ class TAgendamento extends Template{
 
 		<form id="frm_criar_agendamento" name="frm_criar_agendamento" method="post" action="" onsubmit="Agendamento.criarAgendamento(); return false;" >						
 			<? 
-			$id_uni = SGA::get_current_user()->get_unidade()->get_id();
+			$id_uni = SGA::get_current_user()->get_unidade()->get_id() ;
 			$usuario_logado = SGA::get_current_user()->get_id();
 			$agendas = DB::getInstance()->get_agendas_disponiveis($dia, null, $id_uni, null, $usuario_logado); ?>
 			<input type="hidden" id="dia" value="<? echo $dia ?>" />
@@ -194,6 +194,7 @@ class TAgendamento extends Template{
 
 					if($usuario_logado == $agenda->get_id_cliente()){
 						$sim = "checked='checked'";
+						$id_agendamento_marcado = $agenda->get_id();
 					}
 				?>
 					
@@ -207,7 +208,7 @@ class TAgendamento extends Template{
 			<?
 				$sim = null; 
 				} ?>	
-				
+			<input type="hidden" id="id_agendamento_marcado" value="<? echo $id_agendamento_marcado; ?>"/>	
 			</table>	
 			<br>
 			<br>

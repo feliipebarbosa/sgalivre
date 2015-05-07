@@ -1002,6 +1002,14 @@ abstract class DB {
 		$statement->bindValue(':id_cli', $id_usu, PDO::PARAM_INT);
 		$statement->execute();
 	}
+
+	public function desmarcar_agendamento($id_agendamento){
+		$sql = $this->get_queries()->desmarcar_agendamento();	
+
+		$statement = $this->m_connection->prepare($sql); 
+		$statement->bindValue(':id_agenda', $id_agendamento, PDO::PARAM_INT);
+		$statement->execute();
+	}
 	
 	public function atualizar_usuario($id_usu, $login_usu, $nm_usu, $ult_nm_usu) {
 		$sql = $this->get_queries()->atualizar_usuario();

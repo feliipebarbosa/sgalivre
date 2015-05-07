@@ -32,12 +32,19 @@ Agendamento.criarAgendamento = function() {
     var p = new Object();
     var form = document.frm_criar_agendamento;
 	var Radio=null;
+	var id_agendamento_marcado = document.getElementById('id_agendamento_marcado').value;
 
 	Radio = form.agendamento;
 	for(var i=0;i<Radio.length;i++){
 		if(Radio[i].checked) {
 			p['id'] = Radio[i].id;
 		}
+	}
+
+	if((id_agendamento_marcado != '') && (p['id'] != id_agendamento_marcado)){
+		p['id_desmarcado'] = id_agendamento_marcado;
+		Ajax.simpleLoad(AGENDAM_PATH + "acoes/desmarcar_agendamento.php", '', "POST", Ajax
+		.encodePostParameters(p), false);
 	}
 
 	p['dia'] = document.getElementById('dia').value;

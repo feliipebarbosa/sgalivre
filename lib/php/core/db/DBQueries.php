@@ -203,6 +203,8 @@ interface DBQueries {
 	 */
 	public function marcar_agendamento();
 
+	public function desmarcar_agendamento();
+
 	
 	/**
 	 * Retorna a Query para atualizar um usuario

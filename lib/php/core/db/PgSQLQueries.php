@@ -572,6 +572,13 @@ class PgSQLQueries implements DBQueries {
 						id_cliente =  :id_cli
 				WHERE id_agen = :id_agenda";
 	}
+
+	public function desmarcar_agendamento(){
+		return "UPDATE agendas
+					SET 
+						id_cliente =  null
+				WHERE id_agen = :id_agenda";
+	}
 	
 	public function atualizar_usuario() {
 		return "UPDATE usuarios
